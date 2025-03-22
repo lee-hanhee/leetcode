@@ -1,2 +1,1 @@
-
-    t = "racecar"
+print(key)

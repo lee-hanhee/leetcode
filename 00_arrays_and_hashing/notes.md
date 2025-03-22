@@ -11,3 +11,11 @@
 ## Two Sum 
 - nums[i] = target - nums[j], so we can see if nums[i] in hashmap. 
 - If it is, then return the index of nums[i] and i, otherwise, add nums[j] to hashmap.
+
+## Group Anagram 
+- dict.get(key, default): get the value of key, if not found, return default.
+- dict[key] = dict.get(key, []) + [word]: append word to the list of key.
+- list() to convert something to a list.
+- ord(): convert a character to its ASCII value.
+- ord(char) - ord('a'): get the index of the character in the list.
+- dict and list are unhashable, so convert to tuple. 
