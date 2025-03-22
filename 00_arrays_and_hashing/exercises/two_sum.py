@@ -31,18 +31,16 @@ Constraints:
 '''
 class Solution:
     def twoSum0(self, nums, target) -> list:
-        # Brute Force: O(n^2) time, O(1) space
-        i = 0
+        # Brute Force (all pairs, even repeats): O(n^2) time, O(1) space
         for j in range(len(nums)):
-            i += 1
-            for i in range(len(nums) - 1):
+            for i in range(len(nums)):
                 if nums[j] + nums[i] == target and i != j :
                     return [j,i]
         
         return []
     
     def twoSum1(self, nums, target) -> list:
-        # Brute Force: O(n^2) time, O(1) space
+        # Brute Force (all pairs, no repeats): O(n^2) time, O(1) space
         for i in range(len(nums)):
             for j in range(i+1, len(nums)):
                 if nums[j] + nums[i] == target:
@@ -52,8 +50,15 @@ class Solution:
     
     def twoSum2(self, nums, target) -> list:
         # Hashmap: O(n) time, O(n) space
+        prevMap = {} # val: index 
         
-        return []
+        for i, num in enumerate(nums): # gets index and num
+            diff = target - num 
+            if diff in prevMap: # if diff in hashmap, then there exists a # s.t. target - num = # 
+                return [prevMap[diff], i] 
+            prevMap[num] = i # add to hash map if not.
+        
+        return [] # will never reach since always guaranteed
 
         
 if __name__ == '__main__':
@@ -65,4 +70,9 @@ if __name__ == '__main__':
     nums = [4,5,6]
     target = 10
     result = Solution().twoSum1(nums,target)
+    print(result)
+    
+    nums = [4,5,6]
+    target = 10
+    result = Solution().twoSum2(nums,target)
     print(result)
