@@ -30,9 +30,39 @@ Constraints:
 -10,000,000 <= target <= 10,000,000
 '''
 class Solution:
-    def twoSum(self, nums, target) -> list:
-        return False
+    def twoSum0(self, nums, target) -> list:
+        # Brute Force: O(n^2) time, O(1) space
+        i = 0
+        for j in range(len(nums)):
+            i += 1
+            for i in range(len(nums) - 1):
+                if nums[j] + nums[i] == target and i != j :
+                    return [j,i]
+        
+        return []
+    
+    def twoSum1(self, nums, target) -> list:
+        # Brute Force: O(n^2) time, O(1) space
+        for i in range(len(nums)):
+            for j in range(i+1, len(nums)):
+                if nums[j] + nums[i] == target:
+                    return [i,j]
+        
+        return []
+    
+    def twoSum2(self, nums, target) -> list:
+        # Hashmap: O(n) time, O(n) space
+        
+        return []
+
         
 if __name__ == '__main__':
     nums = [3,4,5,6]
     target = 7
+    result = Solution().twoSum0(nums,target)
+    print(result)
+
+    nums = [4,5,6]
+    target = 10
+    result = Solution().twoSum1(nums,target)
+    print(result)
