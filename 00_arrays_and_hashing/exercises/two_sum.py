@@ -31,7 +31,7 @@ Constraints:
 '''
 class Solution:
     def twoSum(self, nums, target) -> list:
-        
+        return False
         
 if __name__ == '__main__':
     nums = [3,4,5,6]
