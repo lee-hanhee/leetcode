@@ -19,3 +19,8 @@
 - ord(): convert a character to its ASCII value.
 - ord(char) - ord('a'): get the index of the character in the list.
 - dict and list are unhashable, so convert to tuple. 
+
+## Top K Frequent Elements 
+- for key, value in dict.items() 
+- for i, key in enumerate(list) will give the index and the value of the list.
+- sorted(dict.items(), key=lambda x:x[1]) will sort the dictionary by value.
