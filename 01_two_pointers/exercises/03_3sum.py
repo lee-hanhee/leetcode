@@ -63,7 +63,8 @@ class Solution:
                     res.append([val, nums[start], nums[end]])
                     
                     # update one pointer until its not a dup similar as before but for the condensed list
-                    # [-2,-2,0,0,2,2]
+                    # [-2,-2,0,0,2,2]. 
+                    # Don't have to move the other pointer b/c it gets fixed by the above conditionals to not have dups. 
                     l += 1 
                     while nums[l] == nums[l-1] and l < r: 
                         l += 1
