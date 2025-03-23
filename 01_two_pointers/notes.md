@@ -14,7 +14,7 @@
 # Two Sum 
 - 2nd Variation: Start and End pointers w/ num[start] + num[end] >/</== target
 
-# Three Sum
+# Three Sum (Hard)
 - for i in range(len(nums)): # O(n)
     - for j in range(i+1, len(nums)): # O(n)
         - for k in range(j+1, len(nums)): # O(n)
