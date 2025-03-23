@@ -33,7 +33,7 @@ class Solution:
                 num2 = stack.pop() 
                 res = int(eval(num2 + ele + num1)) # eval is by convention b op a not a op b
                 
-                stack.append(str(res))
+                stack.append(str(res)) # add res back to stack as string
                 
         return res
         
