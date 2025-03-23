@@ -26,23 +26,19 @@ class Solution:
     def twoSum0(self, numbers, target) -> list:
         # Two Pointer: O(n) time, O(1) space 
         # Assume only one valid solution
-        start = numbers[0]
-        start_ind = 0 # 0 indexed
-        end = numbers[len(numbers) - 1]
-        end_ind = len(numbers) - 1
+        start,end = 0, len(numbers) - 1
         
-        for i in range(1,len(numbers)):
-            if start + end > target: 
-                end_ind = len(numbers) - i - 1
-                end = numbers[end_ind] 
-                print(end)
-            elif start + end < target: 
-                start = numbers[i]
-                start_ind = i + 1
-            else: 
-                return [start_ind,end_ind]
-        
-        return [start_ind,end_ind]
+        while start < end:
+            sum = numbers[start] + numbers[end]
+            
+            if sum > target:
+                end -= 1
+            elif sum < target:
+                start += 1   
+            else:
+                return [start + 1, end + 1]             
+            
+        return []     
         
 if __name__ == "__main__":
     numbers = [100,200,300,500]
