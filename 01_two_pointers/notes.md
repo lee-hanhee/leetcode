@@ -13,8 +13,11 @@
 
 # Two Sum 
 - 2nd Variation: Start and End pointers w/ num[start] + num[end] >/</== target
+
+# Three Sum
 - for i in range(len(nums)): # O(n)
     - for j in range(i+1, len(nums)): # O(n)
         - for k in range(j+1, len(nums)): # O(n)
 - The above code will generate all possible unique triplets in the array.
-- tuple is  
+- Reduce the problem to a 2Sum problem by fixing a sorted array w/ one number and finding the other two numbers using the two pointers approach 
+- Confused on the last part for updating the pointers

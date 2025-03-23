@@ -33,7 +33,7 @@ class Solution:
     def threeSum(self, nums) -> list:
         # Brute Force: O(n^3) time, O(1) space
         res = set() # keeps unique triplets
-        nums.sort() # removes the case of (0,1,-1) and (-1,0,1)
+        nums.sort() # removes the case of (0,1,-1) and (-1,0,1) [-1,0,1,2,-1,-4] 
         for i in range(len(nums)):
             for j in range(i+1, len(nums)):
                 for k in range(j+1, len(nums)):
@@ -42,8 +42,38 @@ class Solution:
                         res.add(tuple(tmp)) # convert to tuple b/c lists are unhashable
         
         return [list(i) for i in res]
+    
+    def threeSum1(self, nums) -> list:
+        # Two Pointer: O(n^2) time, O(1) space
+        res = []
+        nums.sort()
+        for i, val in enumerate(nums):
+            if i > 0 and val == nums[i-1]: # same value as before, then skip it 
+                continue # since we don't want to have duplciates. 
+
+            # do two sum on the remaining part of list
+            start, end = i + 1, len(nums) - 1
+            while start < end: 
+                threeSum = val + nums[start] + nums[end]
+                if threeSum > 0: 
+                    end -= 1
+                elif threeSum < 0: 
+                    start += 1 
+                else: 
+                    res.append([val, nums[start], nums[end]])
+                    
+                    # update one pointer until its not a dup similar as before but for the condensed list
+                    # [-2,-2,0,0,2,2]
+                    l += 1 
+                    while nums[l] == nums[l-1] and l < r: 
+                        l += 1
+        
+        return res
         
 if __name__ == '__main__':
     nums = [-1,0,1,2,-1,-4]
     res = Solution().threeSum(nums)
+    print(res)
+    
+    res = Solution().threeSum1(nums)
     print(res)
