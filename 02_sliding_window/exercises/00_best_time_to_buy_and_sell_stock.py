@@ -41,17 +41,6 @@ class Solution:
             sell += 1
                 
         return maxP
-    
-    def maxProfit1(self, prices) -> int:
-        # Dynamic Programming: O(n) time, O(n) space
-        dp = [0] * len(prices)
-        minPrice = prices[0]
-        
-        for i in range(1, len(prices)):
-            minPrice = min(minPrice, prices[i])
-            dp[i] = max(dp[i-1], prices[i] - minPrice)
-            
-        return dp[-1]
             
 if __name__ == '__main__':
     prices = [10,1,5,6,7,1]
