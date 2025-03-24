@@ -68,9 +68,9 @@ Each file is stored in anki_review/metadata/ and looks like this:
 ---- | ---- | ---- | ----
 <sub>[Contains Duplicate](https://leetcode.com/problems/contains-duplicate)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/01_contains_duplicate.py)</sub>
 <sub>[Valid Anagram](https://leetcode.com/problems/valid-anagram)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/02_valid_anagram.py)</sub>
-<sub>[Two Sum](https://leetcode.com/problems/two-sum)</sub> | <sub>-</sub> | <sub>-</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/03_two_sum.py)</sub>
-<sub>[Group Anagrams](https://leetcode.com/problems/group-anagrams)</sub> | <sub>2025-03-24</sub> | <sub>2025-03-25</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/04_group_anagrams.py)</sub>
-<sub>[Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements)</sub> | <sub>2025-03-24</sub> | <sub>2025-03-30</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/05_top_k_frequent_elements.py)</sub>
+<sub>[Two Sum](https://leetcode.com/problems/two-sum)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/03_two_sum.py)</sub>
+<sub>[Group Anagrams](https://leetcode.com/problems/group-anagrams)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/04_group_anagrams.py)</sub>
+<sub>[Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/05_top_k_frequent_elements.py)</sub>
 <sub>[Encode And Decode Strings](https://leetcode.com/problems/encode-and-decode-strings)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/encode_and_decode_strings.py)</sub>
 <sub>[Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/longest_consecutive_sequence.py)</sub>
 <sub>[Product Of Array Except Self](https://leetcode.com/problems/product-of-array-except-self)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/product_of_array_except_self.py)</sub>
