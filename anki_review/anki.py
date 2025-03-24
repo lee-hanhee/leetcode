@@ -35,6 +35,35 @@ def get_metadata_path(problem_path):
     sanitized_name = problem_path.replace("/", "__").replace("\\", "__") + ".json"
     return os.path.join(metadata_dir, sanitized_name)
 
+def reset_command(problem_path):
+    """Reset the metadata for a problem to default values"""
+    # Ensure metadata directory exists
+    os.makedirs(metadata_dir, exist_ok=True)
+    
+    metadata_path = get_metadata_path(problem_path)
+    
+    # Get today's date
+    today = datetime.date.today()
+    tomorrow = today + datetime.timedelta(days=1)
+    
+    # Create default metadata
+    metadata = {
+        "ease_factor": 2.5,
+        "interval": 1,
+        "last_reviewed": today.strftime("%Y-%m-%d"),
+        "next_review": tomorrow.strftime("%Y-%m-%d")
+    }
+    
+    # Save the metadata to file
+    with open(metadata_path, 'w') as f:
+        json.dump(metadata, f, indent=2)
+    
+    print(f"Metadata for '{problem_path}' has been reset.")
+    
+    # Update the README
+    os.system(f"python {review_tool_path} update_readme")
+    return 0
+
 def update_command(problem_path):
     """Update command for reviewing a problem"""
     metadata_path = get_metadata_path(problem_path)
@@ -68,6 +97,7 @@ def main():
         print("Usage:")
         print("  anki.py add <problem_path>")
         print("  anki.py update <problem_path>")
+        print("  anki.py reset <problem_path>")
         print("  anki.py list_due")
         print("  anki.py update_readme")
         return 1
@@ -77,6 +107,10 @@ def main():
     # Handle enhanced update command
     if command == "update" and len(sys.argv) == 3:
         return update_command(sys.argv[2])
+    
+    # Handle reset command
+    if command == "reset" and len(sys.argv) == 3:
+        return reset_command(sys.argv[2])
     
     # For other commands, forward to the review tool
     args = " ".join(sys.argv[1:])
