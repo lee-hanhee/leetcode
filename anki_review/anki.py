@@ -134,6 +134,16 @@ def fix_metadata_command():
 
 def main():
     """Main entry point for the Anki CLI wrapper"""
+    # Check for direct command format: python anki.py filename.py rating
+    if len(sys.argv) >= 2 and sys.argv[1].endswith('.py'):
+        problem_path = sys.argv[1]
+        rating = None
+        if len(sys.argv) >= 3 and sys.argv[2].isdigit():
+            rating = sys.argv[2]
+        
+        # Default to add command
+        return add_command(problem_path, rating)
+    
     if len(sys.argv) < 2:
         print("Usage:")
         print("  anki.py add <problem_path> [rating]")
@@ -142,6 +152,8 @@ def main():
         print("  anki.py list_due")
         print("  anki.py update_readme")
         print("  anki.py fix_metadata")
+        print("\nAlternative usage:")
+        print("  anki.py <filename.py> [rating]")
         print("\nRating options (1-4):")
         print("  1 - Again (Failed completely)")
         print("  2 - Hard (Significant difficulty)")
@@ -186,6 +198,8 @@ def main():
         print("  anki.py list_due")
         print("  anki.py update_readme")
         print("  anki.py fix_metadata")
+        print("\nAlternative usage:")
+        print("  anki.py <filename.py> [rating]")
         print("\nYou can use just the filename (e.g., 01_two_sum.py) instead of the full path")
         return 1
 

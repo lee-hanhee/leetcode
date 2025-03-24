@@ -27,6 +27,23 @@ python anki.py list_due
 python anki.py update_readme
 ```
 
+### Simplified Command Format
+
+You can also use a simplified format by just providing the filename:
+
+```bash
+# Add a problem using just the filename
+python anki.py problem_name.py [rating]
+
+# Examples
+python anki.py 00_two_sum.py 3
+python anki.py valid_palindrome.py 4
+```
+
+The system will automatically search for the file in the repository.
+
+### Rating System
+
 The optional rating argument (1-4) allows you to quickly rate problems:
 
 - 1: Again (Failed completely)
@@ -42,6 +59,9 @@ python anki.py add 00_arrays_and_hashing/exercises/03_two_sum.py 3
 
 # Update a problem rating to "Easy" (4)
 python anki.py update 00_arrays_and_hashing/exercises/03_two_sum.py 4
+
+# Even simpler: just use the filename
+python anki.py 03_two_sum.py 3
 ```
 
 For more details, see the [Anki Review README](anki_review/README.md).

@@ -63,6 +63,12 @@ def resolve_problem_path(input_path):
         for base_dir in BASE_DIRS:
             exercises_dir = root_path / base_dir / "exercises"
             if exercises_dir.exists():
+                # Try exact match first
+                exact_path = exercises_dir / input_path
+                if exact_path.is_file():
+                    return str(exact_path.relative_to(root_path))
+                
+                # Try fuzzy match if exact match not found
                 for file_path in exercises_dir.glob(f"*{input_path}*"):
                     if file_path.is_file():
                         matching_files.append(str(file_path.relative_to(root_path)))
@@ -85,9 +91,33 @@ def resolve_problem_path(input_path):
                 print("Invalid input. Using the first match.")
                 return matching_files[0]
         else:
-            # If no matches, warn but continue with the original input
-            print(f"Warning: Could not find a file matching '{input_path}' in known directories.")
-            return input_path
+            # If no matches, try recursive search with glob
+            all_matches = []
+            for path in root_path.glob(f"**/*{input_path}*"):
+                if path.is_file() and path.name.endswith(".py"):
+                    all_matches.append(str(path.relative_to(root_path)))
+            
+            if len(all_matches) == 1:
+                return all_matches[0]
+            elif len(all_matches) > 1:
+                print(f"Multiple matches found for '{input_path}':")
+                for i, path in enumerate(all_matches, 1):
+                    print(f"  {i}. {path}")
+                
+                try:
+                    choice = int(input("Enter the number of the correct file: "))
+                    if 1 <= choice <= len(all_matches):
+                        return all_matches[choice - 1]
+                    else:
+                        print("Invalid choice. Using the first match.")
+                        return all_matches[0]
+                except ValueError:
+                    print("Invalid input. Using the first match.")
+                    return all_matches[0]
+            else:
+                # If still no matches, warn but continue with the original input
+                print(f"Warning: Could not find a file matching '{input_path}' in known directories.")
+                return input_path
     
     # Case 2: User provided a partial path (e.g., "exercises/01_two_sum.py")
     else:
@@ -577,6 +607,18 @@ def main():
     # Parse any flag arguments
     flags = parse_arguments()
     
+    # Check for direct command format: python review_tool.py filename.py rating
+    if len(sys.argv) >= 2 and sys.argv[1].endswith('.py'):
+        problem_path = sys.argv[1]
+        rating = None
+        if len(sys.argv) >= 3 and sys.argv[2].isdigit():
+            rating = sys.argv[2]
+        
+        # Default to add command
+        add_problem(problem_path, rating)
+        update_readme()
+        return 0
+    
     if len(sys.argv) < 2:
         print("Usage:")
         print("  review_tool.py add <problem_path> [--rating <1-4>]")
@@ -585,6 +627,8 @@ def main():
         print("  review_tool.py list_due")
         print("  review_tool.py update_readme")
         print("  review_tool.py fix_metadata")
+        print("\nAlternative usage:")
+        print("  review_tool.py <filename.py> [rating]")
         print("\nYou can specify just the filename (e.g., 01_two_sum.py) instead of the full path.")
         return 1
     
@@ -624,6 +668,8 @@ def main():
         print("  review_tool.py list_due")
         print("  review_tool.py update_readme")
         print("  review_tool.py fix_metadata")
+        print("\nAlternative usage:")
+        print("  review_tool.py <filename.py> [rating]")
         print("\nYou can specify just the filename (e.g., 01_two_sum.py) instead of the full path.")
         return 1
 

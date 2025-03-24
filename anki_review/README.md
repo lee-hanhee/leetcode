@@ -66,7 +66,7 @@ Each file is stored in anki_review/metadata/ and looks like this:
 
 <sub>Problem</sub> | <sub>Last Reviewed</sub> | <sub>Next Review</sub> | <sub>Source</sub>
 ---- | ---- | ---- | ----
-<sub>[Climbing Stairs](https://leetcode.com/problems/climbing-stairs)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../05_1d_dp/exercises/00_climbing_stairs.py)</sub>
+<sub>[Climbing Stairs](https://leetcode.com/problems/climbing-stairs)</sub> | <sub>2025-03-24</sub> | <sub>2025-03-26</sub> | <sub>[Python](../05_1d_dp/exercises/00_climbing_stairs.py)</sub>
 
 ### Arrays And Hashing
 
@@ -98,7 +98,7 @@ Each file is stored in anki_review/metadata/ and looks like this:
 
 <sub>Problem</sub> | <sub>Last Reviewed</sub> | <sub>Next Review</sub> | <sub>Source</sub>
 ---- | ---- | ---- | ----
-<sub>[Reverse Linked List](https://leetcode.com/problems/reverse-linked-list)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../02_linked_list/exercises/00_reverse_linked_list.py)</sub>
+<sub>[Reverse Linked List](https://leetcode.com/problems/reverse-linked-list)</sub> | <sub>2025-03-24</sub> | <sub>2025-03-27</sub> | <sub>[Python](../02_linked_list/exercises/00_reverse_linked_list.py)</sub>
 <sub>[Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../02_linked_list/exercises/01_merge_two_sorted_lists.py)</sub>
 <sub>[Linked List Cycle](https://leetcode.com/problems/linked-list-cycle)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../02_linked_list/exercises/02_linked_list_cycle.py)</sub>
 <sub>[Reorder List](https://leetcode.com/problems/reorder-list)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../02_linked_list/exercises/03_reorder_list.py)</sub>
