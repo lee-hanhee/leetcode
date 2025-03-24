@@ -24,7 +24,7 @@ def initialize_metadata_dir():
     """Ensure the metadata directory exists"""
     os.makedirs(METADATA_DIR, exist_ok=True)
 
-def add_problem(problem_path, difficulty):
+def add_problem(problem_path):
     """Add a new problem to the review system"""
     if not os.path.exists(problem_path):
         print(f"Warning: Problem path '{problem_path}' does not exist in the repository.")
@@ -39,7 +39,6 @@ def add_problem(problem_path, difficulty):
     tomorrow = today + datetime.timedelta(days=1)
     
     metadata = {
-        "difficulty_rating": difficulty.lower(),
         "ease_factor": 2.5,
         "interval": 1,
         "last_reviewed": today.strftime(DATE_FORMAT),
@@ -49,9 +48,9 @@ def add_problem(problem_path, difficulty):
     with open(metadata_path, 'w') as f:
         json.dump(metadata, f, indent=2)
     
-    print(f"Added '{problem_path}' to review system with difficulty '{difficulty}'")
+    print(f"Added '{problem_path}' to review system")
 
-def update_problem(problem_path):
+def update_problem(problem_path, from_wrapper=False):
     """Update the review metadata for a problem after a review"""
     metadata_path = get_metadata_path(problem_path)
     
@@ -59,11 +58,44 @@ def update_problem(problem_path):
         print(f"No metadata found for '{problem_path}'. Use 'add' to create it first.")
         return
     
+    # Load metadata
     with open(metadata_path, 'r') as f:
         metadata = json.load(f)
     
+    # Remove difficulty_rating if it exists (for backward compatibility)
+    if "difficulty_rating" in metadata:
+        del metadata["difficulty_rating"]
+    
+    # Display current metadata only if not called from wrapper
+    if not from_wrapper:
+        # Display current metadata
+        print(f"\nCurrent metadata for '{problem_path}':")
+        print(f"  Ease factor: {metadata['ease_factor']}")
+        print(f"  Interval: {metadata['interval']} days")
+        print(f"  Last reviewed: {metadata['last_reviewed']}")
+        print(f"  Next review: {metadata['next_review']}")
+        
+        # Check if the problem is overdue
+        today = datetime.date.today()
+        next_review_date = datetime.datetime.strptime(metadata["next_review"], DATE_FORMAT).date()
+        if next_review_date < today:
+            print(f"  Status: ⚠️ OVERDUE (was due {(today - next_review_date).days} days ago)")
+        else:
+            days_until_due = (next_review_date - today).days
+            print(f"  Status: Due in {days_until_due} days")
+        
+        print()
+    
+    # Reload metadata in case it was modified by wrapper
+    with open(metadata_path, 'r') as f:
+        metadata = json.load(f)
+    
+    # Remove difficulty_rating if it exists (for backward compatibility)
+    if "difficulty_rating" in metadata:
+        del metadata["difficulty_rating"]
+    
     # Get user rating for this review
-    print("Rate your performance:")
+    print("\nRate your performance:")
     print("1 - Again (Failed completely)")
     print("2 - Hard (Significant difficulty)")
     print("3 - Good (Some difficulty)")
@@ -102,7 +134,8 @@ def update_problem(problem_path):
     with open(metadata_path, 'w') as f:
         json.dump(metadata, f, indent=2)
     
-    print(f"Updated '{problem_path}'")
+    print(f"\nUpdated '{problem_path}'")
+    print(f"Ease factor: {metadata['ease_factor']:.2f}")
     print(f"Next review: {metadata['next_review']} (in {metadata['interval']} days)")
 
 def list_due():
@@ -202,10 +235,19 @@ def update_readme():
             metadata_path = os.path.join(METADATA_DIR, filename)
             
             with open(metadata_path, 'r') as f:
-                metadata[problem_path] = json.load(f)
+                metadata_data = json.load(f)
+                
+                # Remove difficulty_rating if present
+                if "difficulty_rating" in metadata_data:
+                    del metadata_data["difficulty_rating"]
+                    
+                metadata[problem_path] = metadata_data
     
     # Generate the README content
     readme_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "README.md")
+    
+    # Get today's date for overdue checking
+    today = datetime.date.today().strftime(DATE_FORMAT)
     
     with open(readme_path, 'w') as f:
         f.write("# LeetCode Anki Review\n\n")
@@ -214,10 +256,9 @@ def update_readme():
         f.write("## Due for Review\n\n")
         
         # Add the table for problems due today
-        f.write("<sub>Problem</sub> | <sub>Difficulty</sub> | <sub>Last Reviewed</sub> | <sub>Next Review</sub> | <sub>Source</sub>\n")
-        f.write("---- | ---- | ---- | ---- | ----\n")
+        f.write("<sub>Problem</sub> | <sub>Last Reviewed</sub> | <sub>Next Review</sub> | <sub>Source</sub>\n")
+        f.write("---- | ---- | ---- | ----\n")
         
-        today = datetime.date.today().strftime(DATE_FORMAT)
         due_problems = []
         
         for problem_path, meta in metadata.items():
@@ -233,12 +274,17 @@ def update_readme():
                 leetcode_url = f"https://leetcode.com/problems/{leetcode_slug}"
                 
                 f.write(f"<sub>[{problem_info['name']}]({leetcode_url})</sub> | ")
-                f.write(f"<sub>{meta['difficulty_rating'].capitalize()}</sub> | ")
                 f.write(f"<sub>{meta['last_reviewed']}</sub> | ")
-                f.write(f"<sub>{meta['next_review']}</sub> | ")
+                
+                # Check if problem is overdue
+                if meta["next_review"] < today:
+                    f.write(f"<sub>⚠️ <span style=\"color:red\">{meta['next_review']}</span></sub> | ")
+                else:
+                    f.write(f"<sub>{meta['next_review']}</sub> | ")
+                
                 f.write(f"<sub>[Python](../{problem_path})</sub>\n")
         else:
-            f.write("<sub>No problems due for review</sub> | <sub>—</sub> | <sub>—</sub> | <sub>—</sub> | <sub>—</sub>\n")
+            f.write("<sub>No problems due for review</sub> | <sub>—</sub> | <sub>—</sub> | <sub>—</sub>\n")
         
         f.write("\n## All Problems\n\n")
         
@@ -246,8 +292,8 @@ def update_readme():
         for category, problems in sorted(problem_categories.items()):
             f.write(f"### {category}\n\n")
             
-            f.write("<sub>Problem</sub> | <sub>Difficulty</sub> | <sub>Last Reviewed</sub> | <sub>Next Review</sub> | <sub>Source</sub>\n")
-            f.write("---- | ---- | ---- | ---- | ----\n")
+            f.write("<sub>Problem</sub> | <sub>Last Reviewed</sub> | <sub>Next Review</sub> | <sub>Source</sub>\n")
+            f.write("---- | ---- | ---- | ----\n")
             
             for problem_path in sorted(problems):
                 problem_info = problem_dirs[problem_path]
@@ -260,11 +306,15 @@ def update_readme():
                 
                 if problem_path in metadata:
                     meta = metadata[problem_path]
-                    f.write(f"<sub>{meta['difficulty_rating'].capitalize()}</sub> | ")
                     f.write(f"<sub>{meta['last_reviewed']}</sub> | ")
-                    f.write(f"<sub>{meta['next_review']}</sub> | ")
+                    
+                    # Check if problem is overdue
+                    if meta["next_review"] < today:
+                        f.write(f"<sub>⚠️ <span style=\"color:red\">{meta['next_review']}</span></sub> | ")
+                    else:
+                        f.write(f"<sub>{meta['next_review']}</sub> | ")
                 else:
-                    f.write("<sub>—</sub> | <sub>—</sub> | <sub>—</sub> | ")
+                    f.write("<sub>—</sub> | <sub>—</sub> | ")
                 
                 f.write(f"<sub>[Python](../{problem_path})</sub>\n")
             
@@ -278,19 +328,23 @@ def main():
     
     if len(sys.argv) < 2:
         print("Usage:")
-        print("  review_tool.py add <problem_path> <difficulty>")
-        print("  review_tool.py update <problem_path>")
+        print("  review_tool.py add <problem_path>")
+        print("  review_tool.py update <problem_path> [--from-wrapper]")
         print("  review_tool.py list_due")
         print("  review_tool.py update_readme")
         return
     
     command = sys.argv[1]
     
-    if command == "add" and len(sys.argv) == 4:
-        add_problem(sys.argv[2], sys.argv[3])
+    if command == "add" and len(sys.argv) == 3:
+        add_problem(sys.argv[2])
         update_readme()
-    elif command == "update" and len(sys.argv) == 3:
-        update_problem(sys.argv[2])
+    elif command == "update" and len(sys.argv) >= 3:
+        # Check if the --from-wrapper flag is set
+        from_wrapper = False
+        if len(sys.argv) > 3 and sys.argv[3] == "--from-wrapper":
+            from_wrapper = True
+        update_problem(sys.argv[2], from_wrapper)
         update_readme()
     elif command == "list_due" and len(sys.argv) == 2:
         list_due()
@@ -299,8 +353,8 @@ def main():
     else:
         print("Invalid command or arguments")
         print("Usage:")
-        print("  review_tool.py add <problem_path> <difficulty>")
-        print("  review_tool.py update <problem_path>")
+        print("  review_tool.py add <problem_path>")
+        print("  review_tool.py update <problem_path> [--from-wrapper]")
         print("  review_tool.py list_due")
         print("  review_tool.py update_readme")
 
