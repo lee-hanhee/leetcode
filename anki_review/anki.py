@@ -66,7 +66,7 @@ def reset_command(problem_path):
     os.system(f"python {review_tool_path} update_readme")
     return 0
 
-def update_command(problem_path):
+def update_command(problem_path, rating=None):
     """Update command for reviewing a problem"""
     metadata_path = get_metadata_path(problem_path)
     
@@ -90,16 +90,28 @@ def update_command(problem_path):
     
     # Now forward to the review tool to handle the review update
     # Pass --from-wrapper flag to indicate this is being called from anki.py
-    return_code = os.system(f"python {review_tool_path} update {problem_path} --from-wrapper")
+    cmd = f"python {review_tool_path} update {problem_path} --from-wrapper"
+    
+    # If rating was provided, pass it to the review tool
+    if rating is not None:
+        cmd += f" --rating {rating}"
+    
+    return_code = os.system(cmd)
     if return_code != 0:
         print(f"Error updating problem '{problem_path}'")
         return 1
     return 0
 
-def add_command(problem_path):
+def add_command(problem_path, rating=None):
     """Add command for adding a new problem to the review system"""
     # Forward to review tool
-    return_code = os.system(f"python {review_tool_path} add {problem_path}")
+    cmd = f"python {review_tool_path} add {problem_path}"
+    
+    # If rating was provided, pass it to the review tool
+    if rating is not None:
+        cmd += f" --rating {rating}"
+        
+    return_code = os.system(cmd)
     if return_code != 0:
         print(f"Error adding problem '{problem_path}'")
         return 1
@@ -127,20 +139,37 @@ def main():
     """Main entry point for the Anki CLI wrapper"""
     if len(sys.argv) < 2:
         print("Usage:")
-        print("  anki.py add <problem_path>")
-        print("  anki.py update <problem_path>")
+        print("  anki.py add <problem_path> [rating]")
+        print("  anki.py update <problem_path> [rating]")
         print("  anki.py reset <problem_path>")
         print("  anki.py list_due")
         print("  anki.py update_readme")
+        print("\nRating options (1-4):")
+        print("  1 - Again (Failed completely)")
+        print("  2 - Hard (Significant difficulty)")
+        print("  3 - Good (Some difficulty)")
+        print("  4 - Easy (Perfect recall)")
         return 1
     
     command = sys.argv[1]
     
     # Handle commands
-    if command == "add" and len(sys.argv) == 3:
-        return add_command(sys.argv[2])
-    elif command == "update" and len(sys.argv) == 3:
-        return update_command(sys.argv[2])
+    if command == "add":
+        if len(sys.argv) < 3:
+            print("Error: Missing problem path")
+            return 1
+        rating = None
+        if len(sys.argv) >= 4:
+            rating = sys.argv[3]
+        return add_command(sys.argv[2], rating)
+    elif command == "update":
+        if len(sys.argv) < 3:
+            print("Error: Missing problem path")
+            return 1
+        rating = None
+        if len(sys.argv) >= 4:
+            rating = sys.argv[3]
+        return update_command(sys.argv[2], rating)
     elif command == "reset" and len(sys.argv) == 3:
         return reset_command(sys.argv[2])
     elif command == "list_due" and len(sys.argv) == 2:
@@ -150,8 +179,8 @@ def main():
     else:
         print("Invalid command or arguments")
         print("Usage:")
-        print("  anki.py add <problem_path>")
-        print("  anki.py update <problem_path>")
+        print("  anki.py add <problem_path> [rating]")
+        print("  anki.py update <problem_path> [rating]")
         print("  anki.py reset <problem_path>")
         print("  anki.py list_due")
         print("  anki.py update_readme")

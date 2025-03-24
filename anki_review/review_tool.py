@@ -24,7 +24,7 @@ def initialize_metadata_dir():
     """Ensure the metadata directory exists"""
     os.makedirs(METADATA_DIR, exist_ok=True)
 
-def add_problem(problem_path):
+def add_problem(problem_path, rating=None):
     """Add a new problem to the review system"""
     if not os.path.exists(problem_path):
         print(f"Warning: Problem path '{problem_path}' does not exist in the repository.")
@@ -49,6 +49,10 @@ def add_problem(problem_path):
         json.dump(metadata, f, indent=2)
     
     print(f"Added '{problem_path}' to review system")
+    
+    # If rating is provided, update the problem immediately
+    if rating is not None:
+        update_problem(problem_path, from_wrapper=True, provided_rating=rating)
 
 def reset_problem(problem_path):
     """Reset a problem to default values"""
@@ -67,7 +71,7 @@ def reset_problem(problem_path):
     
     print(f"Reset '{problem_path}' to default values")
 
-def update_problem(problem_path, from_wrapper=False):
+def update_problem(problem_path, from_wrapper=False, provided_rating=None):
     """Update the review metadata for a problem after a review"""
     metadata_path = get_metadata_path(problem_path)
     
@@ -118,21 +122,35 @@ def update_problem(problem_path, from_wrapper=False):
         del metadata["difficulty_rating"]
     
     # Get user rating for this review
-    print("\nRate your performance:")
-    print("1 - Again (Failed completely)")
-    print("2 - Hard (Significant difficulty)")
-    print("3 - Good (Some difficulty)")
-    print("4 - Easy (Perfect recall)")
+    rating = None
     
-    while True:
+    # If rating was provided as an argument, use it
+    if provided_rating is not None:
         try:
-            rating = int(input("Enter your rating (1-4): "))
+            rating = int(provided_rating)
             if rating < 1 or rating > 4:
-                print("Please enter a number between 1 and 4.")
-                continue
-            break
+                print(f"Invalid rating: {provided_rating}. Please use a number between 1 and 4.")
+                return
         except ValueError:
-            print("Please enter a valid number.")
+            print(f"Invalid rating: {provided_rating}. Please use a number between 1 and 4.")
+            return
+    # Otherwise, prompt the user for a rating
+    else:
+        print("\nRate your performance:")
+        print("1 - Again (Failed completely)")
+        print("2 - Hard (Significant difficulty)")
+        print("3 - Good (Some difficulty)")
+        print("4 - Easy (Perfect recall)")
+        
+        while True:
+            try:
+                rating = int(input("Enter your rating (1-4): "))
+                if rating < 1 or rating > 4:
+                    print("Please enter a number between 1 and 4.")
+                    continue
+                break
+            except ValueError:
+                print("Please enter a valid number.")
     
     # Implementation of SM-2 algorithm for spaced repetition
     if rating == 1:  # Again
@@ -288,15 +306,21 @@ def update_readme():
         f.write("## How to Use\n\n")
         f.write("```bash\n")
         f.write("# Add a new problem to the review system\n")
-        f.write("python anki.py add path/to/problem.py\n\n")
+        f.write("python anki.py add path/to/problem.py [rating]\n\n")
         f.write("# Update your rating after reviewing the problem\n")
-        f.write("python anki.py update path/to/problem.py\n")
-        f.write("# Prompts for one of: again / hard / good / easy\n\n")
+        f.write("python anki.py update path/to/problem.py [rating]\n")
+        f.write("# If rating is not provided, prompts for one of: again / hard / good / easy\n\n")
         f.write("# List all problems that are due for review today\n")
         f.write("python anki.py list_due\n\n")
         f.write("# Reset review history for a problem\n")
         f.write("python anki.py reset path/to/problem.py\n")
         f.write("```\n\n")
+        
+        f.write("## Rating Options (1-4):\n\n")
+        f.write("- **1 - Again**: Failed completely, review again tomorrow\n")
+        f.write("- **2 - Hard**: Recalled with significant difficulty\n")
+        f.write("- **3 - Good**: Recalled with some effort\n")
+        f.write("- **4 - Easy**: Perfect recall with no hesitation\n\n")
         
         f.write("## Metadata Format\n\n")
         f.write("Each file is stored in anki_review/metadata/ and looks like this:\n\n")
@@ -378,14 +402,43 @@ def update_readme():
     
     print(f"Updated README at {readme_path}")
 
+def parse_arguments():
+    """Parse command line arguments to find flags like --rating"""
+    result = {}
+    
+    # Start from index 1 to skip the script name
+    i = 1
+    while i < len(sys.argv):
+        # Check for flag arguments (starts with --)
+        if sys.argv[i].startswith("--"):
+            flag_name = sys.argv[i][2:]  # Remove -- prefix
+            
+            # If there's a next argument and it's not a flag, consider it the flag's value
+            if i + 1 < len(sys.argv) and not sys.argv[i + 1].startswith("--"):
+                result[flag_name] = sys.argv[i + 1]
+                # Remove both the flag and its value from argv
+                sys.argv.pop(i)
+                sys.argv.pop(i)
+            else:
+                # Flag without value
+                result[flag_name] = True
+                sys.argv.pop(i)
+        else:
+            i += 1
+    
+    return result
+
 def main():
     """Main CLI entry point"""
     initialize_metadata_dir()
     
+    # Parse any flag arguments
+    flags = parse_arguments()
+    
     if len(sys.argv) < 2:
         print("Usage:")
-        print("  review_tool.py add <problem_path>")
-        print("  review_tool.py update <problem_path> [--from-wrapper]")
+        print("  review_tool.py add <problem_path> [--rating <1-4>]")
+        print("  review_tool.py update <problem_path> [--from-wrapper] [--rating <1-4>]")
         print("  review_tool.py reset <problem_path>")
         print("  review_tool.py list_due")
         print("  review_tool.py update_readme")
@@ -394,15 +447,15 @@ def main():
     command = sys.argv[1]
     
     if command == "add" and len(sys.argv) == 3:
-        add_problem(sys.argv[2])
+        rating = flags.get("rating")
+        add_problem(sys.argv[2], rating)
         update_readme()
         return 0
     elif command == "update" and len(sys.argv) >= 3:
         # Check if the --from-wrapper flag is set
-        from_wrapper = False
-        if len(sys.argv) > 3 and sys.argv[3] == "--from-wrapper":
-            from_wrapper = True
-        update_problem(sys.argv[2], from_wrapper)
+        from_wrapper = "from-wrapper" in flags
+        rating = flags.get("rating")
+        update_problem(sys.argv[2], from_wrapper, rating)
         update_readme()
         return 0
     elif command == "reset" and len(sys.argv) == 3:
@@ -418,8 +471,8 @@ def main():
     else:
         print("Invalid command or arguments")
         print("Usage:")
-        print("  review_tool.py add <problem_path>")
-        print("  review_tool.py update <problem_path> [--from-wrapper]")
+        print("  review_tool.py add <problem_path> [--rating <1-4>]")
+        print("  review_tool.py update <problem_path> [--from-wrapper] [--rating <1-4>]")
         print("  review_tool.py reset <problem_path>")
         print("  review_tool.py list_due")
         print("  review_tool.py update_readme")

@@ -12,10 +12,13 @@ Navigate to the `anki_review` directory and use the following commands:
 
 ```bash
 # Add a new problem to the review system
-python anki.py add <problem_path> <difficulty>
+python anki.py add <problem_path> [rating]
 
 # Review a problem and update its next review date
-python anki.py update <problem_path>
+python anki.py update <problem_path> [rating]
+
+# Reset a problem's review history
+python anki.py reset <problem_path>
 
 # List all problems due for review today
 python anki.py list_due
@@ -24,10 +27,21 @@ python anki.py list_due
 python anki.py update_readme
 ```
 
+The optional rating argument (1-4) allows you to quickly rate problems:
+
+- 1: Again (Failed completely)
+- 2: Hard (Significant difficulty)
+- 3: Good (Some difficulty)
+- 4: Easy (Perfect recall)
+
 Example:
 
 ```bash
-python anki.py add 00_arrays_and_hashing/exercises/03_two_sum.py easy
+# Add a problem and rate it as "Good" (3)
+python anki.py add 00_arrays_and_hashing/exercises/03_two_sum.py 3
+
+# Update a problem rating to "Easy" (4)
+python anki.py update 00_arrays_and_hashing/exercises/03_two_sum.py 4
 ```
 
 For more details, see the [Anki Review README](anki_review/README.md).
