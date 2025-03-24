@@ -42,16 +42,12 @@ def reset_command(problem_path):
     
     metadata_path = get_metadata_path(problem_path)
     
-    # Get today's date
-    today = datetime.date.today()
-    tomorrow = today + datetime.timedelta(days=1)
-    
     # Create default metadata
     metadata = {
         "ease_factor": 2.5,
         "interval": 1,
-        "last_reviewed": today.strftime("%Y-%m-%d"),
-        "next_review": tomorrow.strftime("%Y-%m-%d")
+        "last_reviewed": "-",
+        "next_review": "-"
     }
     
     # Save the metadata to file
