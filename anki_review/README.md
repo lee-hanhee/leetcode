@@ -35,7 +35,7 @@ A spaced repetition system for LeetCode problems.
 <sub>Problem</sub> | <sub>Last Reviewed</sub> | <sub>Next Review</sub> | <sub>Source</sub>
 ---- | ---- | ---- | ----
 <sub>[Binary Search](https://leetcode.com/problems/binary-search)</sub> | <sub>2025-03-24</sub> | <sub>2025-03-25</sub> | <sub>[Python](../02_binary_search/exercises/00_binary_search.py)</sub>
-<sub>[Search A 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../02_binary_search/exercises/01_search_a_2d_matrix.py)</sub>
+<sub>[Search A 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix)</sub> | <sub>2025-03-24</sub> | <sub>2025-03-25</sub> | <sub>[Python](../02_binary_search/exercises/01_search_a_2d_matrix.py)</sub>
 <sub>[Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../02_binary_search/exercises/02_koko_eating_bananas.py)</sub>
 <sub>[Find Minimum In Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../02_binary_search/exercises/03_find_minimum_in_rotated_sorted_array.py)</sub>
 <sub>[Search In Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../02_binary_search/exercises/04_search_in_rotated_sorted_array.py)</sub>
