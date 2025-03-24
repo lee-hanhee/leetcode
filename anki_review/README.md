@@ -2,49 +2,6 @@
 
 A spaced repetition system for LeetCode problems.
 
-## How to Use
-
-### Adding a Problem
-```
-python review_tool.py add <problem_path> <difficulty>
-```
-
-Example:
-```
-python review_tool.py add 00_arrays_and_hashing/exercises/03_two_sum.py easy
-```
-
-### Reviewing a Problem
-```
-python review_tool.py update <problem_path>
-```
-
-Example:
-```
-python review_tool.py update 00_arrays_and_hashing/exercises/03_two_sum.py
-```
-
-### Listing Due Problems
-```
-python review_tool.py list_due
-```
-
-### Updating the README
-```
-python review_tool.py update_readme
-```
-
-## Algorithm: SM-2 Spaced Repetition
-
-This tool uses a variation of the SuperMemo 2 (SM-2) algorithm for spaced repetition. After reviewing a problem, you rate your performance:
-
-1. **Again (Failed completely)**: Review again tomorrow, decrease ease factor
-2. **Hard (Significant difficulty)**: Slightly increase interval, decrease ease factor
-3. **Good (Some difficulty)**: Increase interval by ease factor
-4. **Easy (Perfect recall)**: Increase interval even more, increase ease factor
-
-The system automatically calculates the next review date based on your rating.
-
 ## Due for Review
 
 <sub>Problem</sub> | <sub>Difficulty</sub> | <sub>Last Reviewed</sub> | <sub>Next Review</sub> | <sub>Source</sub>
@@ -52,6 +9,12 @@ The system automatically calculates the next review date based on your rating.
 <sub>No problems due for review</sub> | <sub>—</sub> | <sub>—</sub> | <sub>—</sub> | <sub>—</sub>
 
 ## All Problems
+
+### 1D Dp
+
+<sub>Problem</sub> | <sub>Difficulty</sub> | <sub>Last Reviewed</sub> | <sub>Next Review</sub> | <sub>Source</sub>
+---- | ---- | ---- | ---- | ----
+<sub>[Climbing Stairs](https://leetcode.com/problems/climbing-stairs)</sub> | <sub>Hard</sub> | <sub>2025-03-23</sub> | <sub>2025-03-24</sub> | <sub>[Python](../05_1d_dp/exercises/00_climbing_stairs.py)</sub>
 
 ### Arrays And Hashing
 
