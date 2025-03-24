@@ -108,7 +108,7 @@ Each file is stored in anki_review/metadata/ and looks like this:
 
 <sub>Problem</sub> | <sub>Last Reviewed</sub> | <sub>Next Review</sub> | <sub>Source</sub>
 ---- | ---- | ---- | ----
-<sub>[Best Time To Buy And Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../02_sliding_window/exercises/00_best_time_to_buy_and_sell_stock.py)</sub>
+<sub>[Best Time To Buy And Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock)</sub> | <sub>2025-03-24</sub> | <sub>2025-03-25</sub> | <sub>[Python](../02_sliding_window/exercises/00_best_time_to_buy_and_sell_stock.py)</sub>
 <sub>[Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../02_sliding_window/exercises/01_longest_substring_without_repeating_characters.py)</sub>
 <sub>[Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../02_sliding_window/exercises/02_longest_repeating_character_replacement.py)</sub>
 <sub>[Permutation In String](https://leetcode.com/problems/permutation-in-string)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../02_sliding_window/exercises/03_permutation_in_string.py)</sub>
