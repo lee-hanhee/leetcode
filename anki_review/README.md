@@ -6,6 +6,7 @@ A spaced repetition system for LeetCode problems.
 
 <sub>Problem</sub> | <sub>Last Reviewed</sub> | <sub>Next Review</sub> | <sub>Source</sub>
 ---- | ---- | ---- | ----
+<sub>[02_valid_anagram.py](https://leetcode.com/problems/02_valid_anagram.py)</sub> | <sub>-</sub> | <sub>⚠️ <span style="color:red">-</span></sub> | <sub>[Python](../../00_arrays_and_hashing/exercises/02_valid_anagram.py)</sub>
 <sub>[Two Sum](https://leetcode.com/problems/two-sum)</sub> | <sub>-</sub> | <sub>⚠️ <span style="color:red">-</span></sub> | <sub>[Python](../00_arrays_and_hashing/exercises/03_two_sum.py)</sub>
 
 ## All Problems
