@@ -19,14 +19,20 @@ def display_metadata(problem_path, metadata):
     print(f"  Last reviewed: {metadata['last_reviewed']}")
     print(f"  Next review: {metadata['next_review']}")
     
-    # Check if the problem is overdue
-    today = datetime.date.today()
-    next_review_date = datetime.datetime.strptime(metadata["next_review"], "%Y-%m-%d").date()
-    if next_review_date < today:
-        print(f"  Status: ⚠️ OVERDUE (was due {(today - next_review_date).days} days ago)")
+    # Check if the problem is overdue, but only if review dates are actual dates
+    if metadata["next_review"] != "-":
+        try:
+            today = datetime.date.today()
+            next_review_date = datetime.datetime.strptime(metadata["next_review"], "%Y-%m-%d").date()
+            if next_review_date < today:
+                print(f"  Status: ⚠️ OVERDUE (was due {(today - next_review_date).days} days ago)")
+            else:
+                days_until_due = (next_review_date - today).days
+                print(f"  Status: Due in {days_until_due} days")
+        except ValueError:
+            print(f"  Status: Not scheduled for review (invalid date format)")
     else:
-        days_until_due = (next_review_date - today).days
-        print(f"  Status: Due in {days_until_due} days")
+        print(f"  Status: Not yet reviewed")
     
     print()
 
@@ -84,7 +90,37 @@ def update_command(problem_path):
     
     # Now forward to the review tool to handle the review update
     # Pass --from-wrapper flag to indicate this is being called from anki.py
-    os.system(f"python {review_tool_path} update {problem_path} --from-wrapper")
+    return_code = os.system(f"python {review_tool_path} update {problem_path} --from-wrapper")
+    if return_code != 0:
+        print(f"Error updating problem '{problem_path}'")
+        return 1
+    return 0
+
+def add_command(problem_path):
+    """Add command for adding a new problem to the review system"""
+    # Forward to review tool
+    return_code = os.system(f"python {review_tool_path} add {problem_path}")
+    if return_code != 0:
+        print(f"Error adding problem '{problem_path}'")
+        return 1
+    return 0
+
+def list_due_command():
+    """List all problems due for review"""
+    # Forward to review tool
+    return_code = os.system(f"python {review_tool_path} list_due")
+    if return_code != 0:
+        print("Error listing due problems")
+        return 1
+    return 0
+
+def update_readme_command():
+    """Update the README.md file"""
+    # Forward to review tool
+    return_code = os.system(f"python {review_tool_path} update_readme")
+    if return_code != 0:
+        print("Error updating README")
+        return 1
     return 0
 
 def main():
@@ -100,17 +136,26 @@ def main():
     
     command = sys.argv[1]
     
-    # Handle enhanced update command
-    if command == "update" and len(sys.argv) == 3:
+    # Handle commands
+    if command == "add" and len(sys.argv) == 3:
+        return add_command(sys.argv[2])
+    elif command == "update" and len(sys.argv) == 3:
         return update_command(sys.argv[2])
-    
-    # Handle reset command
-    if command == "reset" and len(sys.argv) == 3:
+    elif command == "reset" and len(sys.argv) == 3:
         return reset_command(sys.argv[2])
-    
-    # For other commands, forward to the review tool
-    args = " ".join(sys.argv[1:])
-    return os.system(f"python {review_tool_path} {args}")
+    elif command == "list_due" and len(sys.argv) == 2:
+        return list_due_command()
+    elif command == "update_readme" and len(sys.argv) == 2:
+        return update_readme_command()
+    else:
+        print("Invalid command or arguments")
+        print("Usage:")
+        print("  anki.py add <problem_path>")
+        print("  anki.py update <problem_path>")
+        print("  anki.py reset <problem_path>")
+        print("  anki.py list_due")
+        print("  anki.py update_readme")
+        return 1
 
 if __name__ == "__main__":
     sys.exit(main()) 

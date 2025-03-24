@@ -50,6 +50,23 @@ def add_problem(problem_path):
     
     print(f"Added '{problem_path}' to review system")
 
+def reset_problem(problem_path):
+    """Reset a problem to default values"""
+    metadata_path = get_metadata_path(problem_path)
+    
+    # Create the metadata with default values
+    metadata = {
+        "ease_factor": 2.5,
+        "interval": 1,
+        "last_reviewed": "-",
+        "next_review": "-"
+    }
+    
+    with open(metadata_path, 'w') as f:
+        json.dump(metadata, f, indent=2)
+    
+    print(f"Reset '{problem_path}' to default values")
+
 def update_problem(problem_path, from_wrapper=False):
     """Update the review metadata for a problem after a review"""
     metadata_path = get_metadata_path(problem_path)
@@ -76,13 +93,19 @@ def update_problem(problem_path, from_wrapper=False):
         print(f"  Next review: {metadata['next_review']}")
         
         # Check if the problem is overdue
-        today = datetime.date.today()
-        next_review_date = datetime.datetime.strptime(metadata["next_review"], DATE_FORMAT).date()
-        if next_review_date < today:
-            print(f"  Status: ⚠️ OVERDUE (was due {(today - next_review_date).days} days ago)")
+        if metadata["next_review"] != "-":
+            try:
+                today = datetime.date.today()
+                next_review_date = datetime.datetime.strptime(metadata["next_review"], DATE_FORMAT).date()
+                if next_review_date < today:
+                    print(f"  Status: ⚠️ OVERDUE (was due {(today - next_review_date).days} days ago)")
+                else:
+                    days_until_due = (next_review_date - today).days
+                    print(f"  Status: Due in {days_until_due} days")
+            except ValueError:
+                print(f"  Status: Not scheduled for review (invalid date format)")
         else:
-            days_until_due = (next_review_date - today).days
-            print(f"  Status: Due in {days_until_due} days")
+            print(f"  Status: Not yet reviewed")
         
         print()
     
@@ -156,7 +179,8 @@ def list_due():
         with open(metadata_path, 'r') as f:
             metadata = json.load(f)
         
-        if metadata["next_review"] <= today:
+        # Only add problems with actual review dates
+        if metadata["next_review"] != "-" and metadata["next_review"] <= today:
             problem_path = desanitize_filename(filename)
             due_problems.append((problem_path, metadata["next_review"]))
     
@@ -253,6 +277,38 @@ def update_readme():
         f.write("# LeetCode Anki Review\n\n")
         f.write("A spaced repetition system for LeetCode problems.\n\n")
         
+        # Write instructions for using the tool
+        f.write("## What This Tool Does\n\n")
+        f.write("An Anki-style review tracker for LeetCode problems, storing metadata separately from your code to enable spaced repetition.\n\n")
+        
+        f.write("## Requirements\n\n")
+        f.write("- Python 3.x\n")
+        f.write("- No external libraries required\n\n")
+        
+        f.write("## How to Use\n\n")
+        f.write("```bash\n")
+        f.write("# Add a new problem to the review system\n")
+        f.write("python anki.py add path/to/problem.py\n\n")
+        f.write("# Update your rating after reviewing the problem\n")
+        f.write("python anki.py update path/to/problem.py\n")
+        f.write("# Prompts for one of: again / hard / good / easy\n\n")
+        f.write("# List all problems that are due for review today\n")
+        f.write("python anki.py list_due\n\n")
+        f.write("# Reset review history for a problem\n")
+        f.write("python anki.py reset path/to/problem.py\n")
+        f.write("```\n\n")
+        
+        f.write("## Metadata Format\n\n")
+        f.write("Each file is stored in anki_review/metadata/ and looks like this:\n\n")
+        f.write("```json\n")
+        f.write("{\n")
+        f.write("  \"ease_factor\": 2.5,\n")
+        f.write("  \"interval\": 3,\n")
+        f.write("  \"last_reviewed\": \"2025-03-23\",\n")
+        f.write("  \"next_review\": \"2025-03-26\"\n")
+        f.write("}\n")
+        f.write("```\n\n")
+        
         f.write("## Due for Review\n\n")
         
         # Add the table for problems due today
@@ -262,7 +318,7 @@ def update_readme():
         due_problems = []
         
         for problem_path, meta in metadata.items():
-            if meta["next_review"] <= today:
+            if meta["next_review"] != "-" and meta["next_review"] <= today:
                 due_problems.append((problem_path, meta))
         
         if due_problems:
@@ -277,7 +333,7 @@ def update_readme():
                 f.write(f"<sub>{meta['last_reviewed']}</sub> | ")
                 
                 # Check if problem is overdue
-                if meta["next_review"] < today:
+                if meta["next_review"] != "-" and meta["next_review"] < today:
                     f.write(f"<sub>⚠️ <span style=\"color:red\">{meta['next_review']}</span></sub> | ")
                 else:
                     f.write(f"<sub>{meta['next_review']}</sub> | ")
@@ -309,7 +365,7 @@ def update_readme():
                     f.write(f"<sub>{meta['last_reviewed']}</sub> | ")
                     
                     # Check if problem is overdue
-                    if meta["next_review"] < today:
+                    if meta["next_review"] != "-" and meta["next_review"] < today:
                         f.write(f"<sub>⚠️ <span style=\"color:red\">{meta['next_review']}</span></sub> | ")
                     else:
                         f.write(f"<sub>{meta['next_review']}</sub> | ")
@@ -330,15 +386,17 @@ def main():
         print("Usage:")
         print("  review_tool.py add <problem_path>")
         print("  review_tool.py update <problem_path> [--from-wrapper]")
+        print("  review_tool.py reset <problem_path>")
         print("  review_tool.py list_due")
         print("  review_tool.py update_readme")
-        return
+        return 1
     
     command = sys.argv[1]
     
     if command == "add" and len(sys.argv) == 3:
         add_problem(sys.argv[2])
         update_readme()
+        return 0
     elif command == "update" and len(sys.argv) >= 3:
         # Check if the --from-wrapper flag is set
         from_wrapper = False
@@ -346,17 +404,26 @@ def main():
             from_wrapper = True
         update_problem(sys.argv[2], from_wrapper)
         update_readme()
+        return 0
+    elif command == "reset" and len(sys.argv) == 3:
+        reset_problem(sys.argv[2])
+        update_readme()
+        return 0
     elif command == "list_due" and len(sys.argv) == 2:
         list_due()
+        return 0
     elif command == "update_readme" and len(sys.argv) == 2:
         update_readme()
+        return 0
     else:
         print("Invalid command or arguments")
         print("Usage:")
         print("  review_tool.py add <problem_path>")
         print("  review_tool.py update <problem_path> [--from-wrapper]")
+        print("  review_tool.py reset <problem_path>")
         print("  review_tool.py list_due")
         print("  review_tool.py update_readme")
+        return 1
 
 if __name__ == "__main__":
-    main() 
+    sys.exit(main()) 

@@ -2,6 +2,45 @@
 
 A spaced repetition system for LeetCode problems.
 
+## What This Tool Does
+
+An Anki-style review tracker for LeetCode problems, storing metadata separately from your code to enable spaced repetition.
+
+## Requirements
+
+- Python 3.x
+- No external libraries required
+
+## How to Use
+
+```bash
+# Add a new problem to the review system
+python anki.py add path/to/problem.py
+
+# Update your rating after reviewing the problem
+python anki.py update path/to/problem.py
+# Prompts for one of: again / hard / good / easy
+
+# List all problems that are due for review today
+python anki.py list_due
+
+# Reset review history for a problem
+python anki.py reset path/to/problem.py
+```
+
+## Metadata Format
+
+Each file is stored in anki_review/metadata/ and looks like this:
+
+```json
+{
+  "ease_factor": 2.5,
+  "interval": 3,
+  "last_reviewed": "2025-03-23",
+  "next_review": "2025-03-26"
+}
+```
+
 ## Due for Review
 
 <sub>Problem</sub> | <sub>Last Reviewed</sub> | <sub>Next Review</sub> | <sub>Source</sub>
@@ -22,8 +61,8 @@ A spaced repetition system for LeetCode problems.
 ---- | ---- | ---- | ----
 <sub>[Contains Duplicate](https://leetcode.com/problems/contains-duplicate)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/01_contains_duplicate.py)</sub>
 <sub>[Valid Anagram](https://leetcode.com/problems/valid-anagram)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/02_valid_anagram.py)</sub>
-<sub>[Two Sum](https://leetcode.com/problems/two-sum)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/03_two_sum.py)</sub>
-<sub>[Group Anagrams](https://leetcode.com/problems/group-anagrams)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/04_group_anagrams.py)</sub>
+<sub>[Two Sum](https://leetcode.com/problems/two-sum)</sub> | <sub>-</sub> | <sub>-</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/03_two_sum.py)</sub>
+<sub>[Group Anagrams](https://leetcode.com/problems/group-anagrams)</sub> | <sub>2025-03-24</sub> | <sub>2025-03-25</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/04_group_anagrams.py)</sub>
 <sub>[Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/05_top_k_frequent_elements.py)</sub>
 <sub>[Encode And Decode Strings](https://leetcode.com/problems/encode-and-decode-strings)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/encode_and_decode_strings.py)</sub>
 <sub>[Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/longest_consecutive_sequence.py)</sub>
