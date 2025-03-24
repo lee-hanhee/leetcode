@@ -16,9 +16,13 @@ An Anki-style review tracker for LeetCode problems, storing metadata separately 
 ```bash
 # Add a new problem to the review system
 python anki.py add path/to/problem.py [rating]
+# or simply use the filename:
+python anki.py add problem_name.py [rating]
 
 # Update your rating after reviewing the problem
 python anki.py update path/to/problem.py [rating]
+# or simply use the filename:
+python anki.py update problem_name.py [rating]
 # If rating is not provided, prompts for one of: again / hard / good / easy
 
 # List all problems that are due for review today
@@ -26,6 +30,8 @@ python anki.py list_due
 
 # Reset review history for a problem
 python anki.py reset path/to/problem.py
+# or simply use the filename:
+python anki.py reset problem_name.py
 ```
 
 ## Rating Options (1-4):
@@ -109,7 +115,7 @@ Each file is stored in anki_review/metadata/ and looks like this:
 <sub>Problem</sub> | <sub>Last Reviewed</sub> | <sub>Next Review</sub> | <sub>Source</sub>
 ---- | ---- | ---- | ----
 <sub>[Best Time To Buy And Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock)</sub> | <sub>2025-03-24</sub> | <sub>2025-03-25</sub> | <sub>[Python](../02_sliding_window/exercises/00_best_time_to_buy_and_sell_stock.py)</sub>
-<sub>[Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../02_sliding_window/exercises/01_longest_substring_without_repeating_characters.py)</sub>
+<sub>[Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters)</sub> | <sub>2025-03-24</sub> | <sub>2025-03-25</sub> | <sub>[Python](../02_sliding_window/exercises/01_longest_substring_without_repeating_characters.py)</sub>
 <sub>[Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../02_sliding_window/exercises/02_longest_repeating_character_replacement.py)</sub>
 <sub>[Permutation In String](https://leetcode.com/problems/permutation-in-string)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../02_sliding_window/exercises/03_permutation_in_string.py)</sub>
 <sub>[Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../02_sliding_window/exercises/04_minimum_window_substring.py)</sub>
@@ -131,7 +137,7 @@ Each file is stored in anki_review/metadata/ and looks like this:
 
 <sub>Problem</sub> | <sub>Last Reviewed</sub> | <sub>Next Review</sub> | <sub>Source</sub>
 ---- | ---- | ---- | ----
-<sub>[Valid Palindrome](https://leetcode.com/problems/valid-palindrome)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../01_two_pointers/exercises/01_valid_palindrome.py)</sub>
+<sub>[Valid Palindrome](https://leetcode.com/problems/valid-palindrome)</sub> | <sub>-</sub> | <sub>-</sub> | <sub>[Python](../01_two_pointers/exercises/01_valid_palindrome.py)</sub>
 <sub>[Two Sum Ii](https://leetcode.com/problems/two-sum-ii)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../01_two_pointers/exercises/02_two_sum_ii.py)</sub>
 <sub>[3Sum](https://leetcode.com/problems/3sum)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../01_two_pointers/exercises/03_3sum.py)</sub>
 <sub>[Container With Most Water](https://leetcode.com/problems/container-with-most-water)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../01_two_pointers/exercises/04_container_with_most_water.py)</sub>

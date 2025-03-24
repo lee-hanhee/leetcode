@@ -2,23 +2,124 @@
 import json
 import os
 import sys
+import glob
 import datetime
 from pathlib import Path
 
 METADATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "metadata")
 DATE_FORMAT = "%Y-%m-%d"
 
+# Define base directories for LeetCode problems
+BASE_DIRS = [
+    "00_arrays_and_hashing",
+    "01_two_pointers",
+    "01_stack",
+    "02_binary_search",
+    "02_linked_list",
+    "02_sliding_window",
+    "05_1d_dp"
+    # Add other directories as needed
+]
+
 def sanitize_filename(path):
     """Convert a problem path to a valid filename for metadata storage"""
-    return path.replace("/", "__").replace("\\", "__") + ".json"
+    # Ensure the path doesn't start with '../' or './'
+    normalized_path = os.path.normpath(path)
+    # Remove any leading '../' or './'
+    if normalized_path.startswith("../"):
+        normalized_path = normalized_path[3:]
+    elif normalized_path.startswith("./"):
+        normalized_path = normalized_path[2:]
+    
+    # Replace path separators with double underscores
+    return normalized_path.replace("/", "__").replace("\\", "__") + ".json"
 
 def desanitize_filename(filename):
     """Convert a sanitized filename back to the problem path"""
+    # Remove .json extension and replace double underscores with path separators
     return filename.replace("__", "/").replace(".json", "")
 
 def get_metadata_path(problem_path):
     """Get the metadata file path for a problem"""
     return os.path.join(METADATA_DIR, sanitize_filename(problem_path))
+
+def resolve_problem_path(input_path):
+    """
+    Resolve the full problem path from a simplified input.
+    Accepts either a full path or just a filename.
+    """
+    # If it's already a full path and the file exists, use it directly
+    if os.path.exists(input_path):
+        return os.path.normpath(input_path)
+    
+    # Try to find the file in known directories
+    root_path = Path(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    
+    # Case 1: User provided just the filename (e.g., "01_two_sum.py")
+    if os.path.basename(input_path) == input_path:
+        matching_files = []
+        
+        # Search in all base directories' exercises folders
+        for base_dir in BASE_DIRS:
+            exercises_dir = root_path / base_dir / "exercises"
+            if exercises_dir.exists():
+                for file_path in exercises_dir.glob(f"*{input_path}*"):
+                    if file_path.is_file():
+                        matching_files.append(str(file_path.relative_to(root_path)))
+        
+        if len(matching_files) == 1:
+            return matching_files[0]
+        elif len(matching_files) > 1:
+            print(f"Multiple matches found for '{input_path}':")
+            for i, path in enumerate(matching_files, 1):
+                print(f"  {i}. {path}")
+            
+            try:
+                choice = int(input("Enter the number of the correct file: "))
+                if 1 <= choice <= len(matching_files):
+                    return matching_files[choice - 1]
+                else:
+                    print("Invalid choice. Using the first match.")
+                    return matching_files[0]
+            except ValueError:
+                print("Invalid input. Using the first match.")
+                return matching_files[0]
+        else:
+            # If no matches, warn but continue with the original input
+            print(f"Warning: Could not find a file matching '{input_path}' in known directories.")
+            return input_path
+    
+    # Case 2: User provided a partial path (e.g., "exercises/01_two_sum.py")
+    else:
+        # Try to find matches for the partial path
+        matching_files = []
+        pattern = f"**/{input_path}"
+        
+        for file_path in root_path.glob(pattern):
+            if file_path.is_file():
+                matching_files.append(str(file_path.relative_to(root_path)))
+        
+        if len(matching_files) == 1:
+            return matching_files[0]
+        elif len(matching_files) > 1:
+            print(f"Multiple matches found for '{input_path}':")
+            for i, path in enumerate(matching_files, 1):
+                print(f"  {i}. {path}")
+            
+            try:
+                choice = int(input("Enter the number of the correct file: "))
+                if 1 <= choice <= len(matching_files):
+                    return matching_files[choice - 1]
+                else:
+                    print("Invalid choice. Using the first match.")
+                    return matching_files[0]
+            except ValueError:
+                print("Invalid input. Using the first match.")
+                return matching_files[0]
+        else:
+            # If no matches, warn but continue with the original input
+            print(f"Warning: Could not find a file matching '{input_path}' in known directories.")
+            return input_path
 
 def initialize_metadata_dir():
     """Ensure the metadata directory exists"""
@@ -26,13 +127,16 @@ def initialize_metadata_dir():
 
 def add_problem(problem_path, rating=None):
     """Add a new problem to the review system"""
-    if not os.path.exists(problem_path):
-        print(f"Warning: Problem path '{problem_path}' does not exist in the repository.")
+    # Resolve the problem path if it's simplified
+    resolved_path = resolve_problem_path(problem_path)
+    
+    if not os.path.exists(resolved_path):
+        print(f"Warning: Problem path '{resolved_path}' does not exist in the repository.")
         
-    metadata_path = get_metadata_path(problem_path)
+    metadata_path = get_metadata_path(resolved_path)
     
     if os.path.exists(metadata_path):
-        print(f"Metadata already exists for '{problem_path}'. Use 'update' to modify it.")
+        print(f"Metadata already exists for '{resolved_path}'. Use 'update' to modify it.")
         return
     
     today = datetime.date.today()
@@ -48,15 +152,17 @@ def add_problem(problem_path, rating=None):
     with open(metadata_path, 'w') as f:
         json.dump(metadata, f, indent=2)
     
-    print(f"Added '{problem_path}' to review system")
+    print(f"Added '{resolved_path}' to review system")
     
     # If rating is provided, update the problem immediately
     if rating is not None:
-        update_problem(problem_path, from_wrapper=True, provided_rating=rating)
+        update_problem(resolved_path, from_wrapper=True, provided_rating=rating)
 
 def reset_problem(problem_path):
     """Reset a problem to default values"""
-    metadata_path = get_metadata_path(problem_path)
+    # Resolve the problem path if it's simplified
+    resolved_path = resolve_problem_path(problem_path)
+    metadata_path = get_metadata_path(resolved_path)
     
     # Create the metadata with default values
     metadata = {
@@ -69,14 +175,16 @@ def reset_problem(problem_path):
     with open(metadata_path, 'w') as f:
         json.dump(metadata, f, indent=2)
     
-    print(f"Reset '{problem_path}' to default values")
+    print(f"Reset '{resolved_path}' to default values")
 
 def update_problem(problem_path, from_wrapper=False, provided_rating=None):
     """Update the review metadata for a problem after a review"""
-    metadata_path = get_metadata_path(problem_path)
+    # Resolve the problem path if it's simplified
+    resolved_path = resolve_problem_path(problem_path)
+    metadata_path = get_metadata_path(resolved_path)
     
     if not os.path.exists(metadata_path):
-        print(f"No metadata found for '{problem_path}'. Use 'add' to create it first.")
+        print(f"No metadata found for '{resolved_path}'. Use 'add' to create it first.")
         return
     
     # Load metadata
@@ -90,7 +198,7 @@ def update_problem(problem_path, from_wrapper=False, provided_rating=None):
     # Display current metadata only if not called from wrapper
     if not from_wrapper:
         # Display current metadata
-        print(f"\nCurrent metadata for '{problem_path}':")
+        print(f"\nCurrent metadata for '{resolved_path}':")
         print(f"  Ease factor: {metadata['ease_factor']}")
         print(f"  Interval: {metadata['interval']} days")
         print(f"  Last reviewed: {metadata['last_reviewed']}")
@@ -175,7 +283,7 @@ def update_problem(problem_path, from_wrapper=False, provided_rating=None):
     with open(metadata_path, 'w') as f:
         json.dump(metadata, f, indent=2)
     
-    print(f"\nUpdated '{problem_path}'")
+    print(f"\nUpdated '{resolved_path}'")
     print(f"Ease factor: {metadata['ease_factor']:.2f}")
     print(f"Next review: {metadata['next_review']} (in {metadata['interval']} days)")
 
@@ -306,14 +414,20 @@ def update_readme():
         f.write("## How to Use\n\n")
         f.write("```bash\n")
         f.write("# Add a new problem to the review system\n")
-        f.write("python anki.py add path/to/problem.py [rating]\n\n")
+        f.write("python anki.py add path/to/problem.py [rating]\n")
+        f.write("# or simply use the filename:\n")
+        f.write("python anki.py add problem_name.py [rating]\n\n")
         f.write("# Update your rating after reviewing the problem\n")
         f.write("python anki.py update path/to/problem.py [rating]\n")
+        f.write("# or simply use the filename:\n")
+        f.write("python anki.py update problem_name.py [rating]\n")
         f.write("# If rating is not provided, prompts for one of: again / hard / good / easy\n\n")
         f.write("# List all problems that are due for review today\n")
         f.write("python anki.py list_due\n\n")
         f.write("# Reset review history for a problem\n")
         f.write("python anki.py reset path/to/problem.py\n")
+        f.write("# or simply use the filename:\n")
+        f.write("python anki.py reset problem_name.py\n")
         f.write("```\n\n")
         
         f.write("## Rating Options (1-4):\n\n")
@@ -402,6 +516,34 @@ def update_readme():
     
     print(f"Updated README at {readme_path}")
 
+def fix_metadata_filenames():
+    """Fix any metadata filenames that have incorrect ..__ prefix"""
+    if not os.path.exists(METADATA_DIR):
+        print("No metadata directory found.")
+        return
+    
+    fixed_files = 0
+    for filename in os.listdir(METADATA_DIR):
+        if not filename.endswith('.json'):
+            continue
+            
+        # Check if file starts with ..__ prefix
+        if filename.startswith(".."):
+            # Get the corrected filename
+            corrected_filename = filename.replace("..__", "")
+            old_path = os.path.join(METADATA_DIR, filename)
+            new_path = os.path.join(METADATA_DIR, corrected_filename)
+            
+            # Rename the file
+            os.rename(old_path, new_path)
+            fixed_files += 1
+            print(f"Fixed metadata filename: {filename} -> {corrected_filename}")
+    
+    if fixed_files > 0:
+        print(f"Fixed {fixed_files} metadata filenames.")
+    else:
+        print("No incorrect metadata filenames found.")
+
 def parse_arguments():
     """Parse command line arguments to find flags like --rating"""
     result = {}
@@ -442,6 +584,8 @@ def main():
         print("  review_tool.py reset <problem_path>")
         print("  review_tool.py list_due")
         print("  review_tool.py update_readme")
+        print("  review_tool.py fix_metadata")
+        print("\nYou can specify just the filename (e.g., 01_two_sum.py) instead of the full path.")
         return 1
     
     command = sys.argv[1]
@@ -468,6 +612,9 @@ def main():
     elif command == "update_readme" and len(sys.argv) == 2:
         update_readme()
         return 0
+    elif command == "fix_metadata" and len(sys.argv) == 2:
+        fix_metadata_filenames()
+        return 0
     else:
         print("Invalid command or arguments")
         print("Usage:")
@@ -476,6 +623,8 @@ def main():
         print("  review_tool.py reset <problem_path>")
         print("  review_tool.py list_due")
         print("  review_tool.py update_readme")
+        print("  review_tool.py fix_metadata")
+        print("\nYou can specify just the filename (e.g., 01_two_sum.py) instead of the full path.")
         return 1
 
 if __name__ == "__main__":
