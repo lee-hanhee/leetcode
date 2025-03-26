@@ -58,7 +58,11 @@ Each file is stored in anki_review/metadata/ and looks like this:
 
 <sub>Problem</sub> | <sub>Last Reviewed</sub> | <sub>Next Review</sub> | <sub>Source</sub>
 ---- | ---- | ---- | ----
-<sub>No problems due for review</sub> | <sub>—</sub> | <sub>—</sub> | <sub>—</sub>
+<sub>[Binary Search](https://leetcode.com/problems/binary-search)</sub> | <sub>2025-03-24</sub> | <sub>⚠️ <span style="color:red">2025-03-25</span></sub> | <sub>[Python](../02_binary_search/exercises/00_binary_search.py)</sub>
+<sub>[Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters)</sub> | <sub>2025-03-24</sub> | <sub>⚠️ <span style="color:red">2025-03-25</span></sub> | <sub>[Python](../02_sliding_window/exercises/01_longest_substring_without_repeating_characters.py)</sub>
+<sub>[Best Time To Buy And Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock)</sub> | <sub>2025-03-24</sub> | <sub>⚠️ <span style="color:red">2025-03-25</span></sub> | <sub>[Python](../02_sliding_window/exercises/00_best_time_to_buy_and_sell_stock.py)</sub>
+<sub>[Search A 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix)</sub> | <sub>2025-03-24</sub> | <sub>⚠️ <span style="color:red">2025-03-25</span></sub> | <sub>[Python](../02_binary_search/exercises/01_search_a_2d_matrix.py)</sub>
+<sub>[Climbing Stairs](https://leetcode.com/problems/climbing-stairs)</sub> | <sub>2025-03-24</sub> | <sub>2025-03-26</sub> | <sub>[Python](../05_1d_dp/exercises/00_climbing_stairs.py)</sub>
 
 ## All Problems
 
@@ -77,6 +81,7 @@ Each file is stored in anki_review/metadata/ and looks like this:
 <sub>[Two Sum](https://leetcode.com/problems/two-sum)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/03_two_sum.py)</sub>
 <sub>[Group Anagrams](https://leetcode.com/problems/group-anagrams)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/04_group_anagrams.py)</sub>
 <sub>[Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/05_top_k_frequent_elements.py)</sub>
+<sub>[Roman To Integer](https://leetcode.com/problems/roman-to-integer)</sub> | <sub>2025-03-26</sub> | <sub>2025-03-28</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/06_roman_to_integer.py)</sub>
 <sub>[Encode And Decode Strings](https://leetcode.com/problems/encode-and-decode-strings)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/encode_and_decode_strings.py)</sub>
 <sub>[Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/longest_consecutive_sequence.py)</sub>
 <sub>[Product Of Array Except Self](https://leetcode.com/problems/product-of-array-except-self)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../00_arrays_and_hashing/exercises/product_of_array_except_self.py)</sub>
@@ -86,8 +91,8 @@ Each file is stored in anki_review/metadata/ and looks like this:
 
 <sub>Problem</sub> | <sub>Last Reviewed</sub> | <sub>Next Review</sub> | <sub>Source</sub>
 ---- | ---- | ---- | ----
-<sub>[Binary Search](https://leetcode.com/problems/binary-search)</sub> | <sub>2025-03-24</sub> | <sub>2025-03-25</sub> | <sub>[Python](../02_binary_search/exercises/00_binary_search.py)</sub>
-<sub>[Search A 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix)</sub> | <sub>2025-03-24</sub> | <sub>2025-03-25</sub> | <sub>[Python](../02_binary_search/exercises/01_search_a_2d_matrix.py)</sub>
+<sub>[Binary Search](https://leetcode.com/problems/binary-search)</sub> | <sub>2025-03-24</sub> | <sub>⚠️ <span style="color:red">2025-03-25</span></sub> | <sub>[Python](../02_binary_search/exercises/00_binary_search.py)</sub>
+<sub>[Search A 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix)</sub> | <sub>2025-03-24</sub> | <sub>⚠️ <span style="color:red">2025-03-25</span></sub> | <sub>[Python](../02_binary_search/exercises/01_search_a_2d_matrix.py)</sub>
 <sub>[Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../02_binary_search/exercises/02_koko_eating_bananas.py)</sub>
 <sub>[Find Minimum In Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../02_binary_search/exercises/03_find_minimum_in_rotated_sorted_array.py)</sub>
 <sub>[Search In Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../02_binary_search/exercises/04_search_in_rotated_sorted_array.py)</sub>
@@ -114,8 +119,8 @@ Each file is stored in anki_review/metadata/ and looks like this:
 
 <sub>Problem</sub> | <sub>Last Reviewed</sub> | <sub>Next Review</sub> | <sub>Source</sub>
 ---- | ---- | ---- | ----
-<sub>[Best Time To Buy And Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock)</sub> | <sub>2025-03-24</sub> | <sub>2025-03-25</sub> | <sub>[Python](../02_sliding_window/exercises/00_best_time_to_buy_and_sell_stock.py)</sub>
-<sub>[Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters)</sub> | <sub>2025-03-24</sub> | <sub>2025-03-25</sub> | <sub>[Python](../02_sliding_window/exercises/01_longest_substring_without_repeating_characters.py)</sub>
+<sub>[Best Time To Buy And Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock)</sub> | <sub>2025-03-24</sub> | <sub>⚠️ <span style="color:red">2025-03-25</span></sub> | <sub>[Python](../02_sliding_window/exercises/00_best_time_to_buy_and_sell_stock.py)</sub>
+<sub>[Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters)</sub> | <sub>2025-03-24</sub> | <sub>⚠️ <span style="color:red">2025-03-25</span></sub> | <sub>[Python](../02_sliding_window/exercises/01_longest_substring_without_repeating_characters.py)</sub>
 <sub>[Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../02_sliding_window/exercises/02_longest_repeating_character_replacement.py)</sub>
 <sub>[Permutation In String](https://leetcode.com/problems/permutation-in-string)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../02_sliding_window/exercises/03_permutation_in_string.py)</sub>
 <sub>[Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring)</sub> | <sub>—</sub> | <sub>—</sub> | <sub>[Python](../02_sliding_window/exercises/04_minimum_window_substring.py)</sub>
