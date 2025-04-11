@@ -44,3 +44,29 @@
 
 \end{algo}
 
+\subsection{Common Problems}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Problem} & \textbf{Description:} \\
+            \midrule
+                206. Reverse Linked List & Given the head of a singly linked list, reverse the list and return the reversed list. \\
+                \multicolumn{2}{p{\linewidth}}{
+                    \begin{itemize}
+                        \item \textbf{Iterative:} 
+                        \begin{itemize}
+                            \item Initialize prev, curr = None, head. 
+                            \item While loop until curr is None. curr will point to prev, then curr will get updated to a temp that has curr.next and prev will be updated to curr.
+                            \item prev will be the new head. 
+                            \item $\underbrace{\text{None}}_{\text{prev}}\rightarrow\underbrace{0}_{\text{curr}}\rightarrow1\rightarrow2$
+                            \item $\underbrace{\text{None}}_{\text{prev}}\leftarrow\underbrace{0}_{\text{curr}}\rightarrow\underbrace{1}_{\text{temp}}\rightarrow2$
+                            \item $\text{None}\leftarrow\underbrace{0}_{\text{prev=curr}}\rightarrow\underbrace{1}_{\text{curr=temp}}\rightarrow2$
+                        \end{itemize}
+                    \end{itemize}
+                } \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+
