@@ -587,9 +587,9 @@ INPUT lectures/4_binary_search.tex
 INPUT ./lectures/linked_list.tex
 INPUT ./lectures/linked_list.tex
 INPUT lectures/linked_list.tex
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmr7.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmr7.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
 INPUT notes.aux
 INPUT ./notes.out

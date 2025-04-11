@@ -43,6 +43,7 @@
 \begin{algo}
 
 \end{algo}
+\newpage 
 
 \subsection{Common Problems}
 \begin{summary}
@@ -56,12 +57,13 @@
                     \begin{itemize}
                         \item \textbf{Iterative:} 
                         \begin{itemize}
-                            \item Initialize prev, curr = None, head. 
+                            \item Init: $\underbrace{\text{None}}_{\text{prev}}\rightarrow\underbrace{0}_{\text{curr}}\rightarrow1\rightarrow2$
                             \item While loop until curr is None. curr will point to prev, then curr will get updated to a temp that has curr.next and prev will be updated to curr.
+                            \begin{itemize}
+                                \item $\underbrace{\text{None}}_{\text{prev}}\leftarrow\underbrace{0}_{\text{curr}}\rightarrow\underbrace{1}_{\text{temp}}\rightarrow2$
+                                \item $\text{None}\leftarrow\underbrace{0}_{\text{prev=curr}}\rightarrow\underbrace{1}_{\text{curr=temp}}\rightarrow2$
+                            \end{itemize}
                             \item prev will be the new head. 
-                            \item $\underbrace{\text{None}}_{\text{prev}}\rightarrow\underbrace{0}_{\text{curr}}\rightarrow1\rightarrow2$
-                            \item $\underbrace{\text{None}}_{\text{prev}}\leftarrow\underbrace{0}_{\text{curr}}\rightarrow\underbrace{1}_{\text{temp}}\rightarrow2$
-                            \item $\text{None}\leftarrow\underbrace{0}_{\text{prev=curr}}\rightarrow\underbrace{1}_{\text{curr=temp}}\rightarrow2$
                         \end{itemize}
                     \end{itemize}
                 } \\
