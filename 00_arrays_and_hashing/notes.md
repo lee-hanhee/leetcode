@@ -10,6 +10,7 @@
 
 ## Two Sum 
 - nums[i] = target - nums[j], so we can see if nums[i] in hashmap. 
+- hashmap: {nums[j]: j}
 - If it is, then return the index of nums[i] and i, otherwise, add nums[j] to hashmap.
 
 ## Group Anagram 

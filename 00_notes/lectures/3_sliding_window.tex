@@ -1,0 +1,92 @@
+\subsection{Fixed Sliding Window}
+\begin{summary}
+    \begin{itemize}
+        \item Find a subarray/substring of a fixed size that satisfies a condition.
+        \item Find the maximum or minimum of a subarray of a fixed size.
+    \end{itemize}
+\end{summary}
+
+\begin{algo}
+    \begin{lstlisting}
+initialize window_sum = 0
+initialize max_result (or other required value)
+
+# Set up initial window
+for i in range(0, k):
+    window_sum += arr[i]
+
+max_result = window_sum # Initialize result
+
+# Slide the window 
+for i in range(k, n):
+    window_sum += arr[i] - arr[i - k] # Add new element and remove 1st element of prev window
+    max_result = max(max_result, window_sum) (or other computation)
+
+return max_result (or other required value)
+    \end{lstlisting}
+\end{algo}
+
+\subsubsection{Common Problems}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Problem} & \textbf{Description:} \\
+            \midrule
+            643. Maximum Average Subarray I & Given an integer array nums and an integer k, \\
+            & return the maximum average value of a subarray of length k. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Follow template. 
+                \end{itemize}
+            } \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\subsection{Dynamic Sliding Window}
+\begin{summary}
+    \begin{itemize}
+        \item Find longest or shortest subarray/substring that satisfies a condition.
+    \end{itemize}
+\end{summary}
+
+\begin{algo}
+\begin{lstlisting}
+initialize left = 0
+initialize window_state (sum, count, frequency map, etc.)
+initialize min_or_max_result
+
+for right in range(n):
+    update window_state to include arr[right] # Expand the window
+
+    while window_state violates the condition:
+        update min_or_max_result (if needed)
+        update window_state to exclude arr[left] # Shrink the window
+        move left pointer forward
+
+return min_or_max_result
+\end{lstlisting}
+\end{algo}
+
+\subsubsection{Common Problems}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Problem} & \textbf{Description:} \\
+            \midrule
+            3. Longest Substring Without Repeating Characters & Given a string s, find the length of the longest substring \\
+            & without repeating characters. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Use a frequency map to track characters in the current window.
+                    \item If a character is repeated, move the left pointer to the right of the last occurrence.
+                \end{itemize}
+            } \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}

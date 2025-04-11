@@ -1,3 +1,11 @@
+\subsection{When to Use?}
+\begin{summary}
+    \begin{itemize}
+        \item If we need to find a pair of elements that satisfy a condition.
+        \item If we need to find a subarray that satisfies a condition.
+    \end{itemize}
+\end{summary}
+
 \subsection{Slow and Fast Pointers}
 \begin{algo}
     \begin{enumerate}
@@ -6,23 +14,83 @@
 \end{algo}
 
 \subsubsection{Common Problems}
-\begin{notes}
-    \begin{itemize}
-        \item Linked list problems
-    \end{itemize}
-\end{notes}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Problem} & \textbf{Description:} \\
+            \midrule
+            15. 3Sum & Given an array of integers, return all the triplets \\
+            & [nums[i], nums[j], nums[k]] s.t. i != j, i != k, and j != k. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Tricks:}
+                \end{itemize}
+            } \\
+            \midrule
+            125. Valid Palindrome & Given a string, determine if it is a palindrome, \\
+            & considering only alphanumeric characters and ignoring cases. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \texttt{s\_new = ''.join(char.lower() for char in s if char.isalnum())} to remove non-alphanumeric and lowercase. 
+                    \item Use front and back pointers. If they not equal, return False. If equal move both pointers.
+                \end{itemize}
+            } \\
+            \midrule
+            167. Two Sum II - Input array is sorted & Given an array of integers that is already sorted in ascending order, \\
+            & find two numbers such that they add up to a target. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Use front and back pointers. If > target, move back pointer left. If < target, move front pointer right.
+                \end{itemize}
+            } \\
+            \midrule
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
 
 \subsection{Front and Back Pointers}
 \begin{algo}
     \begin{enumerate}
-        \item 
+        \item Initialize two pointers, one at the front and one at the back of the array.
     \end{enumerate}
 \end{algo}
 
 \subsubsection{Common Problems}
-\begin{notes}
-    \begin{itemize}
-        \item Two sum 
-        \item Three sum
-    \end{itemize}
-\end{notes}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Problem} & \textbf{Description:} \\
+            \midrule
+            15. 3Sum & Given an array of integers, return all the triplets \\
+            & [nums[i], nums[j], nums[k]] s.t. i != j, i != k, and j != k. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Tricks:}
+                \end{itemize}
+            } \\
+            \midrule
+            125. Valid Palindrome & Given a string, determine if it is a palindrome, \\
+            & considering only alphanumeric characters and ignoring cases. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \texttt{s\_new = ''.join(char.lower() for char in s if char.isalnum())} to remove non-alphanumeric and lowercase. 
+                    \item Use front and back pointers. If they not equal, return False. If equal move both pointers.
+                \end{itemize}
+            } \\
+            \midrule
+            167. Two Sum II - Input array is sorted & Given an array of integers that is already sorted in ascending order, \\
+            & find two numbers such that they add up to a target. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Use front and back pointers. If > target, move back pointer left. If < target, move front pointer right.
+                \end{itemize}
+            } \\
+            \midrule
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}

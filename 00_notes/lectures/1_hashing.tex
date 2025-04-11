@@ -1,0 +1,36 @@
+\subsection{When to Use?}
+\begin{summary}
+    \begin{itemize}
+        \item 
+    \end{itemize}
+\end{summary}
+
+\subsection{Hashing}
+\begin{algo}
+    
+\end{algo}
+
+\subsection{Common Problems}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Problem} & \textbf{Description:} \\
+            \midrule
+            1. Two Sum & Given an array of integers, return indices of the two numbers s.t. they add up to a specific target. \\            
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Tricks:}
+                    \begin{itemize}
+                        \item See if target - nums[i] is in the map.
+                        \item If it is, return the index of the target - nums[i] (from prevMap) and i. 
+                        \begin{itemize}
+                            \item \texttt{prevMap[nums[i]] = i}
+                        \end{itemize}
+                    \end{itemize}
+                \end{itemize}
+            } \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
