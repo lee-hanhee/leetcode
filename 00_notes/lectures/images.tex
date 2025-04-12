@@ -1,0 +1,45 @@
+\subsection{Common Problems}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Problem} & \textbf{Description} \\
+            \midrule
+            661. Image Smoother & Given an image represented by a 2D array, \\
+            & smooth the image by averaging the pixel values \\
+            & of each pixel and its neighbors. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Loop through the cols and rows of the image, then 
+                    \begin{itemize}
+                        \item $\text{total sum for each pixel} = \sum_{x,y \in \text{neighbours}} \text{image}[x][y] = \sum_{x=i-1}^{i+1} \sum_{y=j-1}^{j+1} \text{image}[x][y]$
+                        \begin{itemize}
+                            \item If $x$ or $y$ is out of bounds, ignore it.
+                        \end{itemize}
+                        \item $\text{count} = \sum_{x=i-1}^{i+1} \sum_{y=j-1}^{j+1} 1$
+                        \item $\text{average} = \text{total sum} // \text{count}$
+                    \end{itemize}
+                    \item $\text{result}[i][j] = \text{average}$
+                \end{itemize}
+            } \\
+            \midrule
+            832. Flipping an Image & Given a binary matrix, flip the image \\
+            & horizontally and invert it. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Loop through the rows of the image, then use .reverse() to flip the row horizontally.
+                    \item Double for loop to invert image (change 0 to 1 and 1 to 0).
+                \end{itemize}
+            } \\
+            \midrule
+            48. Rotate Image & Given an n x n 2D matrix, rotate the image \\
+            & 90 degrees clockwise. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Transpose the matrix (swap rows and columns) if $i<j$, then $\text{matrix}[i][j] \overset{\text{swap}}{\iff} \text{matrix}[j][i]$.
+                    \item Reverse each row.
+                \end{itemize}
+            } \\
+        \end{tabular}
+    \end{center}
+\end{summary}
