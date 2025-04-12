@@ -93,12 +93,27 @@ return min_or_max_result
                 \end{itemize}
             } \\
             \midrule
-            3. Longest Substring Without Repeating Characters & Given a string s, find the length of the longest substring \\
+            3. Longest Substring W/O Repeating Characters & Given a string s, find the length of the longest substring \\
             & without repeating characters. \\
             \multicolumn{2}{p{\linewidth}}{
                 \begin{itemize}
                     \item \textbf{Init:} Follow template and use frequency map of chars for window\_state.
-                    \item \textbf{While:} If a char is repeated, move left pointer to right by 1 until current char is unique. 
+                    \item \textbf{While:} If a char is repeated, move left pointer to right by 1 and adjust freqMap until current char is unique. 
+                    \item \textbf{Change:} Compare substring length outside of while with \texttt{max\_res = max(max\_res, right - left + 1)}.
+                \end{itemize}
+            } \\
+            \midrule
+            424. Longest Repeating Character Replacement & Given a string s that consists of only uppercase English letters, \\
+            & you can replace any letter with another letter. \\
+            & Find the length of the longest substr containing the same letter \\
+            & after performing at most k replacements. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Init:} Follow template and use freqMap of chars for window\_state.
+                    \item \textbf{While:} If the number of replacements needed exceeds k, i.e. \texttt{(r - l + 1) - max\_freq > k}
+                    \begin{itemize}
+                        \item Move left pointer to right by 1 and adjust freqMap until the condition is satisfied.
+                    \end{itemize}
                     \item \textbf{Change:} Compare substring length outside of while with \texttt{max\_res = max(max\_res, right - left + 1)}.
                 \end{itemize}
             } \\

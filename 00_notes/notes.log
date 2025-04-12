@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  11 APR 2025 20:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  11 APR 2025 20:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1311,7 +1311,7 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 32--45
  []
 
 [6]
-Overfull \hbox (42.6474pt too wide) in paragraph at lines 77--107
+Overfull \hbox (28.75862pt too wide) in paragraph at lines 77--122
  [] 
  []
 
@@ -1331,13 +1331,13 @@ Package rerunfilecheck Info: File `notes.out' has not changed.
 Here is how much of TeX's memory you used:
  52884 strings out of 474116
  1226232 string characters out of 5743683
- 2020757 words of memory out of 5000000
+ 2022757 words of memory out of 5000000
  74264 multiletter control sequences out of 15000+600000
  602114 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,21n,107p,786b,1594s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on notes.pdf (10 pages, 253034 bytes).
+Output written on notes.pdf (10 pages, 253978 bytes).
 PDF statistics:
  320 PDF objects out of 1000 (max. 8388607)
  281 compressed objects within 3 object streams
