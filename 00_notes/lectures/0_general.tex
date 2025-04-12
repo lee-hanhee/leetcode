@@ -62,3 +62,26 @@
         \item Misunderstanding the problem or optimizing prematurely.
     \end{enumerate}
 \end{warning}
+\newpage
+
+\subsection{Syntax}
+\begin{summary}
+
+    \begin{enumerate}
+        \item \texttt{dict.items()}
+        \begin{itemize}
+            \item Returns a view object that displays a list of a dictionary's key-value tuple pairs.
+        \end{itemize}
+        \item \texttt{sorted(iterable,\ key=...,\ reverse=...)}
+        \begin{itemize}
+            \item \texttt{iterable}: The sequence or collection (e.g., list, dictionary view) to be sorted.
+            \item \texttt{key=...}: A function that extracts a comparison key from each element. Sorting is performed based on the result of this function.
+            \begin{itemize}
+                \item \texttt{key=lambda x: x[0]}: Sort by the first element of each tuple.
+                \item \texttt{key=lambda x: x[1]}: Sort by the second element of each tuple.
+            \end{itemize}
+            \item \texttt{reverse=...}: A boolean value. If \texttt{True}, sorted in descending order; otherwise, sorted in ascending order (default is \texttt{False}).
+        \end{itemize}
+    \end{enumerate}
+
+\end{summary}

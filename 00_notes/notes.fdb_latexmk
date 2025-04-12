@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1744471937.84496 "/Users/hanheelee/Desktop/leetcode/00_notes/notes.tex" "notes.pdf" "notes" 1744471941.72396 0
+["pdflatex"] 1744472294.48141 "/Users/hanheelee/Desktop/leetcode/00_notes/notes.tex" "notes.pdf" "notes" 1744472298.50471 0
   "/Users/hanheelee/Desktop/leetcode/00_notes/notes.tex" 1744469299.8537 980 dc8bf9c2a93c07b083dadb6883a72f98 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
@@ -331,14 +331,14 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1739067315.7189 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1739067010 8221435 a1e3d89194b507b879d58628e21da9df ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "lectures/0_general.tex" 1744334615.20893 2945 d8965e581f0d5ae97ade21a3a2a14f66 ""
+  "lectures/0_general.tex" 1744472291.58791 4015 e3f08acd9b7e749618362cbdcc731056 ""
   "lectures/1_arrays_and_hashing.tex" 1744471935.91196 2626 6eb02538a4feb8a1f542c4a45e2a4bff ""
   "lectures/2_two_pointers.tex" 1744416984.81862 4013 8c11a3a854dc6d7596b1de53a87d5d3c ""
   "lectures/3_sliding_window.tex" 1744429473.20275 8309 af23f09b3326b078064d0c3757271a9c ""
   "lectures/4_binary_search.tex" 1744334823.10562 128 ddfc2663f36a187462e6f0171d021624 ""
   "lectures/linked_list.tex" 1744388710.61421 2444 90ac69ec84060802d02eb72c678515b2 ""
-  "notes.aux" 1744471941.32534 3736 642dfa9b39b68763c3c1c2a64f01240e "pdflatex"
-  "notes.out" 1744471941.32682 4064 6993c761be5962a794a814ab7685f630 "pdflatex"
+  "notes.aux" 1744472298.02864 3851 deb9be66ec5140ad2d59c125bbed7448 "pdflatex"
+  "notes.out" 1744472298.03079 4152 948b4684d6efc0011c0aa590fe324665 "pdflatex"
   "notes.tex" 1744469299.8537 980 dc8bf9c2a93c07b083dadb6883a72f98 ""
   "style.sty" 1744333113.51325 8166 e40cba66fcf97f52c4c0baf1070ffb56 ""
   (generated)
