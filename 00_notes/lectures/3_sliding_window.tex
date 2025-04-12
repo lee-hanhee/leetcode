@@ -129,6 +129,25 @@ return min_or_max_result
                     \item \textbf{Change:} Compare substring length outside of while with \texttt{max\_res = max(max\_res, right - left + 1)}.
                 \end{itemize}
             } \\
+            \midrule
+            **76. Minimum Window Substring & Given two strings s and t, return the minimum window substr \\
+            & of s such that every character in t (including duplicates) is \\
+            & included in the window. If there is no such substring, return "" \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Init:} Set \texttt{left = 0}. Initialize \texttt{count\_t} as frequency map of \texttt{t}, \texttt{count\_s} for current window, and variables \texttt{have = 0}, \texttt{required = len(count\_t)}, \texttt{res = [-1, -1]}, and \texttt{resLen = \textbackslash infty}.
+                    
+                    \item \textbf{For right in range(n):} Expand window by adding \texttt{s[right]} to \texttt{count\_s}. If frequency matches \texttt{count\_t}, increment \texttt{have}.
+                    
+                    \item \textbf{While have == required:}
+                    \begin{itemize}
+                        \item Update result if current window is smaller.
+                        \item Shrink window by decrementing \texttt{count\_s[s[left]]}; if below \texttt{count\_t}, decrement \texttt{have}; increment \texttt{left}.
+                    \end{itemize}
+                    
+                    \item \textbf{Return:} \texttt{s[res[0]:res[1]+1]} if valid window found, else empty string.
+                \end{itemize}                
+            } \\
             \bottomrule
         \end{tabular}
     \end{center}
