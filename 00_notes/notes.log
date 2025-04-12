@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  12 APR 2025 11:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  12 APR 2025 11:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1284,34 +1284,35 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 71
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )) [2] (./lectures/1_arrays_and_hashing.tex
-Overfull \hbox (12.0pt too wide) in paragraph at lines 16--61
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 14.
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <9> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 15.
+ [3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
+Overfull \hbox (25.03506pt too wide) in paragraph at lines 47--99
  [] 
  []
 
-) [3] (./lectures/2_two_pointers.tex
+) [4] (./lectures/2_two_pointers.tex
 Overfull \hbox (12.0pt too wide) in paragraph at lines 19--49
  [] 
  []
 
-[4]
+[5]
 Overfull \hbox (12.0pt too wide) in paragraph at lines 68--98
  [] 
  []
 
-) [5] (./lectures/3_sliding_window.tex
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <9> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 12.
- [6]
+) [6] (./lectures/3_sliding_window.tex [7]
 Overfull \hbox (12.0pt too wide) in paragraph at lines 32--56
  [] 
  []
 
-[7{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}] [8]
+[8] [9]
 Overfull \hbox (28.75862pt too wide) in paragraph at lines 89--168
  [] 
  []
 
-) [9] (./lectures/4_binary_search.tex) [10] (./lectures/linked_list.tex [11{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
+) [10] (./lectures/4_binary_search.tex) [11] (./lectures/linked_list.tex [12]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 69.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1320,7 +1321,7 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 51--72
  [] 
  []
 
-) [12{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] (./notes.aux)
+) [13{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] (./notes.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -1329,18 +1330,18 @@ Package rerunfilecheck Info: File `notes.out' has not changed.
 (rerunfilecheck)             Checksum: 948B4684D6EFC0011C0AA590FE324665;4152.
  ) 
 Here is how much of TeX's memory you used:
- 52884 strings out of 474116
- 1226231 string characters out of 5743683
- 2016757 words of memory out of 5000000
- 74263 multiletter control sequences out of 15000+600000
+ 52924 strings out of 474116
+ 1226821 string characters out of 5743683
+ 2096757 words of memory out of 5000000
+ 74276 multiletter control sequences out of 15000+600000
  602114 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,21n,107p,786b,1594s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,21n,107p,786b,1683s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on notes.pdf (12 pages, 260478 bytes).
+Output written on notes.pdf (13 pages, 267339 bytes).
 PDF statistics:
- 331 PDF objects out of 1000 (max. 8388607)
- 290 compressed objects within 3 object streams
- 104 named destinations out of 1000 (max. 500000)
+ 368 PDF objects out of 1000 (max. 8388607)
+ 325 compressed objects within 4 object streams
+ 131 named destinations out of 1000 (max. 500000)
  245 words of extra memory for PDF output out of 10000 (max. 10000000)
 

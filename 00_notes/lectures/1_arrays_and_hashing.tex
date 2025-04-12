@@ -1,14 +1,45 @@
 \subsection{When to Use?}
 \begin{summary}
     \begin{itemize}
-        \item 
+        \item To count frequencies in \( O(n) \) time.
+        \item To check membership in constant time.
+        \item To map keys to values (e.g., index, count, group).
+        \item To group elements by shared features (e.g., anagrams).
+        \item To detect duplicates efficiently.
     \end{itemize}
 \end{summary}
 
 \subsection{Hashing}
 \begin{algo}
-    
+\begin{lstlisting}[language=Python, caption=General Hashing Pattern]
+def solve_problem(nums):
+    # Step 1: Initialize the hashmap (e.g., for frequency, index, or existence check)
+    hashmap = {}
+
+    # Step 2: Iterate over the array
+    for i, num in enumerate(nums):
+        # Step 3: Define your condition (e.g., check complement, existence, frequency)
+        if some_condition_based_on_hashmap(num, hashmap):
+            # Step 4: Return or process result as needed
+            return result_based_on_condition
+        
+        # Step 5: Update the hashmap
+        hashmap_update_logic(num, i, hashmap)
+
+    # Step 6: Handle the case where the condition is never met
+    return final_result_if_needed
+
+# Helper functions (replace with actual logic based on the problem)
+def some_condition_based_on_hashmap(num, hashmap):
+    # Example: return (target - num) in hashmap
+    pass
+
+def hashmap_update_logic(num, i, hashmap):
+    # Example: hashmap[num] = i
+    pass
+\end{lstlisting}
 \end{algo}
+\newpage
 
 \subsection{Common Problems}
 \begin{summary}
@@ -55,7 +86,14 @@
                 \end{itemize}
             } \\
             \midrule
-            
+            **347. Top K Frequent Elements & Given an integer array nums and an integer k, \\
+            & return the k most frequent elements. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Use a hashMap to count the frequency of each element.
+                    \item Sort the map by frequency and return the top k elements.
+                \end{itemize}
+            } \\
             \bottomrule
         \end{tabular}
     \end{center}
