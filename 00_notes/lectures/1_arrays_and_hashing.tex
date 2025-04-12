@@ -1,0 +1,60 @@
+\subsection{When to Use?}
+\begin{summary}
+    \begin{itemize}
+        \item 
+    \end{itemize}
+\end{summary}
+
+\subsection{Hashing}
+\begin{algo}
+    
+\end{algo}
+
+\subsection{Common Problems}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Problem} & \textbf{Description:} \\
+            \midrule
+            217. Contains Duplicate & Given an integer array nums, return true if any value appears at least twice. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Use a set to store the elements. If an element is already in the set, return True.
+                    \item Otherwise, add it to the set.
+                \end{itemize}
+            } \\
+            \midrule
+            242. Valid Anagram & Given two strings s and t, return true if t is an anagram of s and false otherwise. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Use a hashMap to count the frequency of each character in s and t.
+                    \item If the frequency maps are equal, return True. Otherwise, return False.
+                \end{itemize}
+            } \\
+            \midrule
+            1. Two Sum & Given an array of integers, return indices of the two numbers s.t. \\
+            & they add up to a specific target. \\            
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Tricks:}
+                    \begin{itemize}
+                        \item Use a hashMap to store the indices of the elements, \texttt{prevMap[nums[i]] = i}
+                        \item For each element, check if the target - nums[i] is in the map.
+                        \item If it is, return the index of the target - nums[i] (from prevMap) and i. Otherwise, add target - nums[i].
+                    \end{itemize}
+                \end{itemize}
+            } \\
+            \midrule
+            49. Group Anagrams & Given an array of strings, group the anagrams together. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Use a hashMap to store a tuple of count of each char as the key and the list of words as the value.
+                    \item For each word, create a tuple of count of each char and add the word to the list in the map.
+                    \item Finally, return the values of the map.
+                \end{itemize}
+            } \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
