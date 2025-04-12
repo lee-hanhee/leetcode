@@ -25,7 +25,7 @@ for i in range(k, n):
 return max_result (or other required value)
     \end{lstlisting}
 \end{algo}
-
+\newpage
 \subsubsection{Common Problems}
 \begin{summary}
     \begin{center}
@@ -38,6 +38,17 @@ return max_result (or other required value)
             \multicolumn{2}{p{\linewidth}}{
                 \begin{itemize}
                     \item Follow template. 
+                \end{itemize}
+            } \\
+            \midrule
+            567. Permutation in String & Given two strings s1 and s2, return true if s2 contains a \\
+            & permutation of s1, or false otherwise. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Init:} Follow template with window\_valid, freqMap\_window, freqMap\_s1, and fixed size $k$ of len(s1). Rather than sum, get freq of chars. 
+                    \item \textbf{Special Case:} If len(s1) > len(s2), return False.
+                    \item \textbf{For:} Since contiguous, slide through s2 and update freqMap\_window by adding new char and removing old char (make sure to del key if freq = 0).
+                    \item \textbf{Condition:} If freqMap\_window == freqMap\_s1, return True.
                 \end{itemize}
             } \\
             \bottomrule
@@ -70,6 +81,7 @@ for right in range(n):
 return min_or_max_result
 \end{lstlisting}
 \end{algo}
+\newpage
 
 \subsubsection{Common Problems}
 \begin{summary}
