@@ -78,12 +78,28 @@ return min_or_max_result
             \toprule
             \textbf{Problem} & \textbf{Description:} \\
             \midrule
+            121. Best Time to Buy and Sell Stock & Given an array where the ith element is the price of a given stock \\ 
+            & on day i, find the maximum profit you can achieve. \\ 
+            & You may not engage in multiple transactions. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Buy low, sell high principle}
+                    \begin{itemize}
+                        \item Use left = buy and right = sell, initialized at 0, 1. 
+                        \item If price[right] >= price[left], update max profit. Move right pointer since we can still sell for a profit.
+                        \item If price[right] < price[left], move left pointer since we need to find a lower price to buy.
+                        \item Continue until right pointer reaches the end of the array.
+                    \end{itemize}
+                \end{itemize}
+            } \\
+            \midrule
             3. Longest Substring Without Repeating Characters & Given a string s, find the length of the longest substring \\
             & without repeating characters. \\
             \multicolumn{2}{p{\linewidth}}{
                 \begin{itemize}
-                    \item Use a frequency map to track characters in the current window.
-                    \item If a character is repeated, move the left pointer to the right of the last occurrence.
+                    \item \textbf{Init:} Follow template and use frequency map of chars for window\_state.
+                    \item \textbf{While:} If a char is repeated, move left pointer to right by 1 until current char is unique. 
+                    \item \textbf{Change:} Compare substring length outside of while with \texttt{max\_res = max(max\_res, right - left + 1)}.
                 \end{itemize}
             } \\
             \bottomrule
