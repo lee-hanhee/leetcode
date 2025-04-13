@@ -103,6 +103,19 @@ def hashmap_update_logic(num, i, hashmap):
                     \item \textbf{Row/Column Zeroing:} Set all elements in column \texttt{col\_ind} to zero and all elements in row \texttt{row\_ind} to zero using two helpers.
                 \end{itemize}                
             } \\
+            \midrule
+            118. Pascal's Triangle & Given an integer numRows, return the first numRows of Pascal's triangle. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Initialize:} \texttt{res = [[1]]}.
+                    \item \textbf{Loop from numRows - 1:}
+                    \begin{itemize}
+                        \item \textbf{Pad the PrevRow:} Create \texttt{dummy\_row} by padding the last row in \texttt{res} with zeros at both ends. 
+                        \item \textbf{Loop 2 from len(prevRow) + 1:} For each position \texttt{i}, compute the value \texttt{dummy\_row[i] + dummy\_row[i+1]} and append it to the new row. 
+                    \end{itemize}
+                \end{itemize}                
+            } \\
+            \midrule
             \bottomrule
         \end{tabular}
     \end{center}

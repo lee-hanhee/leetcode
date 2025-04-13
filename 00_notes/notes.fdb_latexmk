@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1744506158.89506 "/Users/hanheelee/Desktop/leetcode/00_notes/notes.tex" "notes.pdf" "notes" 1744506163.91451 0
+["pdflatex"] 1744507751.58367 "/Users/hanheelee/Desktop/leetcode/00_notes/notes.tex" "notes.pdf" "notes" 1744507756.16161 0
   "/Users/hanheelee/Desktop/leetcode/00_notes/notes.tex" 1744494224.97824 1097 dfb5006a3afb359a3febe1135ab78efb ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
@@ -334,15 +334,15 @@
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1739067010 8221435 a1e3d89194b507b879d58628e21da9df ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
   "lectures/0_general.tex" 1744472291.58791 4015 e3f08acd9b7e749618362cbdcc731056 ""
-  "lectures/1_arrays_and_hashing.tex" 1744506158.58384 4908 993bc6a3da8e36d05bc14fe325d35a27 ""
+  "lectures/1_arrays_and_hashing.tex" 1744507747.93351 5737 bb405d99184dfd52ab4aeec77e35b727 ""
   "lectures/2_two_pointers.tex" 1744416984.81862 4013 8c11a3a854dc6d7596b1de53a87d5d3c ""
   "lectures/3_sliding_window.tex" 1744486090.91899 8984 76861566188d04e9befd28f7027097b6 ""
   "lectures/4_binary_search.tex" 1744504030.44854 879 e3ed5787e461cd9cdbca424774d754f9 ""
   "lectures/images.tex" 1744492907.87218 2631 531edc3c9cc1e426b5502045cca478f2 ""
   "lectures/linked_list.tex" 1744388710.61421 2444 90ac69ec84060802d02eb72c678515b2 ""
   "lectures/trees.tex" 1744504500.7962 5247 3e0d6472ccc76c69d6df5b537b8d39d3 ""
-  "notes.aux" 1744506163.44965 5253 56d79f5cb43cc19cacfea532b156eba2 "pdflatex"
-  "notes.out" 1744506163.45161 5790 c0f35a4cc7b08b46a95b85bd11c8c8da "pdflatex"
+  "notes.aux" 1744507755.73863 5253 56d79f5cb43cc19cacfea532b156eba2 "pdflatex"
+  "notes.out" 1744507755.74041 5790 c0f35a4cc7b08b46a95b85bd11c8c8da "pdflatex"
   "notes.tex" 1744494224.97824 1097 dfb5006a3afb359a3febe1135ab78efb ""
   "style.sty" 1744333113.51325 8166 e40cba66fcf97f52c4c0baf1070ffb56 ""
   (generated)
