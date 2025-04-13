@@ -1,0 +1,193 @@
+\subsection{Binary Search Tree (BST)}
+\begin{summary}
+    \begin{itemize}
+        \item A binary tree where for each node, left subtree values are smaller, and right subtree values are larger.
+        \item Enables $\mathcal{O}(\log n)$ average-case operations for insert, delete, search on balanced trees.
+        \item Used to implement sets, maps, and ordered data structures.
+        \item Core operations include search, insertion, deletion, in-order traversal, and range queries.
+    \end{itemize}
+\end{summary}
+
+\begin{algo}
+\begin{lstlisting}
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def search_bst(root, target):
+    if not root or root.val == target:
+        return root
+    if target < root.val:
+        return search_bst(root.left, target)
+    else:
+        return search_bst(root.right, target)
+
+def insert_bst(root, val):
+    if not root:
+        return TreeNode(val)
+    if val < root.val:
+        root.left = insert_bst(root.left, val)
+    else:
+        root.right = insert_bst(root.right, val)
+    return root
+
+def delete_bst(root, key):
+    if not root:
+        return None
+    if key < root.val:
+        root.left = delete_bst(root.left, key)
+    elif key > root.val:
+        root.right = delete_bst(root.right, key)
+    else:
+        if not root.left:
+            return root.right
+        if not root.right:
+            return root.left
+        successor = get_min(root.right)
+        root.val = successor.val
+        root.right = delete_bst(root.right, successor.val)
+    return root
+
+def get_min(node):
+    while node.left:
+        node = node.left
+    return node
+\end{lstlisting}
+\end{algo}
+
+\newpage
+
+\subsubsection{Common Problems}
+
+\begin{summary}
+\end{summary}
+
+\newpage
+
+\subsubsection{BST-based Sets and Maps}
+
+\begin{summary}
+    \begin{itemize}
+        \item \textbf{BST Set}: Stores unique values in sorted order. Supports insert, search, delete.
+        \item \textbf{BST Map}: Associates keys with values, maintaining keys in sorted order.
+        \item Can be implemented using self-balancing trees (e.g., AVL, Red-Black Tree) for O(log n) operations.
+        \item Useful for range queries, floor/ceiling lookups, and ordered iteration.
+    \end{itemize}
+\end{summary}
+
+\begin{algo}
+\begin{lstlisting}
+class BSTSet:
+    def __init__(self):
+        self.root = None
+
+    def add(self, val):
+        self.root = insert_bst(self.root, val)
+
+    def contains(self, val):
+        return search_bst(self.root, val) is not None
+
+    def remove(self, val):
+        self.root = delete_bst(self.root, val)
+
+class BSTMap:
+    def __init__(self):
+        self.root = None
+
+    def put(self, key, value):
+        self.root = self._put(self.root, key, value)
+
+    def _put(self, node, key, value):
+        if not node:
+            return TreeNode((key, value))
+        if key < node.val[0]:
+            node.left = self._put(node.left, key, value)
+        elif key > node.val[0]:
+            node.right = self._put(node.right, key, value)
+        else:
+            node.val = (key, value)
+        return node
+
+    def get(self, key):
+        node = self.root
+        while node:
+            if key < node.val[0]:
+                node = node.left
+            elif key > node.val[0]:
+                node = node.right
+            else:
+                return node.val[1]
+        return None
+\end{lstlisting}
+\end{algo}
+
+\newpage
+
+
+\subsection{Breadth-First Search (BFS)}
+\begin{summary}
+    \begin{itemize}
+        \item Use when exploring nodes layer-by-layer, typically in unweighted graphs or grids.
+        \item Ideal for finding the shortest path, level order traversal, or minimum number of steps.
+        \item Queue-based traversal ensures nodes are visited in order of increasing distance from the source.
+    \end{itemize}
+\end{summary}
+
+\begin{algo}
+\begin{lstlisting}
+from collections import deque
+
+def bfs(start, graph):
+    visited = set()
+    queue = deque([start])
+    visited.add(start)
+
+    while queue:
+        node = queue.popleft()
+
+        for neighbor in graph[node]:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
+\end{lstlisting}
+\end{algo}
+\newpage
+
+\subsubsection{Common Problems}
+\begin{summary}
+\end{summary}
+\newpage
+
+\subsection{Depth-First Search (DFS)}
+
+\begin{summary}
+    \begin{itemize}
+        \item Use when traversing all nodes or paths in \textbf{trees}, \textbf{graphs}, or \textbf{matrices}.
+        \item Ideal for problems involving \textbf{backtracking}, \textbf{recursion}, or exploring all \textbf{connected components}.
+        \item Can be implemented recursively or iteratively with a stack.
+        \item Maintain a \texttt{visited} set or matrix to avoid revisiting nodes.
+        \item Useful for \textbf{topological sorting}, \textbf{cycle detection}, and \textbf{pathfinding}.
+    \end{itemize}
+\end{summary}
+
+\begin{algo}
+\begin{lstlisting}
+def dfs(node, visited):
+    if node in visited:
+        return
+
+    visited.add(node)
+
+    for neighbor in graph[node]:
+        dfs(neighbor, visited)
+\end{lstlisting}
+\end{algo}
+
+\newpage
+
+\subsubsection{Common Problems}
+
+\begin{summary}
+\end{summary}

@@ -1,6 +1,33 @@
 \subsection{When to Use?}
 \begin{summary}
     \begin{itemize}
-        \item If array is sorted. 
+        \item Use when the input is \textbf{sorted} or can be \textbf{monotonically mapped}.
+        \item Common for problems involving \textbf{searching for a target}, \textbf{finding boundaries}, or \textbf{min/max constraints}.
+        \item Works on arrays, answer ranges, or implicit search spaces with $\mathcal{O}(\log n)$ complexity.
     \end{itemize}
+\end{summary}
+
+\begin{algo}
+\begin{lstlisting}
+def binary_search(nums, target):
+    left, right = 0, len(nums) - 1
+
+    while left <= right:
+        mid = left + (right - left) // 2
+
+        if nums[mid] == target:
+            return mid
+        elif nums[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+
+    return -1
+\end{lstlisting}
+\end{algo}
+
+\newpage
+
+\subsubsection{Common Problems}
+\begin{summary}
 \end{summary}

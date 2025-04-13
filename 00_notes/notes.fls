@@ -591,6 +591,9 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT ./lectures/images.tex
 INPUT ./lectures/images.tex
 INPUT lectures/images.tex
+INPUT ./lectures/trees.tex
+INPUT ./lectures/trees.tex
+INPUT lectures/trees.tex
 INPUT notes.aux
 INPUT ./notes.out
 INPUT ./notes.out
