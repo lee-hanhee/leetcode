@@ -129,13 +129,13 @@ def hashmap_update_logic(num, i, hashmap):
             54. Spiral Matrix & Given an m x n matrix, return all elements of the matrix in spiral order. \\
             \multicolumn{2}{p{\linewidth}}{
                 \begin{itemize}
-                    \item \textbf{Initialize:} Create an empty list \texttt{res} and set boundaries: \texttt{top, bottom, left, right}.
-                    \item \textbf{Loop:} While top <= bottom and left <= right. Use helper functions to achieve the following:
+                    \item \textbf{Initialize:} Create an empty list \texttt{res}, set boundaries: \texttt{top, bottom, left, right}, and current pos $(i,j)$.
+                    \item \textbf{Loop:} While top <= bottom and left <= right. Use helper functions to achieve the following: 
                     \begin{itemize}
-                        \item Traverse from left to right along the top row.
-                        \item Traverse from top to bottom along the right column.
-                        \item Traverse from right to left along the bottom row.
-                        \item Traverse from bottom to top along the left column.
+                        \item Traverse from left to right along the top row and adjust top bdy and check if top > bottom.
+                        \item Traverse from top to bottom along the right column and adjust right bdy and check if left > right.
+                        \item Traverse from right to left along the bottom row and adjust bottom bdy and check if top > bottom.
+                        \item Traverse from bottom to top along the left column and adjust left bdy and check if left > right.
                     \end{itemize}
                 \end{itemize}
             } \\
