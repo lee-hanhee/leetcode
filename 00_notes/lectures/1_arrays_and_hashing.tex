@@ -94,6 +94,15 @@ def hashmap_update_logic(num, i, hashmap):
                     \item Sort the map by frequency and return the top k elements.
                 \end{itemize}
             } \\
+            \midrule
+            73. Set Matrix Zeroes & Given an m x n integer matrix, if an element is 0, \\
+            & set its entire row and column to 0. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}                
+                    \item \textbf{Record Zero Positions:} Iterate through all elements. If \texttt{matrix[i][j] == 0}, append \texttt{[i, j]} to list.
+                    \item \textbf{Row/Column Zeroing:} Set all elements in column \texttt{col\_ind} to zero and all elements in row \texttt{row\_ind} to zero using two helpers.
+                \end{itemize}                
+            } \\
             \bottomrule
         \end{tabular}
     \end{center}
