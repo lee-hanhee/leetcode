@@ -1,3 +1,51 @@
+\subsection{2D Convolution Operations}
+\begin{notes}
+    \begin{enumerate}
+        \item \textbf{1. Output Dimensions}
+
+        The output height and width of a 2D convolution are given by:
+    
+        \[
+        \text{out\_height} = \left\lfloor \frac{\text{in\_height} + 2 \cdot \text{padding}_h - \text{effective\_kernel}_h}{\text{stride}_h} \right\rfloor + 1
+        \]
+    
+        \[
+        \text{out\_width} = \left\lfloor \frac{\text{in\_width} + 2 \cdot \text{padding}_w - \text{effective\_kernel}_w}{\text{stride}_w} \right\rfloor + 1
+        \]
+    
+        \item \textbf{2. Effective Kernel Size (with Dilation)}
+    
+        The effective kernel size when dilation is applied:
+    
+        \[
+        \text{effective\_kernel}_h = \text{kernel\_height} + (\text{kernel\_height} - 1) \cdot (\text{dilation}_h - 1)
+        \]
+    
+        \[
+        \text{effective\_kernel}_w = \text{kernel\_width} + (\text{kernel\_width} - 1) \cdot (\text{dilation}_w - 1)
+        \]
+    
+        \item \textbf{3. Convolution Operation (Batch, Channel-aware)}
+    
+        The general convolution operation for a batch of input tensors is:
+    
+        \[
+        \text{output}[b, c_{\text{out}}, h_{\text{out}}, w_{\text{out}}] = \sum_{c_{\text{in}}} \sum_{k_h} \sum_{k_w}
+        \left(
+        \text{input}[b, c_{\text{in}}, h_{\text{in}} + k_h \cdot \text{dilation}_h, w_{\text{in}} + k_w \cdot \text{dilation}_w]
+        \cdot
+        \text{filter}[c_{\text{out}}, c_{\text{in}}, k_h, k_w]
+        \right)
+        \]
+    
+        where:
+    
+        \[
+        h_{\text{in}} = h_{\text{out}} \cdot \text{stride}_h, \quad w_{\text{in}} = w_{\text{out}} \cdot \text{stride}_w
+        \]
+    \end{enumerate}
+\end{notes}
+
 \subsection{Common Problems}
 \begin{summary}
     \begin{center}

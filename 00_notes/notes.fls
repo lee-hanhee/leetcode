@@ -578,9 +578,9 @@ INPUT lectures/3_sliding_window.tex
 INPUT ./lectures/4_binary_search.tex
 INPUT ./lectures/4_binary_search.tex
 INPUT lectures/4_binary_search.tex
-INPUT ./lectures/linked_list.tex
-INPUT ./lectures/linked_list.tex
-INPUT lectures/linked_list.tex
+INPUT ./lectures/images.tex
+INPUT ./lectures/images.tex
+INPUT lectures/images.tex
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmr7.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
@@ -588,12 +588,6 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ts1-lmr10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
-INPUT ./lectures/images.tex
-INPUT ./lectures/images.tex
-INPUT lectures/images.tex
-INPUT ./lectures/trees.tex
-INPUT ./lectures/trees.tex
-INPUT lectures/trees.tex
 INPUT notes.aux
 INPUT ./notes.out
 INPUT ./notes.out
@@ -601,6 +595,7 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb
