@@ -163,6 +163,20 @@ class SinglyLinkedList:
                         \item Merge the two halves together.
                     \end{itemize}
                 } \\
+                \midrule 
+                19. Remove Nth Node From End of List & Given a linked list, remove the Nth node from the end of the list. \\
+                \multicolumn{2}{p{\linewidth}}{
+                    \begin{itemize}
+                        \item \textbf{Idea:} Use two pointers (slow and fast) to traverse the list by moving fast pointer N steps ahead. 
+                        \begin{itemize}
+                            \item \textbf{Conditional:} If fast is None, then this means $N=\text{length of list}$, therefore, remove head by returning head.next.
+                        \end{itemize}
+                        \item Move both pointers until fast reaches the end. 
+                        \begin{itemize}
+                            \item Slow pointer will be at the node to be deleted, so store prev node and do appropriate adjustments. 
+                        \end{itemize}
+                    \end{itemize}
+                } \\
                 \midrule
             \bottomrule
         \end{tabular}
