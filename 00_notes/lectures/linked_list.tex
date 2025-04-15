@@ -13,7 +13,23 @@
     \end{itemize}
 \end{summary}
 
-\subsection{Operations}
+\subsection{Singly Linked List}
+\begin{algo}
+\begin{lstlisting}[language=Python, caption=Singly Linked List in Python]
+class Node:
+    def __init__(self, data):
+        self.data = data  # Value stored in the node
+        self.next = None  # Pointer to the next node
+
+class SinglyLinkedList:
+    def __init__(self,data):
+        self.head = Node(data)  # Head of the list
+
+    def operations(self):
+        pass
+\end{lstlisting}
+        
+\end{algo}
 \begin{summary}
     \begin{center}
         \begin{tabular}{lc}
@@ -29,21 +45,8 @@
     \end{center}
 \end{summary}
 
-\subsection{Singly Linked List}
-\begin{algo}
-    
-\end{algo}
-
-\subsection{Doubly Linked List}
-\begin{algo}
-
-\end{algo}
-
-\subsection{Circular Linked List}
-\begin{algo}
-
-\end{algo}
-\newpage 
+\subsection{Operations}
+\newpage
 
 \subsection{Common Problems}
 \begin{summary}
@@ -57,18 +60,31 @@
                     \begin{itemize}
                         \item \textbf{Iterative:} 
                         \begin{itemize}
-                            \item Init: $\underbrace{\text{None}}_{\text{prev}}\rightarrow\underbrace{0}_{\text{curr}}\rightarrow1\rightarrow2$
-                            \item While loop until curr is None. curr will point to prev, then curr will get updated to a temp that has curr.next and prev will be updated to curr.
+                            \item Init: $\underbrace{\text{None}}_{\text{prev}} \rightarrow \underbrace{1}_{\text{cur}} \rightarrow 2 \rightarrow 3 \rightarrow 4 \rightarrow 5$
+                            \item While loop: 
                             \begin{itemize}
-                                \item $\underbrace{\text{None}}_{\text{prev}}\leftarrow\underbrace{0}_{\text{curr}}\rightarrow\underbrace{1}_{\text{temp}}\rightarrow2$
-                                \item $\text{None}\leftarrow\underbrace{0}_{\text{prev=curr}}\rightarrow\underbrace{1}_{\text{curr=temp}}\rightarrow2$
+                                \item Temp: $\underbrace{\text{None}}_{\text{prev}} \rightarrow \underbrace{1}_{\text{cur}} \rightarrow \underbrace{2}_{\text{temp}} \rightarrow 3 \rightarrow 4 \rightarrow 5$
+                                \item Switch link: $\underbrace{\text{None}}_{\text{prev}} \leftarrow \underbrace{1}_{\text{cur}} \rightarrow \underbrace{2}_{\text{temp}} \rightarrow 3 \rightarrow 4 \rightarrow 5$
+                                \item Swap positions: $\underbrace{1}_{\text{prev = cur}} \rightarrow \underbrace{2}_{\text{cur = temp}} \rightarrow 3 \rightarrow 4 \rightarrow 5$
                             \end{itemize}
-                            \item prev will be the new head. 
-                        \end{itemize}
+                        \end{itemize}                        
                     \end{itemize}
                 } \\
+                \midrule
+                21. Merge Two Sorted Lists & Given two sorted linked lists, merge them into one sorted list. \\
             \bottomrule
         \end{tabular}
     \end{center}
 \end{summary}
 
+
+\subsection{Doubly Linked List}
+\begin{algo}
+
+\end{algo}
+
+\subsection{Circular Linked List}
+\begin{algo}
+
+\end{algo}
+\newpage 
