@@ -13,6 +13,66 @@
     \end{itemize}
 \end{summary}
 
+\subsection{Heapq}
+\begin{summary}
+\begin{lstlisting}
+heapq.heapify(x)
+\end{lstlisting}
+\begin{itemize}
+    \item Transforms a list \texttt{x} into a valid min-heap in-place.
+    \item \textbf{Arguments:} \texttt{x}: list to be heapified.
+\end{itemize}
+
+\begin{lstlisting}
+heapq.heappush(heap, item)
+\end{lstlisting}
+\begin{itemize}
+    \item Inserts \texttt{item} into \texttt{heap} while maintaining the heap invariant.
+    \item \textbf{Arguments:} \texttt{heap}: list representing a heap; \texttt{item}: element to insert.
+\end{itemize}
+
+\begin{lstlisting}
+heapq.heappop(heap)
+\end{lstlisting}
+\begin{itemize}
+    \item Removes and returns the smallest element from the heap.
+    \item \textbf{Arguments:} \texttt{heap}: non-empty list representing a valid heap.
+\end{itemize}
+
+\begin{lstlisting}
+heapq.heappushpop(heap, item)
+\end{lstlisting}
+\begin{itemize}[noitemsep]
+    \item Pushes \texttt{item} onto the heap, then pops and returns the smallest element.
+    \item \textbf{Arguments:} \texttt{heap}: valid heap; \texttt{item}: element to insert.
+\end{itemize}
+    
+\begin{lstlisting}
+heapq.heapreplace(heap, item)
+\end{lstlisting}
+\begin{itemize}
+    \item Pops and returns the smallest element, then inserts \texttt{item} into the heap.
+    \item \textbf{Arguments:} \texttt{heap}: non-empty valid heap; \texttt{item}: element to insert.
+\end{itemize}
+
+\begin{lstlisting}
+heapq.nlargest(n, iterable)
+\end{lstlisting}
+\begin{itemize}
+    \item Returns the \texttt{n} largest elements from \texttt{iterable} in descending order.
+    \item \textbf{Arguments:} \texttt{n}: number of elements; \texttt{iterable}: list or other iterable.
+\end{itemize}
+    
+\begin{lstlisting}
+heapq.nsmallest(n, iterable)
+\end{lstlisting}
+\begin{itemize}[noitemsep]
+    \item Returns the \texttt{n} smallest elements from \texttt{iterable} in ascending order.
+    \item \textbf{Arguments:} \texttt{n}: number of elements; \texttt{iterable}: list or other iterable.
+\end{itemize}        
+\end{summary}
+\newpage
+
 \begin{algo}
 \begin{lstlisting}
 class MinHeap:
@@ -65,6 +125,7 @@ class MinHeap:
 \end{lstlisting}
         
 \end{algo}
+\newpage
 
 \subsubsection{Operations}
 \begin{summary}
@@ -86,6 +147,38 @@ class MinHeap:
             Search & $O(n)$ \\
             \midrule
             Delete & $O(n)$ \\
+            \midrule
+            Heap Sort & $O(n \log n)$ \\
         \end{tabular}
     \end{center}
 \end{summary}
+\newpage
+
+\subsubsection{Common Problem}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Problem} & \textbf{Description} \\
+            \midrule
+            703. Kth Largest Element in a Stream & Design a class to find the kth largest element in a stream of numbers. \\
+            \multicolumn{2}{p{\linewidth}}{
+                    \begin{itemize}
+                        \item Implement a heap that keeps track of the k largest elements using a min-heap so that the kth largest element is always at the root. 
+                        \item \textbf{Process:}
+                        \begin{enumerate}
+                            \item Change list into heap. If more than $k$ elements, pop until only $k$ elements remain.
+                            \item Add: Push new element into heap. If size exceeds $k$, pop the smallest element. Return the root.
+                        \end{enumerate}
+                    \end{itemize}
+                } \\
+            \midrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+
+
+\subsubsection{Priority Queue}
+\begin{algo}
+    
+\end{algo}

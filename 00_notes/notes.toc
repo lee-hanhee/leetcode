@@ -41,4 +41,7 @@
 \contentsline {subsubsection}{\numberline {8.4.1}Common Problems}{29}{subsubsection.8.4.1}%
 \contentsline {section}{\numberline {9}Heaps and Priority Queues}{30}{section.9}%
 \contentsline {subsection}{\numberline {9.1}Heap}{30}{subsection.9.1}%
-\contentsline {subsubsection}{\numberline {9.1.1}Operations}{31}{subsubsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.2}Heapq}{30}{subsection.9.2}%
+\contentsline {subsubsection}{\numberline {9.2.1}Operations}{32}{subsubsection.9.2.1}%
+\contentsline {subsubsection}{\numberline {9.2.2}Common Problem}{33}{subsubsection.9.2.2}%
+\contentsline {subsubsection}{\numberline {9.2.3}Priority Queue}{33}{subsubsection.9.2.3}%
