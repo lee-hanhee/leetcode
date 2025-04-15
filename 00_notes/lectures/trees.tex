@@ -134,7 +134,7 @@ def inorder(self):
         \begin{tabular}{ll}
             \toprule
             \textbf{Problem} & \textbf{Description:} \\
-            226. Invert Binary Tree & Given a binary tree, invert it. \\
+            **226. Invert Binary Tree & Given a binary tree, invert it. \\
             \multicolumn{2}{p{\linewidth}}{
                 \begin{itemize}
                     \item Base case: If the node is None, return.
@@ -143,7 +143,7 @@ def inorder(self):
                 \end{itemize}
             } \\
             \midrule
-            104. Maximum Depth of Binary Tree & Given a binary tree, find its maximum depth. \\
+            **104. Maximum Depth of Binary Tree & Given a binary tree, find its maximum depth. \\
             \multicolumn{2}{p{\linewidth}}{
                 \begin{itemize}
                     \item \textbf{Recursive DFS:}
@@ -171,11 +171,29 @@ def inorder(self):
                 \end{itemize}
             } \\
             \midrule
+            **543. Diameter of Binary Tree & Given a binary tree, find its diameter. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item The diameter is the longest path between any two nodes in the tree.
+                    \item Use DFS to calculate the height of each subtree and update the diameter.
+                    \item The diameter at each node is the sum of the heights of its left and right subtrees.
+                \end{itemize}
+            } \\
+            \midrule
+            
+            \midrule
+            110. Balanced Binary Tree & Given a binary tree, check if it is height-balanced. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item A tree is balanced if the heights of the two child subtrees of any node differ by no more than one.
+                    \item Use DFS to calculate the height of each subtree and check the balance condition.
+                \end{itemize}
+            } \\
+            \midrule
             \bottomrule
         \end{tabular}
     \end{center}
 \end{summary}
-
 \newpage
 
 \subsubsection{BST-based Sets and Maps}
