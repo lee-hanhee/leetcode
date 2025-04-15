@@ -186,6 +186,15 @@ class MinHeap:
                     \end{itemize}
                 } \\
             \midrule
+            973. K Closest Points to Origin & Given an array of points, find the k closest points to the origin. \\
+            \multicolumn{2}{p{\linewidth}}{
+                    \begin{itemize}
+                        \item Use a min-heap to store the points based on their distance using a tuple of (distance, point).
+                        \item While len(heap) > k, pop the largest element.
+                        \item Return the k closest points by using heapq.nsmallest.
+                    \end{itemize}
+                } \\
+            \midrule
         \end{tabular}
     \end{center}
 \end{summary}
