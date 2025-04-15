@@ -131,6 +131,33 @@ class SinglyLinkedList:
 \end{summary}
 \newpage
 
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Problem} & \textbf{Description:} \\
+            \midrule
+                141. Linked List Cycle & Given a linked list, determine if it has a cycle in it. \\
+                \multicolumn{2}{p{\linewidth}}{
+                    \begin{itemize}
+                        \item \textbf{Floyd's Cycle Detection Algorithm:} 
+                        \begin{itemize}
+                            \item Use two pointers (slow and fast) to traverse the list 
+                            \item If they meet, a cycle exists. 
+                        \end{itemize}
+                        \item \textbf{While Condition:} While fast and fast.next are not None b/c fast moves twice as fast so will reach the end first if no cycle.
+                        \begin{itemize}
+                            \item \texttt{fast}: Ensures the fast pointer is not \texttt{None}, so that accessing \texttt{fast.next} is safe.
+                            \item \texttt{fast.next}: Ensures that \texttt{fast.next.next} is valid, allowing the fast pointer to move two steps ahead without error.
+                        \end{itemize}                        
+                    \end{itemize}
+                } \\
+                \midrule
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+
 \subsection{Doubly Linked List}
 \begin{algo}
 
