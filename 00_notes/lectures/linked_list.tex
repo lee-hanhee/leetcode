@@ -147,9 +147,20 @@ class SinglyLinkedList:
                         \end{itemize}
                         \item \textbf{While Condition:} While fast and fast.next are not None b/c fast moves twice as fast so will reach the end first if no cycle.
                         \begin{itemize}
-                            \item \texttt{fast}: Ensures the fast pointer is not \texttt{None}, so that accessing \texttt{fast.next} is safe.
-                            \item \texttt{fast.next}: Ensures that \texttt{fast.next.next} is valid, allowing the fast pointer to move two steps ahead without error.
+                            \item \texttt{fast}: Ensures \texttt{fast} is not \texttt{None}, so \texttt{fast.next} is safe.
+                            \item \texttt{fast.next}: Ensures \text{tt{fast.next}} is not \texttt{None}, so \texttt{fast.next.next} is safe.
                         \end{itemize}                        
+                    \end{itemize}
+                } \\
+                \midrule
+                143. Reorder List & Given a linked list, reorder it in a specific pattern. \\
+                & Specifically, the pattern is to rearrange the list s.t. the first element is followed by \\
+                & the last element, and so on. \\
+                \multicolumn{2}{p{\linewidth}}{
+                    \begin{itemize} 
+                        \item Find the middle of the list using slow and fast pointers.
+                        \item Reverse the second half of the list.
+                        \item Merge the two halves together.
                     \end{itemize}
                 } \\
                 \midrule

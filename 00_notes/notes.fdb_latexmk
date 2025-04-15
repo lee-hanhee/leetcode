@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1744683135.33291 "/Users/hanheelee/Desktop/leetcode/00_notes/notes.tex" "notes.pdf" "notes" 1744683139.76431 0
+["pdflatex"] 1744727312.78241 "/Users/hanheelee/Desktop/leetcode/00_notes/notes.tex" "notes.pdf" "notes" 1744727317.0974 0
   "/Users/hanheelee/Desktop/leetcode/00_notes/notes.tex" 1744675835.31109 1141 3e315aebebce3ca710b838e6c292cc15 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
@@ -358,11 +358,11 @@
   "lectures/3_sliding_window.tex" 1744486090.91899 8984 76861566188d04e9befd28f7027097b6 ""
   "lectures/4_binary_search.tex" 1744504030.44854 879 e3ed5787e461cd9cdbca424774d754f9 ""
   "lectures/images.tex" 1744596889.38594 4352 2cc1d35de8ad9226140344790edbd794 ""
-  "lectures/linked_list.tex" 1744683132.50162 8009 d9e6682cb07fdebf1851337a369a7270 ""
-  "notes.aux" 1744683139.25058 4495 861172e002f83d9ccb153ee97f3105b2 "pdflatex"
-  "notes.out" 1744683139.25332 4697 a2e2c12961f85822a1b62e995571030b "pdflatex"
+  "lectures/linked_list.tex" 1744727311.96126 8601 aa921e0c42d58809e010fc631ec8e06e ""
+  "notes.aux" 1744727316.59006 4495 861172e002f83d9ccb153ee97f3105b2 "pdflatex"
+  "notes.out" 1744727316.59243 4697 a2e2c12961f85822a1b62e995571030b "pdflatex"
   "notes.tex" 1744675835.31109 1141 3e315aebebce3ca710b838e6c292cc15 ""
-  "notes.toc" 1744683139.25421 2742 3e72e5debcde855444709dee42325f95 "pdflatex"
+  "notes.toc" 1744727316.59322 2742 3e72e5debcde855444709dee42325f95 "pdflatex"
   "style.sty" 1744333113.51325 8166 e40cba66fcf97f52c4c0baf1070ffb56 ""
   (generated)
   "notes.aux"
