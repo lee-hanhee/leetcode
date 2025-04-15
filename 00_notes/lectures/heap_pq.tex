@@ -173,6 +173,19 @@ class MinHeap:
                     \end{itemize}
                 } \\
             \midrule
+            1046. Last Stone Weight & You are given an array of integers. \\
+            & Each integer represents the weight of a stone. \\
+            \multicolumn{2}{p{\linewidth}}{
+                    \begin{itemize}
+                        \item Convert the list into a max-heap using heapq with negation. 
+                        \item While there are at least 1 stone in heap:
+                        \begin{itemize}
+                            \item If they are equal, both stones are destroyed. If not, new stone is created and pushed back into the heap.
+                        \end{itemize}
+                        \item Return the weight of the last remaining stone or 0 if there are no stones left.
+                    \end{itemize}
+                } \\
+            \midrule
         \end{tabular}
     \end{center}
 \end{summary}
