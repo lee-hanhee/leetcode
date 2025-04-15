@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1744729347.74394 "/Users/hanheelee/Desktop/leetcode/00_notes/notes.tex" "notes.pdf" "notes" 1744729352.00251 0
-  "/Users/hanheelee/Desktop/leetcode/00_notes/notes.tex" 1744675835.31109 1141 3e315aebebce3ca710b838e6c292cc15 ""
+["pdflatex"] 1744744069.02503 "/Users/hanheelee/Desktop/leetcode/00_notes/notes.tex" "notes.pdf" "notes" 1744744073.63055 0
+  "/Users/hanheelee/Desktop/leetcode/00_notes/notes.tex" 1744743052.84789 1135 82c40e50974663045618813e2241bc08 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -358,11 +358,12 @@
   "lectures/3_sliding_window.tex" 1744486090.91899 8984 76861566188d04e9befd28f7027097b6 ""
   "lectures/4_binary_search.tex" 1744504030.44854 879 e3ed5787e461cd9cdbca424774d754f9 ""
   "lectures/images.tex" 1744596889.38594 4352 2cc1d35de8ad9226140344790edbd794 ""
-  "lectures/linked_list.tex" 1744729347.36991 9613 2712674f1741167c2274558f6ea19e12 ""
-  "notes.aux" 1744729351.53844 4495 861172e002f83d9ccb153ee97f3105b2 "pdflatex"
-  "notes.out" 1744729351.54141 4697 a2e2c12961f85822a1b62e995571030b "pdflatex"
-  "notes.tex" 1744675835.31109 1141 3e315aebebce3ca710b838e6c292cc15 ""
-  "notes.toc" 1744729351.54237 2742 3e72e5debcde855444709dee42325f95 "pdflatex"
+  "lectures/linked_list.tex" 1744743030.5634 9495 8ea63bd2a08879f57ea86df303037622 ""
+  "lectures/trees.tex" 1744744050.83238 8518 cebc500f957bc9b8104d1c477e471d38 ""
+  "notes.aux" 1744744073.16812 5402 c72e2a8c42db4f0056be4559c81596bb "pdflatex"
+  "notes.out" 1744744073.17028 5769 8e455dbc73791bed4a5d307be5891835 "pdflatex"
+  "notes.tex" 1744743052.84789 1135 82c40e50974663045618813e2241bc08 ""
+  "notes.toc" 1744744073.1709 3362 62682f78b5d13939e26330798a659440 "pdflatex"
   "style.sty" 1744333113.51325 8166 e40cba66fcf97f52c4c0baf1070ffb56 ""
   (generated)
   "notes.aux"

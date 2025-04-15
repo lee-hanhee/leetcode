@@ -2,61 +2,130 @@
 \begin{summary}
     \begin{itemize}
         \item A binary tree where for each node, left subtree values are smaller, and right subtree values are larger.
-        \item Enables $\mathcal{O}(\log n)$ average-case operations for insert, delete, search on balanced trees.
-        \item Used to implement sets, maps, and ordered data structures.
-        \item Core operations include search, insertion, deletion, in-order traversal, and range queries.
+        \item \textbf{Balanced vs. Unbalanced:} 
+            \begin{equation*}
+                O(\log (n)) \; \text{(balanced)} \leq O(h) \leq O(n) \; \text{(unbalanced)}
+            \end{equation*}
+        \item \textbf{In-order (Increasing order)}: Visit the left subtree, then the root, and finally the right subtree.
+        \item \textbf{Pre-order}: Visit the root first, then the left subtree, and finally the right subtree.
+        \item \textbf{Post-order}: Visit the left subtree, then the right subtree, and finally the root.
     \end{itemize}
 \end{summary}
 
 \begin{algo}
 \begin{lstlisting}
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+class Node:
+    def __init__(self, key):
+        self.val = key
+        self.left = None
+        self.right = None
 
-def search_bst(root, target):
-    if not root or root.val == target:
-        return root
-    if target < root.val:
-        return search_bst(root.left, target)
-    else:
-        return search_bst(root.right, target)
+class BST:
+    def __init__(self):
+        self.root = None
 
-def insert_bst(root, val):
-    if not root:
-        return TreeNode(val)
-    if val < root.val:
-        root.left = insert_bst(root.left, val)
-    else:
-        root.right = insert_bst(root.right, val)
-    return root
+    def operations(self,_):
+        pass
+\end{lstlisting}
+\end{algo}
 
-def delete_bst(root, key):
-    if not root:
-        return None
-    if key < root.val:
-        root.left = delete_bst(root.left, key)
-    elif key > root.val:
-        root.right = delete_bst(root.right, key)
-    else:
-        if not root.left:
-            return root.right
-        if not root.right:
-            return root.left
-        successor = get_min(root.right)
-        root.val = successor.val
-        root.right = delete_bst(root.right, successor.val)
-    return root
+\newpage
 
-def get_min(node):
-    while node.left:
+\subsection{Operations}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Operation} & \textbf{Time Complexity} \\
+            \midrule
+            Search & $O(h)$ \\
+            \midrule
+            Insert & $O(h)$ \\
+            \midrule
+            Delete & $O(h)$ \\
+            \midrule
+            Find Min/Max & $O(h)$ \\
+            \midrule
+            In-order Traversal & $O(n)$ \\
+        \end{tabular}
+    \end{center}
+\end{summary}
+
+\begin{algo}
+\begin{lstlisting}
+def search(self, key):
+    current = self.root
+    while current:
+        if key == current.val:
+            return current
+        elif key < current.val:
+            current = current.left
+        else:
+            current = current.right
+    return None
+\end{lstlisting}
+\end{algo}
+
+\begin{algo}
+\begin{lstlisting}
+def insert(self, key):
+    def _insert(node, key):
+        if node is None:
+            return TreeNode(key)
+        if key < node.val:
+            node.left = _insert(node.left, key)
+        elif key > node.val:
+            node.right = _insert(node.right, key)
+        return node
+    self.root = _insert(self.root, key)
+\end{lstlisting}
+\end{algo}
+
+\begin{algo}
+\begin{lstlisting}
+def delete(self, key):
+    def _delete(node, key):
+        if node is None:
+            return None
+        if key < node.val:
+            node.left = _delete(node.left, key)
+        elif key > node.val:
+            node.right = _delete(node.right, key)
+        else:
+            # Node with one child or no child
+            if node.left is None:
+                return node.right
+            elif node.right is None:
+                return node.left
+            # Node with two children
+            temp = self._find_min(node.right)
+            node.val = temp.val
+            node.right = _delete(node.right, temp.val)
+        return node
+    self.root = _delete(self.root, key)
+\end{lstlisting}
+\end{algo}
+    
+\begin{algo}
+\begin{lstlisting}
+def _find_min(self, node):
+    while node.left is not None:
         node = node.left
     return node
 \end{lstlisting}
 \end{algo}
 
+\begin{algo}
+\begin{lstlisting}
+def inorder(self):
+    def _inorder(node):
+        if node:
+            _inorder(node.left)
+            print(node.val, end=' ')
+            _inorder(node.right)
+    _inorder(self.root)
+\end{lstlisting}
+\end{algo}    
 \newpage
 
 \subsubsection{Common Problems}
