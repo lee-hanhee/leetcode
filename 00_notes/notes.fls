@@ -577,9 +577,9 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm
-OUTPUT notes.toc
 INPUT /usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
+OUTPUT notes.toc
 INPUT ./lectures/0_general.tex
 INPUT ./lectures/0_general.tex
 INPUT lectures/0_general.tex
@@ -623,6 +623,9 @@ INPUT lectures/images.tex
 INPUT ./lectures/trees.tex
 INPUT ./lectures/trees.tex
 INPUT lectures/trees.tex
+INPUT ./lectures/heap_pq.tex
+INPUT ./lectures/heap_pq.tex
+INPUT lectures/heap_pq.tex
 INPUT notes.aux
 INPUT ./notes.out
 INPUT ./notes.out

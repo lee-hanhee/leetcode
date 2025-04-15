@@ -1,0 +1,91 @@
+\subsection{Heap}
+\begin{summary}
+    \begin{itemize}
+        \item \textbf{Max heap:} Largest key at root, where every parent node is \textbf{greater than or equal to} its children.
+        \item \textbf{Min heap:} Smallest key at root, where every parent node is \textbf{less than or equal to} its children.
+        \item \textbf{Balanced Tree:} $h=\log n$
+        \item \textbf{Indexing:} Given a node at index $i$ in the array:
+        \begin{enumerate}
+            \item \textbf{Parent:} $\text{parent(i)} = \left \lfloor \frac{i}{2} \right \rfloor$
+            \item \textbf{Left child:} $\text{leftchild(i)} = 2i$
+            \item \textbf{Right child:} $\text{rightchild(i)} = 2i+1$
+        \end{enumerate}
+    \end{itemize}
+\end{summary}
+
+\begin{algo}
+\begin{lstlisting}
+class MinHeap:
+    def __init__(self):
+        self.heap = []
+
+    def parent(self, i):
+        return (i - 1) // 2
+
+    def left(self, i):
+        return 2 * i + 1
+
+    def right(self, i):
+        return 2 * i + 2
+
+    def insert(self, key):
+        self.heap.append(key)
+        i = len(self.heap) - 1
+        while i != 0 and self.heap[self.parent(i)] > self.heap[i]:
+            self.heap[i], self.heap[self.parent(i)] = self.heap[self.parent(i)], self.heap[i]
+            i = self.parent(i)
+
+    def heapify(self, i):
+        smallest = i
+        l = self.left(i)
+        r = self.right(i)
+
+        if l < len(self.heap) and self.heap[l] < self.heap[smallest]:
+            smallest = l
+        if r < len(self.heap) and self.heap[r] < self.heap[smallest]:
+            smallest = r
+
+        if smallest != i:
+            self.heap[i], self.heap[smallest] = self.heap[smallest], self.heap[i]
+            self.heapify(smallest)
+
+    def extract_min(self):
+        if not self.heap:
+            return None
+        if len(self.heap) == 1:
+            return self.heap.pop()
+
+        root = self.heap[0]
+        self.heap[0] = self.heap.pop()
+        self.heapify(0)
+        return root
+
+    def get_min(self):
+        return self.heap[0] if self.heap else None
+\end{lstlisting}
+        
+\end{algo}
+
+\subsubsection{Operations}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Operation} & \textbf{Time Complexity} \\
+            \midrule
+            Insert & $O(\log n)$ \\
+            \midrule
+            Extract Min & $O(\log n)$ \\
+            \midrule
+            Get Min & $O(1)$ \\
+            \midrule
+            Heapify & $O(n)$ \\
+            \midrule
+            Build Heap & $O(n)$ \\
+            \midrule
+            Search & $O(n)$ \\
+            \midrule
+            Delete & $O(n)$ \\
+        \end{tabular}
+    \end{center}
+\end{summary}
