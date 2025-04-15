@@ -143,6 +143,34 @@ def inorder(self):
                 \end{itemize}
             } \\
             \midrule
+            104. Maximum Depth of Binary Tree & Given a binary tree, find its maximum depth. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Recursive DFS:}
+                    \begin{itemize}
+                        \item Base case: If the node is None, return 0.
+                        \item Recursively find the maximum depth of left and right subtrees.
+                        \item Return the maximum of the two depths plus one for the current node.
+                    \end{itemize}
+                    \item \textbf{Iterative BFS:}
+                    \begin{itemize}
+                        \item Initialize an empty queue $q$.
+                        \item Append $root$ to $q$ and set $level \gets 0$ unless root is None.
+                        \item While $q$ is not empty:
+                        \begin{itemize}
+                            \item For each node in the current level (\texttt{len(q)} iterations):
+                            \begin{itemize}
+                                \item Pop the front node from $q$.
+                                \item If the node has a left child, append it to $q$.
+                                \item If the node has a right child, append it to $q$.
+                            \end{itemize}
+                            \item Increment $level$ after processing all nodes in the current level.
+                        \end{itemize}
+                        \item Return $level$ as the maximum depth of the tree.
+                    \end{itemize}                    
+                \end{itemize}
+            } \\
+            \midrule
             \bottomrule
         \end{tabular}
     \end{center}
