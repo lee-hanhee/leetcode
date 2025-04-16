@@ -248,6 +248,51 @@ class CircularLinkedList:
                     \end{itemize}
                 } \\
                 \midrule
+                2. Add Two Numbers & Given two non-empty linked lists representing two \\
+                & non-negative integers, add the two numbers and return a linked list. \\
+                \multicolumn{2}{p{\linewidth}}{
+                    \begin{itemize}
+                        \item \textbf{Initialize:} Create a dummy node, use \texttt{cur} to traverse as \texttt{cur = dummy}.
+                        \begin{itemize}
+                            \item Set \texttt{next\_val = 0} to store carry between digit additions.
+                        \end{itemize}
+                        \item \textbf{Helper Function:} \texttt{add\_two\_nodes(n1, n2, next\_val)}
+                        \begin{itemize}
+                            \item Extract values: \texttt{val1 = n1.val if n1 else 0}, \texttt{val2 = n2.val if n2 else 0}.
+                            \item Compute sum:
+                            \begin{itemize}
+                                \item \texttt{rem = (val1 + val2 + next\_val) \% 10}
+                                \item \texttt{next\_val = (val1 + val2 + next\_val) // 10}.
+                            \end{itemize}
+                            \item Return updated carry and new node with value \texttt{rem}.
+                        \end{itemize}
+                        \item \textbf{Traversal Loop:}
+                        \begin{itemize}
+                            \item Continue while at least one of \texttt{l1}, \texttt{l2} exists or \texttt{next\_val != 0}.
+                            \item Call \texttt{add\_two\_nodes(l1, l2, next\_val)} and link result to \texttt{cur.next}.
+                            \item Advance \texttt{cur}, and move \texttt{l1}, \texttt{l2} to their next nodes if they exist.
+                        \end{itemize}
+                    \end{itemize}                    
+                } \\
+                \midrule
+                23. Merge K Sorted Lists & Given an array of k linked lists, each list is sorted in ascending order. \\
+                & Merge all the lists into one sorted linked list and return it. \\
+                \multicolumn{2}{p{\linewidth}}{
+                    \begin{itemize}
+                        \item \textbf{Initialization:} Create a min-heap \texttt{heap} to store tuples \texttt{(node.val, list\_index, node)}.
+                        \begin{itemize}
+                            \item Push the head of each non-empty list in \texttt{lists} into the heap.
+                            \item Initialize dummy node \texttt{dummy} and pointer \texttt{cur = dummy}.
+                        \end{itemize}
+                        \item \textbf{Merge Process:} \textbf{While} \texttt{heap} is not empty:
+                        \begin{itemize}
+                            \item Pop the smallest element \texttt{(min\_val, list\_ind, node)} from the heap.
+                            \item Append \texttt{node} to the result list using \texttt{cur.next = node}, then advance \texttt{cur}.
+                            \item If \texttt{node.next} exists, push \texttt{(node.next.val, list\_ind, node.next)} into the heap.
+                        \end{itemize}
+                        \item \textbf{Return Result:} \texttt{return dummy.next} (skipping dummy head).
+                    \end{itemize}                    
+                } \\
             \bottomrule
         \end{tabular}
     \end{center}
