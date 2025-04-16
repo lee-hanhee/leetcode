@@ -35,13 +35,18 @@
 \contentsline {subsection}{\numberline {8.2}Operations}{22}{subsection.8.2}%
 \contentsline {subsubsection}{\numberline {8.2.1}Common Problems}{24}{subsubsection.8.2.1}%
 \contentsline {subsubsection}{\numberline {8.2.2}BST-based Sets and Maps}{25}{subsubsection.8.2.2}%
-\contentsline {subsection}{\numberline {8.3}Breadth-First Search (BFS)}{26}{subsection.8.3}%
-\contentsline {subsubsection}{\numberline {8.3.1}Common Problems}{27}{subsubsection.8.3.1}%
-\contentsline {subsection}{\numberline {8.4}Depth-First Search (DFS)}{28}{subsection.8.4}%
-\contentsline {subsubsection}{\numberline {8.4.1}Common Problems}{29}{subsubsection.8.4.1}%
-\contentsline {section}{\numberline {9}Heaps and Priority Queues}{30}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Heap}{30}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Heapq}{30}{subsection.9.2}%
-\contentsline {subsubsection}{\numberline {9.2.1}Operations}{32}{subsubsection.9.2.1}%
-\contentsline {subsubsection}{\numberline {9.2.2}Common Problem}{33}{subsubsection.9.2.2}%
-\contentsline {subsubsection}{\numberline {9.2.3}Priority Queue}{33}{subsubsection.9.2.3}%
+\contentsline {section}{\numberline {9}Heaps and Priority Queues}{26}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Heap}{26}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Heapq}{26}{subsection.9.2}%
+\contentsline {subsubsection}{\numberline {9.2.1}Operations}{28}{subsubsection.9.2.1}%
+\contentsline {subsubsection}{\numberline {9.2.2}Common Problem}{29}{subsubsection.9.2.2}%
+\contentsline {subsubsection}{\numberline {9.2.3}Priority Queue}{29}{subsubsection.9.2.3}%
+\contentsline {section}{\numberline {10}Graphs}{30}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Breadth-First Search (BFS)}{30}{subsection.10.1}%
+\contentsline {subsubsection}{\numberline {10.1.1}Common Problems}{31}{subsubsection.10.1.1}%
+\contentsline {subsection}{\numberline {10.2}Depth-First Search (DFS)}{32}{subsection.10.2}%
+\contentsline {subsubsection}{\numberline {10.2.1}Common Problems}{33}{subsubsection.10.2.1}%
+\contentsline {section}{\numberline {11}Backtracking}{34}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Subsets}{34}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Combinations}{34}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Permutations}{34}{subsection.11.3}%

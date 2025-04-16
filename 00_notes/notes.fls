@@ -626,6 +626,12 @@ INPUT lectures/trees.tex
 INPUT ./lectures/heap_pq.tex
 INPUT ./lectures/heap_pq.tex
 INPUT lectures/heap_pq.tex
+INPUT ./lectures/graphs.tex
+INPUT ./lectures/graphs.tex
+INPUT lectures/graphs.tex
+INPUT ./lectures/backtracking.tex
+INPUT ./lectures/backtracking.tex
+INPUT lectures/backtracking.tex
 INPUT notes.aux
 INPUT ./notes.out
 INPUT ./notes.out

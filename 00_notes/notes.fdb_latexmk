@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1744773206.67548 "/Users/hanheelee/Desktop/leetcode/00_notes/notes.tex" "notes.pdf" "notes" 1744773211.42096 0
-  "/Users/hanheelee/Desktop/leetcode/00_notes/notes.tex" 1744751987.87061 1210 966c086ce8db39a10ef4cef05fdfff82 ""
+["pdflatex"] 1744776058.5655 "/Users/hanheelee/Desktop/leetcode/00_notes/notes.tex" "notes.pdf" "notes" 1744776063.64762 0
+  "/Users/hanheelee/Desktop/leetcode/00_notes/notes.tex" 1744775975.48816 1332 ccfca5fe568db55cb68e1f30932c184f ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -357,14 +357,16 @@
   "lectures/2_two_pointers.tex" 1744416984.81862 4013 8c11a3a854dc6d7596b1de53a87d5d3c ""
   "lectures/3_sliding_window.tex" 1744486090.91899 8984 76861566188d04e9befd28f7027097b6 ""
   "lectures/4_binary_search.tex" 1744773192.25241 4280 0dba5214f65501078f009e65b93c5a44 ""
+  "lectures/backtracking.tex" 1744776056.96472 533 d22b7016643c40a476c81b26887b0153 ""
+  "lectures/graphs.tex" 1744774915.37097 3735 0889d53651f56817064610d7fe4b79e3 ""
   "lectures/heap_pq.tex" 1744764207.42061 8739 1c8fcf18c80c718572b04ce540d460b5 ""
   "lectures/images.tex" 1744596889.38594 4352 2cc1d35de8ad9226140344790edbd794 ""
   "lectures/linked_list.tex" 1744743030.5634 9495 8ea63bd2a08879f57ea86df303037622 ""
-  "lectures/trees.tex" 1744749092.41764 11747 53f96067e1a02191f24bfc756a1892b3 ""
-  "notes.aux" 1744773210.97903 6142 e0b28992a0e0237ecb88655cd11af0f1 "pdflatex"
-  "notes.out" 1744773210.98139 6508 a5230c84861cf61a5f96513aacb5ab5c "pdflatex"
-  "notes.tex" 1744751987.87061 1210 966c086ce8db39a10ef4cef05fdfff82 ""
-  "notes.toc" 1744773210.98195 3856 ddfc29b2ca3c1413098f11497600b6dd "pdflatex"
+  "lectures/trees.tex" 1744774775.90366 8455 e92ce4f184074600beff9083d664982f ""
+  "notes.aux" 1744776063.20082 6729 05307e4180b722eb3b10d11324d7be55 "pdflatex"
+  "notes.out" 1744776063.20385 7031 93d7e8cf1da4d85b3620c4c29f44d36b "pdflatex"
+  "notes.tex" 1744775975.48816 1332 ccfca5fe568db55cb68e1f30932c184f ""
+  "notes.toc" 1744776063.20503 4238 eb8e71e6a663d0371a25e7a4286742de "pdflatex"
   "style.sty" 1744333113.51325 8166 e40cba66fcf97f52c4c0baf1070ffb56 ""
   (generated)
   "notes.aux"

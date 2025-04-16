@@ -1,0 +1,114 @@
+\subsection{Breadth-First Search (BFS)}
+\begin{summary}
+    \begin{itemize}
+        \item Use when exploring nodes layer-by-layer, typically in unweighted graphs or grids.
+        \item Ideal for finding the shortest path, level order traversal, or minimum number of steps.
+        \item Queue-based traversal ensures nodes are visited in order of increasing distance from the source.
+    \end{itemize}
+\end{summary}
+
+\begin{algo}
+\begin{lstlisting}
+from collections import deque
+
+def bfs(start, graph):
+    visited = set()
+    queue = deque([start])
+    visited.add(start)
+
+    while queue:
+        node = queue.popleft() # FIFO (BFS)
+
+        for neighbor in graph[node]:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
+\end{lstlisting}
+\end{algo}
+\newpage
+
+\subsubsection{Common Problems}
+\begin{summary}
+\end{summary}
+\newpage
+
+\subsection{Depth-First Search (DFS)}
+
+\begin{summary}
+    \begin{itemize}
+        \item Use when traversing all nodes or paths in \textbf{trees}, \textbf{graphs}, or \textbf{matrices}.
+        \item Ideal for problems involving \textbf{backtracking}, \textbf{recursion}, or exploring all \textbf{connected components}.
+        \item Can be implemented recursively or iteratively with a stack.
+        \item Maintain a \texttt{visited} set or matrix to avoid revisiting nodes.
+        \item Useful for \textbf{topological sorting}, \textbf{cycle detection}, and \textbf{pathfinding}.
+    \end{itemize}
+\end{summary}
+
+\begin{algo}
+\begin{lstlisting}
+from collections import deque
+
+def dfs(start, graph):
+    visited = set()
+    stack = deque([start])
+    visited.add(start)
+
+    while stack:
+        node = stack.pop()  # LIFO (DFS)
+
+        for neighbor in graph[node]:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                stack.append(neighbor) 
+\end{lstlisting}
+    \end{algo}
+
+\begin{algo}
+\begin{lstlisting}
+def dfs(node, visited):
+    if node in visited:
+        return
+
+    visited.add(node)
+
+    for neighbor in graph[node]:
+        dfs(neighbor, visited)
+\end{lstlisting}
+\end{algo}
+
+\newpage
+
+\subsubsection{Common Problems}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Problem} & \textbf{Description:} \\
+            \midrule
+            200. Number of Islands & Given a 2D grid of '1's (land) and '0's (water), count the number of islands. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Use DFS or BFS to explore all connected '1's and mark them as visited.
+                    \item Increment the island count for each unvisited '1'.
+                \end{itemize}
+            } \\
+            \midrule
+            695. Max Area of Island & Given a 2D grid of '1's (land) and '0's (water), find the maximum area of an island. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Use DFS or BFS to explore all connected '1's and calculate the area.
+                    \item Keep track of the maximum area encountered during the traversal.
+                \end{itemize}
+            } \\
+            \midrule
+            79. Word Search & Given a 2D board and a word, check if the word exists in the grid. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Use DFS to explore all possible paths in the grid.
+                    \item Mark cells as visited to avoid revisiting.
+                    \item Backtrack if the current path does not lead to a solution.
+                \end{itemize}
+            } \\
+        \end{tabular}
+    \end{center}
+\end{summary}
