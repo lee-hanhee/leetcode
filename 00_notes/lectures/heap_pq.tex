@@ -299,3 +299,37 @@ def heap_sort(self):
         \end{tabular}
     \end{center}
 \end{summary}
+\newpage
+
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Problem} & \textbf{Description} \\
+            \midrule
+            239. Sliding Window Maximum & Given an array and a window size, \\
+            & find the maximum in each sliding window. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Initialization:}
+                    \begin{itemize}
+                        \item Create an empty max-heap \texttt{heap} using negated values: \texttt{(-value, index)}.
+                        \item Fill the initial window with the first \texttt{k} elements.
+                        \item Append the maximum (top of the heap) to result: \texttt{res.append(-heap[0][0])}.
+                    \end{itemize}
+                    \item \textbf{Sliding the Window:}
+                    \begin{itemize}
+                        \item For each new index \texttt{i}, push \texttt{(-nums[i], i)} into the heap.
+                        \item \textbf{Lazy Removal:} While the top element’s index is outside the window (\texttt{heap[0][1] $\leq$ i - k}), remove it using \texttt{heapq.heappop()}.
+                        \begin{itemize}
+                            \item Heap may contain elements outside the current window, but they are ignored. Only care about root element.
+                        \end{itemize}
+                        \item Append the current maximum to the result: \texttt{res.append(-heap[0][0])}.
+                    \end{itemize}
+                    \item \textbf{Return:} The list \texttt{res} containing all sliding window maximums.
+                \end{itemize}                
+                } \\
+            \midrule
+        \end{tabular}
+    \end{center}
+\end{summary}
