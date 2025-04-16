@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1744776563.62904 "/Users/hanheelee/Desktop/leetcode/00_notes/notes.tex" "notes.pdf" "notes" 1744776568.50026 0
-  "/Users/hanheelee/Desktop/leetcode/00_notes/notes.tex" 1744775975.48816 1332 ccfca5fe568db55cb68e1f30932c184f ""
+["pdflatex"] 1744777654.28574 "/Users/hanheelee/Desktop/leetcode/00_notes/notes.tex" "notes.pdf" "notes" 1744777659.23546 0
+  "/Users/hanheelee/Desktop/leetcode/00_notes/notes.tex" 1744777278.81298 1389 b780ee23d196211080c1e38ae2c4a34d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -362,11 +362,12 @@
   "lectures/heap_pq.tex" 1744764207.42061 8739 1c8fcf18c80c718572b04ce540d460b5 ""
   "lectures/images.tex" 1744596889.38594 4352 2cc1d35de8ad9226140344790edbd794 ""
   "lectures/linked_list.tex" 1744743030.5634 9495 8ea63bd2a08879f57ea86df303037622 ""
+  "lectures/sorting.tex" 1744777653.38224 5185 3c34c87b757045a49e534bad9eba800a ""
   "lectures/trees.tex" 1744774775.90366 8455 e92ce4f184074600beff9083d664982f ""
-  "notes.aux" 1744776568.0558 6729 05307e4180b722eb3b10d11324d7be55 "pdflatex"
-  "notes.out" 1744776568.05879 7031 93d7e8cf1da4d85b3620c4c29f44d36b "pdflatex"
-  "notes.tex" 1744775975.48816 1332 ccfca5fe568db55cb68e1f30932c184f ""
-  "notes.toc" 1744776568.05944 4238 eb8e71e6a663d0371a25e7a4286742de "pdflatex"
+  "notes.aux" 1744777658.78981 7226 1197f1f7873e813775b5df40bf4f3784 "pdflatex"
+  "notes.out" 1744777658.79303 7612 9d63dbf726ff8b8777b84ff765150315 "pdflatex"
+  "notes.tex" 1744777278.81298 1389 b780ee23d196211080c1e38ae2c4a34d ""
+  "notes.toc" 1744777658.79363 4571 ebfa0476a1981845869c79354a1ad8a2 "pdflatex"
   "style.sty" 1744333113.51325 8166 e40cba66fcf97f52c4c0baf1070ffb56 ""
   (generated)
   "notes.aux"

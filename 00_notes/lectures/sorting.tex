@@ -1,0 +1,148 @@
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{lccc}
+        \toprule
+        Name & Space & Time (BC,AC,WC) & Prop. (In-place, Stable, D\&C) \\
+        \toprule
+        \multicolumn{4}{p{\linewidth}}{
+        \begin{center}
+            \textbf{Comparison Based}
+        \end{center}} \\
+        \bottomrule
+        Merge Sort & $\Theta(n)$ & $\Theta(n\log n)$ & $\not$IP,S,DC\\ 
+        \multicolumn{4}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{DS:} Auxiliary arrays
+        \end{itemize}} \\
+        \midrule
+        Quick Sort& $\Theta(1)$, $\Theta(\log n)$,$\Theta(n)$& $\Theta(n \log n)$, $\Theta(n \log n)$,$\Theta(n^2)$& IP, $\not$S,DC\\
+        \multicolumn{4}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{DS:} Original array (in-place)
+            \item Space complexity depends on implementation.
+        \end{itemize}} \\
+        \midrule
+        Heap Sort& $\Theta(1)$& $\Theta (n \log n)$ & IP, $\not$S,$\not$DC \\
+        \multicolumn{4}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{DS:} Binary heap 
+            \item \textbf{Time Complexity:} 
+            \begin{itemize}
+                \item $n$: Number of elements in the input array that need to be sorted.
+                \item $h = \log n$: Height of the binary heap (can be changed)
+            \end{itemize}
+            \item Space complexity doesn't include the input.
+        \end{itemize}} \\
+        \midrule
+        Bubble Sort & $\Theta(1)$ & $\Theta(n)$,$\Theta(n^2)$,$\Theta(n^2)$ & IP,S,$\not$DC\\ 
+        \multicolumn{4}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{DS:} Original array (in-place)
+        \end{itemize}} \\
+        \midrule
+        Selection Sort & $\Theta(1)$ & $\Theta(n^2)$ & IP,$\not$S,$\not$DC\\ 
+        \multicolumn{4}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{DS:} Original array (in-place)
+        \end{itemize}} \\
+        \midrule
+        Insertion Sort & $\Theta(1)$ & $\Theta(n)$,$\Theta(n^2)$,$\Theta(n^2)$ & IP,S,$\not$DC\\ 
+        \multicolumn{4}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{DS:} Original array (in-place)
+        \end{itemize}} \\
+        \toprule
+        \multicolumn{4}{p{\linewidth}}{
+        \begin{center}
+            \textbf{Non-Comparison Based}
+        \end{center}} \\
+        \bottomrule
+        Counting Sort& $\Theta(n+k)$& $\Theta(n+k)$ if $k \gg O(n)$, $\Theta(n)$ if $k \leq O(n)$ & $\not$IP, S,$\not$DC\\
+        \multicolumn{4}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{DS:} Auxiliary arrays
+            \item \textbf{Assumption:} Elements are integers ranging from $0$ to $k$.
+            \item $n$: Size of array
+            \item $k$: Range of numbers (i.e. $[0,...,k]$)
+        \end{itemize}} \\
+        \midrule
+        Radix Sort & $\Theta(n+k)$ & $\Theta(d \cdot (n+k))$ & $\not$IP, S,$\not$DC \\
+        \multicolumn{4}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{DS:} Auxiliary arrays
+            \item \textbf{Assumption:} All elements have $\leq d\text{-digits}$
+            \item \textbf{One pass time complexity:} $O(n+k)$ (i.e. counting sort)
+            \item \textbf{Note:} If $k=d=O(1)$, then $O(n)$ time complexity.
+            \item $n$: Size of array
+            \item $k$: Range of numbers
+            \item $d$: Number of digits
+        \end{itemize}} \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\subsection{Stable, In-place, and Divide and Conquer}
+\begin{definition}
+    \begin{itemize}
+        \item \textbf{Stable:} Relative order of ties is maintained.
+        \begin{itemize}
+            \item e.g. $[2_a,3,2_b,1]\rightarrow [1,2_a,2_b,3]$
+        \end{itemize}
+        \item \textbf{In-place sorting:} $O(1)$ extra space.
+        \item \textbf{Lower bound on comparison-based sorting:} No CBS algorithm on \textbf{unrestricted} range is better than $\Omega(n \log n)$
+    \end{itemize}
+\end{definition}
+
+\subsection{Merge Sort}
+\begin{algo}
+\begin{lstlisting}
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+
+    # Divide
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+
+    # Conquer: Merge two sorted halves
+    return merge(left, right)
+
+def merge(left, right):
+    result = []
+    i = j = 0
+
+    # Merge two sorted lists
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+
+    # Append remaining elements
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+\end{lstlisting}
+\end{algo}
+
+\subsection{Quick Sort}
+\begin{algo}
+\begin{lstlisting}
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+
+    pivot = arr[len(arr) // 2]  # Choose middle element as pivot
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+
+    # Recursively sort left and right, then concatenate
+    return quick_sort(left) + middle + quick_sort(right)
+\end{lstlisting}
+\end{algo}

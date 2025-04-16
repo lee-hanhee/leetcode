@@ -632,6 +632,9 @@ INPUT lectures/graphs.tex
 INPUT ./lectures/backtracking.tex
 INPUT ./lectures/backtracking.tex
 INPUT lectures/backtracking.tex
+INPUT ./lectures/sorting.tex
+INPUT ./lectures/sorting.tex
+INPUT lectures/sorting.tex
 INPUT notes.aux
 INPUT ./notes.out
 INPUT ./notes.out
