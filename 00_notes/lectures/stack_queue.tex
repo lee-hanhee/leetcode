@@ -1,3 +1,4 @@
+\subsection{Stack}
 \begin{summary}
     Data structure that follows Last-In-First-Out (LIFO) order for inserting and removing elements.
     \begin{itemize}
@@ -6,7 +7,7 @@
     \end{itemize}    
 \end{summary}
 
-\subsection{When to Use?}
+\subsubsection{When to Use?}
 \begin{summary}
     \begin{itemize}
         \item Function call management using a call stack.
@@ -15,7 +16,22 @@
     \end{itemize}
 \end{summary}
 
-\subsection{Stack}
+\subsubsection{Operations}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{lc}
+            \toprule
+            \textbf{Operation} & \textbf{Time Complexity (WC)} \\
+            \midrule
+            Push   & $O(1)$ \\
+            Pop    & $O(1)$ \\
+            Peek   & $O(1)$ \\
+            IsEmpty & $O(1)$ \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+
 \begin{algo}
 \begin{lstlisting}[language=Python]
 class Stack:
@@ -37,23 +53,9 @@ class Stack:
         return len(self.items) == 0
 \end{lstlisting}
 \end{algo}
+\newpage
 
-\subsection{Operations}
-\begin{summary}
-    \begin{center}
-        \begin{tabular}{lc}
-            \toprule
-            \textbf{Operation} & \textbf{Time Complexity (WC)} \\
-            \midrule
-            Push   & $O(1)$ \\
-            Pop    & $O(1)$ \\
-            Peek   & $O(1)$ \\
-            IsEmpty & $O(1)$ \\
-            \bottomrule
-        \end{tabular}
-    \end{center}
-\end{summary}
-
+\subsection{Queue}
 \begin{summary}
     Data structure that follows First-In-First-Out (FIFO) order for inserting and removing elements.
     \begin{itemize}
@@ -62,7 +64,7 @@ class Stack:
     \end{itemize}    
 \end{summary}
 
-\subsection{When to Use?}
+\subsubsection{When to Use?}
 \begin{summary}
     \begin{itemize}
         \item Scheduling processes in operating systems.
@@ -71,7 +73,22 @@ class Stack:
     \end{itemize}
 \end{summary}
 
-\subsection{Queue}
+\subsubsection{Operations}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{lc}
+            \toprule
+            \textbf{Operation} & \textbf{Time Complexity (WC)} \\
+            \midrule
+            Enqueue  & $O(1)$ \\
+            Dequeue  & $O(n)$ \\
+            Peek     & $O(1)$ \\
+            IsEmpty  & $O(1)$ \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+
 \begin{algo}
 \begin{lstlisting}
 class Queue:
@@ -93,19 +110,3 @@ class Queue:
         return len(self.items) == 0
 \end{lstlisting}
 \end{algo}
-
-\subsection{Operations}
-\begin{summary}
-    \begin{center}
-        \begin{tabular}{lc}
-            \toprule
-            \textbf{Operation} & \textbf{Time Complexity (WC)} \\
-            \midrule
-            Enqueue  & $O(1)$ \\
-            Dequeue  & $O(n)$ \\
-            Peek     & $O(1)$ \\
-            IsEmpty  & $O(1)$ \\
-            \bottomrule
-        \end{tabular}
-    \end{center}
-\end{summary}
