@@ -132,12 +132,12 @@ def dfs(node, visited):
 \subsection{Topological Sort}
 \begin{summary}
     \begin{itemize}
-        \item Use when processing nodes in a directed acyclic graph (DAG) in a linear order.
-        \item Ideal for scheduling tasks, resolving dependencies, or ordering items.
-        \item Can be implemented using DFS or Kahn's algorithm (BFS).
-        \item Maintain an in-degree count for each node to identify nodes with no dependencies.
-        \item Use a queue to process nodes with zero in-degrees and update the in-degrees of their neighbors.
-        \item Continue until all nodes are processed or a cycle is detected.
+        \item \textbf{Overview:} Produces a total ordering from partial ordering.
+        \item \textbf{DAG:} $G=(V,E)$ must be a DAG to produce a valid topological sorting. 
+        \item Given a DAG, create a linear (total) order out of the partial order $\rightarrow$ "serialize" these events 
+        \begin{itemize}
+            \item \textbf{Intuition:} Arranges the vertices of a DAG in a linear order such that for every directed edge \( u \to v \), vertex \( u \) appears before \( v \).
+        \end{itemize}
     \end{itemize}
 \end{summary}
 
