@@ -1,19 +1,10 @@
-\subsection{When to Use?}
-\begin{summary}
-    \begin{itemize}
-        \item Use when the input is \textbf{sorted} or can be \textbf{monotonically mapped}.
-        \item Common for problems involving \textbf{searching for a target}, \textbf{finding boundaries}, or \textbf{min/max constraints}.
-        \item Works on arrays, answer ranges, or implicit search spaces with $\mathcal{O}(\log n)$ complexity.
-    \end{itemize}
-\end{summary}
-
 \begin{algo}
 \begin{lstlisting}
 def binary_search(nums, target):
     left, right = 0, len(nums) - 1
 
     while left <= right:
-        mid = left + (right - left) // 2
+        mid = (left + right) // 2
 
         if nums[mid] == target:
             return mid
@@ -26,8 +17,40 @@ def binary_search(nums, target):
 \end{lstlisting}
 \end{algo}
 
+\subsection{When to Use?}
+\begin{summary}
+    \begin{itemize}
+        \item Use when the input is \textbf{sorted} or can be \textbf{monotonically mapped}.
+        \item Common for problems involving \textbf{searching for a target}, \textbf{finding boundaries}, or \textbf{min/max constraints}.
+        \item Works on arrays, answer ranges, or implicit search spaces with $\mathcal{O}(\log n)$ complexity.
+    \end{itemize}
+\end{summary}
 \newpage
 
 \subsubsection{Common Problems}
 \begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Problems} & \textbf{Description} \\
+            \midrule
+            704. Binary Search & Given a sorted array of integers, return the index of the target. \\
+            & If not found, return -1. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Implement binary search.
+                \end{itemize}
+            } \\
+            \midrule
+            74. Search a 2D Matrix & Given a 2D matrix, search for a target value. \\
+            & If found, return its index. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Use binary search to find the row by comparing first value of mid row w/ target \& last value of mid row w/ target.
+                    \item Then, use binary search to find the column in that row.
+                \end{itemize}
+            } \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
 \end{summary}
