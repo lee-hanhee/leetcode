@@ -124,6 +124,23 @@ def dfs(node, visited):
                     \item Backtrack if the current path does not lead to a solution.
                 \end{itemize}
             } \\
+            \midrule
+            133. Clone Graph & Given a reference to a node in a connected undirected graph, \\
+            & return a deep copy of the graph. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Initialization:} Create a hash map \texttt{oldToNew} to store mappings from original nodes to their cloned nodes.
+                
+                    \item \textbf{DFS:} Define \texttt{dfs(node)} to recursively clone the graph.
+                    \begin{itemize}
+                        \item \textbf{Base Case:} If \texttt{node} already in \texttt{oldToNew}, return the cloned node.
+                        \item \textbf{Clone Creation:} Create a new \texttt{Node(node.val)}, store in \texttt{oldToNew}.
+                        \item \textbf{Neighbor Cloning:} For each \texttt{neigh} in \texttt{node.neighbors}, recursively clone and append to \texttt{copy.neighbors}.
+                    \end{itemize}
+                
+                    \item \textbf{Entry Point:} Return \texttt{dfs(node)} if \texttt{node} is not \texttt{None}; otherwise return \texttt{None}.
+                \end{itemize}                
+            } \\
         \end{tabular}
     \end{center}
 \end{summary}
