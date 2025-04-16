@@ -203,6 +203,22 @@ class MinHeap:
                         \item Return the root of the heap.
                     \end{itemize}
                 } \\
+            \midrule
+            621. Task Scheduler & Given a list of tasks and a cooldown period, \\
+            & find the least time to finish all tasks. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Use \texttt{Counter} to count the frequency of each task.
+                    \item Use a max-heap to store tasks by frequency: \texttt{(-freq, task)}.
+                    \item Use a queue to track cooldowns: \texttt{(-freq, ready\_time)}.
+                    \item While either heap or queue is non-empty:
+                    \begin{itemize}[noitemsep]
+                        \item Increment \texttt{time}.
+                        \item If heap is non-empty, pop task, decrement frequency, and if not 0, add to queue with \texttt{time + n}.
+                        \item If the front of the queue is ready (\texttt{ready\_time == time}), pop and push it back into the heap.
+                    \end{itemize}
+                \end{itemize}
+                } \\
         \end{tabular}
     \end{center}
 \end{summary}
