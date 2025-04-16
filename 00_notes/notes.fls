@@ -623,6 +623,7 @@ INPUT lectures/images.tex
 INPUT ./lectures/trees.tex
 INPUT ./lectures/trees.tex
 INPUT lectures/trees.tex
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ts1-lmbx10.tfm
 INPUT ./lectures/heap_pq.tex
 INPUT ./lectures/heap_pq.tex
 INPUT lectures/heap_pq.tex

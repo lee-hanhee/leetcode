@@ -6,9 +6,6 @@
             \begin{equation*}
                 O(\log (n)) \; \text{(balanced)} \leq O(h) \leq O(n) \; \text{(unbalanced)}
             \end{equation*}
-        \item \textbf{In-order (Increasing order)}: Visit the left subtree, then the root, and finally the right subtree.
-        \item \textbf{Pre-order}: Visit the root first, then the left subtree, and finally the right subtree.
-        \item \textbf{Post-order}: Visit the left subtree, then the right subtree, and finally the root.
     \end{itemize}
 \end{summary}
 
@@ -28,6 +25,24 @@ class BST:
         pass
 \end{lstlisting}
 \end{algo}
+
+\subsection{In-order, Pre-order, Post-order Traversal}
+\begin{definition}
+    \begin{itemize}
+        \item \textbf{In-order (Left → Root → Right)}: Visit the left subtree, then the root, and finally the right subtree.
+        \begin{itemize}
+            \item Used for retrieving elements in sorted order from a BST.5
+        \end{itemize}
+        \item \textbf{Pre-order (Root → Left → Right)}: Visit the root first, then the left subtree, and finally the right subtree.
+        \begin{itemize}
+            \item Useful for copying or serializing the tree.
+        \end{itemize}
+        \item \textbf{Post-order (Left → Right → Root)}: Visit the left subtree, then the right subtree, and finally the root.
+        \begin{itemize}
+            \item Useful for deleting or freeing nodes in memory.
+        \end{itemize}
+    \end{itemize}
+\end{definition}
 
 \newpage
 
