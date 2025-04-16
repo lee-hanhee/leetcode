@@ -51,6 +51,19 @@ def binary_search(nums, target):
                     \item Then, use binary search to find the column in that row.
                 \end{itemize}
             } \\
+            \midrule
+            875. Koko Eating Bananas & Given an array of piles and an integer h, \\
+            & find the minimum eating speed k such that Koko can eat all bananas in h hours. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Use binary search to find the minimum k w/ l = 0, r = max(piles) since k must be in this range.
+                    \item Check if k is valid by calculating the total hours needed to eat all bananas.
+                    \begin{itemize}
+                        \item for p in piles total\_hours += math.ceil(p / k)
+                        \item Compare total\_hours with h. If hours <= h, update r = mid - 1 and res = mid. Else update l = mid + 1.
+                    \end{itemize}
+                \end{itemize}
+            } \\
             \bottomrule
         \end{tabular}
     \end{center}
