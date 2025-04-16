@@ -609,3 +609,14 @@ INPUT lectures/2_two_pointers.tex
 INPUT ./lectures/3_sliding_window.tex
 INPUT ./lectures/3_sliding_window.tex
 INPUT lectures/3_sliding_window.tex
+INPUT ./lectures/4_binary_search.tex
+INPUT ./lectures/4_binary_search.tex
+INPUT lectures/4_binary_search.tex
+INPUT ./lectures/linked_list.tex
+INPUT ./lectures/linked_list.tex
+INPUT lectures/linked_list.tex
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmr7.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
+INPUT ./lectures/images.tex
+INPUT ./lectures/images.tex
+INPUT lectures/images.tex
