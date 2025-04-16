@@ -2,10 +2,9 @@
 \begin{algo}  Enumerates all $2^n$ subsets of a given set, $\mathcal{S}$, where n is the size of the input set.
 \begin{lstlisting}
 def generate_subsets(S):
-    res = [[]]  # Start with the empty subset
-    for elem in S:
-        # For each existing subset, add a new subset that includes the current element
-        res += [x + [elem] for x in res]
+    res = [[]]
+    for num in nums:
+        res += [subset + [num] for subset in res]
     return res
 \end{lstlisting}
         
