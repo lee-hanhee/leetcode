@@ -146,33 +146,39 @@ return min_or_max_result
             & included in the window. If there is no such substring, return "" \\
             \multicolumn{2}{p{\linewidth}}{
                 \begin{itemize}
-                    \item \textbf{Init:} Set \texttt{left = 0}. Initialize \texttt{count\_t} as frequency map of \texttt{t}, \texttt{count\_s} for current window, and variables \texttt{have = 0}, \texttt{required = len(count\_t)}, \texttt{res = [-1, -1]}, and \texttt{resLen = \textbackslash infty}.
+                    \item \textbf{Init:} Set \texttt{left = 0}. Initialize \texttt{count\_t} as frequency map of \texttt{t}, \texttt{count\_s} for current window, and variables \texttt{have = 0}, \texttt{required = len(count\_t)}, \texttt{res = [-1, -1]}, and \texttt{resLen = infty}.
                     
-                    \item \textbf{For right in range(n):} Expand window by adding \texttt{s[right]} to \texttt{count\_s}. If frequency matches \texttt{count\_t}, increment \texttt{have}.
+                    \item \textbf{For right in range(n):} Expand window by adding \texttt{s[right]} to \texttt{count\_s}. If relevant char and frequency matches \texttt{count\_t}, increment \texttt{have}.
                     
-                    \item \textbf{While have == required:}
                     \begin{itemize}
-                        \item Update result if current window is smaller.
-                        \item Shrink window by decrementing \texttt{count\_s[s[left]]}; if below \texttt{count\_t}, decrement \texttt{have}; increment \texttt{left}.
+                        \item \textbf{While have == required:}
+                        \begin{itemize}
+                            \item Update result if current window is smaller w/ coordinates \texttt{res = [left, right]} and length \texttt{resLen = right - left + 1}.
+                            \item Shrink window by $\downarrow$ \texttt{count\_s[s[left]]}; if below \texttt{count\_t}, decrement \texttt{have}; increment \texttt{left}.
+                        \end{itemize}
                     \end{itemize}
                     
                     \item \textbf{Return:} \texttt{s[res[0]:res[1]+1]} if valid window found, else empty string.
                 \end{itemize}                
             } \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Problem} & \textbf{Description:} \\
             \midrule
             239. Sliding Window Maximum & Given an integer array nums and an integer k, \\
             & return the maximum value in each sliding window of size k. \\
             \multicolumn{2}{p{\linewidth}}{
                 \begin{itemize}
-                    \item \textbf{Init:} Use deque to store indices of elements in the current window. 
-                    \item \textbf{For right in range(n):} 
-                    \begin{itemize}
-                        \item Remove indices that are out of the current window.
-                        \item Remove indices from the back of the deque while the current element is greater than the element at those indices.
-                        \item Append the current index to the deque.
-                        \item If the window size is reached, append the maximum (element at the front of the deque) to the result list.
-                    \end{itemize}
-                \end{itemize}
+                    \item Hi
+                \end{itemize}                
             } \\
             \bottomrule
         \end{tabular}
