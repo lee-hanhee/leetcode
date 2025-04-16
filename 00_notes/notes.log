@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  16 APR 2025 10:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  16 APR 2025 10:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1354,12 +1354,12 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 52--101
  []
 
 [21]) [22] (./lectures/trees.tex [23] [24] [25] [26]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 221--282
+Overfull \hbox (12.0pt too wide) in paragraph at lines 222--283
  [] 
  []
 
 [27]) [28] (./lectures/heap_pq.tex [29] [30] [31]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 160--223
+Overfull \hbox (12.0pt too wide) in paragraph at lines 163--226
  [] 
  []
 
@@ -1379,21 +1379,21 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `notes.out' has not changed.
-(rerunfilecheck)             Checksum: AEB0E95068A61B0535D3E711E7B7678E;10189.
+(rerunfilecheck)             Checksum: 14D7C533D61B53C7CFB42D559F177089;10008.
  ) 
 Here is how much of TeX's memory you used:
- 53665 strings out of 474116
- 1237875 string characters out of 5743683
+ 53661 strings out of 474116
+ 1237763 string characters out of 5743683
  2231757 words of memory out of 5000000
- 74528 multiletter control sequences out of 15000+600000
+ 74525 multiletter control sequences out of 15000+600000
  620308 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,21n,107p,786b,1592s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on notes.pdf (40 pages, 434557 bytes).
+Output written on notes.pdf (40 pages, 434205 bytes).
 PDF statistics:
- 1225 PDF objects out of 1440 (max. 8388607)
- 1135 compressed objects within 12 object streams
- 582 named destinations out of 1000 (max. 500000)
- 565 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1220 PDF objects out of 1440 (max. 8388607)
+ 1130 compressed objects within 12 object streams
+ 581 named destinations out of 1000 (max. 500000)
+ 557 words of extra memory for PDF output out of 10000 (max. 10000000)
 

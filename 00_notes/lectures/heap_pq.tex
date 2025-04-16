@@ -1,10 +1,13 @@
 \subsection{Heap}
 \begin{summary}
     \begin{itemize}
-        \item \textbf{Max heap:} Largest key at root, where every parent node is \textbf{greater than or equal to} its children.
-        \item \textbf{Min heap:} Smallest key at root, where every parent node is \textbf{less than or equal to} its children.
+        \item A \textbf{heap} is a complete binary tree where each node follows the heap property:
+        \begin{itemize}
+            \item \textbf{Max heap:} Largest key at root, where every parent node is \textbf{greater than or equal to} its children.
+            \item \textbf{Min heap:} Smallest key at root, where every parent node is \textbf{less than or equal to} its children.
+        \end{itemize}
         \item \textbf{Balanced Tree:} $h=\log n$
-        \item \textbf{Indexing:} Given a node at index $i$ in the array:
+        \item \textbf{Indexing:} Given a node at index $i$ in the array, assuming 1-based indexing:
         \begin{enumerate}
             \item \textbf{Parent:} $\text{parent(i)} = \left \lfloor \frac{i}{2} \right \rfloor$
             \item \textbf{Left child:} $\text{leftchild(i)} = 2i$
@@ -127,7 +130,7 @@ class MinHeap:
 \end{algo}
 \newpage
 
-\subsubsection{Operations}
+\subsection{Operations}
 \begin{summary}
     \begin{center}
         \begin{tabular}{ll}
@@ -222,9 +225,3 @@ class MinHeap:
         \end{tabular}
     \end{center}
 \end{summary}
-
-
-\subsubsection{Priority Queue}
-\begin{algo}
-    
-\end{algo}
