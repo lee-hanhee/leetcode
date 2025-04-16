@@ -53,7 +53,8 @@ def binary_search(nums, target):
             } \\
             \midrule
             875. Koko Eating Bananas & Given an array of piles and an integer h, \\
-            & find the minimum eating speed k such that Koko can eat all bananas in h hours. \\
+            & find the minimum eating speed k such that Koko can eat \\
+            & all bananas in h hours. \\
             \multicolumn{2}{p{\linewidth}}{
                 \begin{itemize}
                     \item Use binary search to find the minimum k w/ l = 0, r = max(piles) since k must be in this range.
@@ -65,16 +66,27 @@ def binary_search(nums, target):
                 \end{itemize}
             } \\
             \midrule 
-            153. Find Minimum in Rotated Sorted Array & Given a rotated sorted array, find the minimum element. \\
+            **153. Find Minimum in Rotated Sorted Array & Given a rotated sorted array, find the minimum element. \\
             \multicolumn{2}{p{\linewidth}}{
                 \begin{itemize}
-                    \item Store res. 
-                    \item Initialize l = 0, r = len(nums) - 1.
-                    \item While l <= r:
+                    \item Initialize \texttt{res = nums[0]} as a candidate minimum.
+                    \item Set binary search bounds: \texttt{l = 0}, \texttt{r = len(nums) - 1}.
+                    \item While \texttt{l <= r}:
                     \begin{itemize}
-                        \item If nums[l] < nums[r], res = min(res, nums[l]) and break. This means the array is not rotated.
-                        \item Else, get the mid and update res = min(res, nums[mid]). If nums[mid] >= nums[l], update l = mid + 1 (i.e. min is in the right half). Else, update r = mid - 1 (i.e. min is in the left half).
+                        \item If \texttt{nums[l] < nums[r]}, subarray is sorted; update \texttt{res = min(res, nums[l])} and break.
+                        \item Compute midpoint \texttt{m = (l + r) // 2}, update \texttt{res = min(res, nums[m])}.
+                        \item If \texttt{nums[m] >= nums[l]}, left half is sorted; search right: \texttt{l = m + 1}.
+                        \item Else, pivot is in left half; search left: \texttt{r = m - 1}.
                     \end{itemize}
+                    \item Return \texttt{res} as the minimum element.
+                \end{itemize}                
+            } \\
+            \midrule
+            **33. Search in Rotated Sorted Array & Given a rotated sorted array, search for a target value. \\
+            & If found, return its index. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item 
                 \end{itemize}
             } \\
             \midrule
