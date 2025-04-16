@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  16 APR 2025 17:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  16 APR 2025 18:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1348,32 +1348,37 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 206--298
  [] 
  []
 
-[21]) (./lectures/stack_queue.tex [22]) [23] (./lectures/trees.tex [24] [25] [26] [27]
+[21]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 304--333
+ [] 
+ []
+
+) [22] (./lectures/stack_queue.tex [23]) [24] (./lectures/trees.tex [25] [26] [27] [28]
 Overfull \hbox (12.0pt too wide) in paragraph at lines 222--283
  [] 
  []
 
-[28]) [29] (./lectures/heap_pq.tex [30] [31] [32] [33] [34]
+[29]) [30] (./lectures/heap_pq.tex [31] [32] [33] [34] [35]
 Overfull \hbox (12.0pt too wide) in paragraph at lines 237--300
  [] 
  []
 
-[35]
+[36]
 Overfull \hbox (12.0pt too wide) in paragraph at lines 306--334
  [] 
  []
 
-) [36] (./lectures/graphs.tex [37] [38] [39]
+) [37] (./lectures/graphs.tex [38] [39] [40]
 Overfull \hbox (12.0pt too wide) in paragraph at lines 99--128
  [] 
  []
 
-[40]) [41] (./lectures/sorting.tex
+[41]) [42] (./lectures/sorting.tex
 Overfull \hbox (12.0pt too wide) in paragraph at lines 3--82
  [] 
  []
 
-[42]) [43] (./lectures/images.tex
+[43]) [44] (./lectures/images.tex
 Overfull \hbox (22.64009pt too wide) detected at line 39
 []\OT1/lmr/m/n/10 [\OML/lmm/m/it/10 b; c[]; h[]; w[]\OT1/lmr/m/n/10 ] = [] [] [] []
  []
@@ -1383,7 +1388,7 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 52--101
  [] 
  []
 
-[44]) [45] (./notes.aux)
+[45]) [46] (./notes.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -1392,18 +1397,18 @@ Package rerunfilecheck Info: File `notes.out' has not changed.
 (rerunfilecheck)             Checksum: A1D103A1D3923C3DB4DFB997FBDE3EF6;11234.
  ) 
 Here is how much of TeX's memory you used:
- 53778 strings out of 474116
- 1239551 string characters out of 5743683
+ 53780 strings out of 474116
+ 1239574 string characters out of 5743683
  2208757 words of memory out of 5000000
- 74563 multiletter control sequences out of 15000+600000
+ 74564 multiletter control sequences out of 15000+600000
  620308 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,21n,107p,786b,1592s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on notes.pdf (45 pages, 450039 bytes).
+Output written on notes.pdf (46 pages, 451379 bytes).
 PDF statistics:
- 1376 PDF objects out of 1440 (max. 8388607)
- 1280 compressed objects within 13 object streams
- 660 named destinations out of 1000 (max. 500000)
+ 1381 PDF objects out of 1440 (max. 8388607)
+ 1284 compressed objects within 13 object streams
+ 661 named destinations out of 1000 (max. 500000)
  645 words of extra memory for PDF output out of 10000 (max. 10000000)
 

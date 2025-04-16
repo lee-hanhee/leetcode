@@ -298,3 +298,37 @@ class CircularLinkedList:
     \end{center}
 \end{summary}
 \newpage 
+
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Problem} & \textbf{Description:} \\
+            \midrule
+            287. Find the Duplicate Number & Given an array of integers, find the duplicate number. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Phase 1: Cycle Detection (Floyd's Tortoise and Hare)}
+                    \begin{itemize}
+                        \item Initialize two pointers: \texttt{slow = 0}, \texttt{fast = 0}.
+                        \item \textbf{Loop:} Move \texttt{slow = nums[slow]}, \texttt{fast = nums[nums[fast]]}.
+                        \item Continue until \texttt{slow == fast}, indicating an intersection point within the cycle.
+                    \end{itemize}
+                    
+                    \item \textbf{Phase 2: Cycle Entrance (Duplicate Finder)}
+                    \begin{itemize}
+                        \item Initialize a new pointer: \texttt{slow2 = 0}.
+                        \item \textbf{Loop:} Move both \texttt{slow = nums[slow]} and \texttt{slow2 = nums[slow2]}.
+                        \item When \texttt{slow == slow2}, return the value at that index as the duplicate.
+                    \end{itemize}
+                
+                    \item \textbf{Rationale:}
+                    \begin{itemize}
+                        \item Each number is a pointer to the next index; repeated values form a cycle.
+                        \item Detecting the start of the cycle identifies the duplicate.
+                    \end{itemize}
+                \end{itemize}                
+            } \\
+        \end{tabular}
+    \end{center}
+\end{summary}
