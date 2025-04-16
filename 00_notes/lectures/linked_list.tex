@@ -15,7 +15,7 @@
 
 \subsection{Singly Linked List}
 \begin{algo}
-\begin{lstlisting}[language=Python, caption=Singly Linked List in Python]
+\begin{lstlisting}
 class Node:
     def __init__(self, data):
         self.data = data  # Value stored in the node
@@ -30,22 +30,92 @@ class SinglyLinkedList:
 \end{lstlisting}
         
 \end{algo}
+
+\subsubsection{Operations}
 \begin{summary}
     \begin{center}
         \begin{tabular}{lc}
             \toprule
-            \textbf{Operation} & \textbf{Time Complexity} \\
+            \textbf{Operation} & \textbf{Time Complexity (WC)} \\
             \midrule
             Search & $O(n)$ \\
-            Insert & $O(1)$ \\
-            Delete & $O(1)$ \\
+            Insert & $O(n)$ \\
+            Delete & $O(n)$ \\
             Access & $O(n)$ \\
             \bottomrule
         \end{tabular}
     \end{center}
 \end{summary}
+\newpage
 
-\subsection{Operations}
+\subsection{Doubly Linked List}
+\begin{algo}
+\begin{lstlisting}
+class Node:
+    def __init__(self, data):
+        self.data = data  # Value stored in the node
+        self.next = None  # Pointer to the next node
+        self.prev = None  # Pointer to the previous node
+
+class DoublyLinkedList:
+    def __init__(self,data):
+        self.head = Node(data)  # Head of the list
+
+    def operations(self):
+        pass
+\end{lstlisting}
+\end{algo}
+
+\subsubsection{Operations}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{lc}
+            \toprule
+            \textbf{Operation} & \textbf{Time Complexity (WC)} \\
+            \midrule
+            Search & $O(n)$ \\
+            Insert & $O(n)$ \\
+            Delete & $O(n)$ \\
+            Access & $O(n)$ \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\subsection{Circular Linked List}
+\begin{algo}
+\begin{lstlisting}
+class Node:
+    def __init__(self, data):
+        self.data = data  # Value stored in the node
+        self.next = None  # Pointer to the next node
+
+class CircularLinkedList:
+    def __init__(self,data):
+        self.head = Node(data)  # Head of the list
+        self.head.next = self.head  # Point to itself
+
+    def operations(self):
+        pass
+\end{lstlisting}
+\end{algo}  
+
+\subsubsection{Operations}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{lc}
+            \toprule
+            \textbf{Operation} & \textbf{Time Complexity (WC)} \\
+            \midrule
+            Search & $O(n)$ \\
+            Insert & $O(n)$ \\
+            Delete & $O(n)$ \\
+            Access & $O(n)$ \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
 \newpage
 
 \subsection{Common Problems}
