@@ -620,9 +620,6 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
 INPUT ./lectures/stack_queue.tex
 INPUT ./lectures/stack_queue.tex
 INPUT lectures/stack_queue.tex
-INPUT ./lectures/images.tex
-INPUT ./lectures/images.tex
-INPUT lectures/images.tex
 INPUT ./lectures/trees.tex
 INPUT ./lectures/trees.tex
 INPUT lectures/trees.tex
@@ -633,12 +630,12 @@ INPUT lectures/heap_pq.tex
 INPUT ./lectures/graphs.tex
 INPUT ./lectures/graphs.tex
 INPUT lectures/graphs.tex
-INPUT ./lectures/backtracking.tex
-INPUT ./lectures/backtracking.tex
-INPUT lectures/backtracking.tex
 INPUT ./lectures/sorting.tex
 INPUT ./lectures/sorting.tex
 INPUT lectures/sorting.tex
+INPUT ./lectures/images.tex
+INPUT ./lectures/images.tex
+INPUT lectures/images.tex
 INPUT notes.aux
 INPUT ./notes.out
 INPUT ./notes.out
