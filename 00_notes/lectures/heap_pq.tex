@@ -138,7 +138,7 @@ def insert(self, key):
 \end{algo}
 
 \subsubsection{Heapify}
-\begin{algo}
+\begin{algo} Restores the heap property by moving a node down the tree to its correct position. 
 \begin{lstlisting}
 def heapify(self, i):
     smallest = i
@@ -172,7 +172,7 @@ def extract_min(self):
 \end{algo}
 
 \subsubsection{Get Min}
-\begin{algo}
+\begin{algo} Min-heap always has the smallest element at the root.
 \begin{lstlisting}
 def get_min(self):
     return self.heap[0] if self.heap else None
