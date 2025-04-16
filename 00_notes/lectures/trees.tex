@@ -25,29 +25,6 @@ class BST:
         pass
 \end{lstlisting}
 \end{algo}
-
-\subsection{In-order, Pre-order, Post-order Traversal}
-\begin{definition}
-    \begin{itemize}
-        \item \textbf{In-order (Left → Root → Right)}: Visit the left subtree, then the root, and finally the right subtree.
-        \begin{itemize}
-            \item Used for retrieving elements in sorted order from a BST.5
-        \end{itemize}
-        \item \textbf{Pre-order (Root → Left → Right)}: Visit the root first, then the left subtree, and finally the right subtree.
-        \begin{itemize}
-            \item Useful for copying or serializing the tree.
-        \end{itemize}
-        \item \textbf{Post-order (Left → Right → Root)}: Visit the left subtree, then the right subtree, and finally the root.
-        \begin{itemize}
-            \item Useful for deleting or freeing nodes in memory.
-        \end{itemize}
-        \item \textbf{Level-order (Top → Bottom, Left → Root)}: Visit nodes level-level from top to bottom \& left to right.
-        \begin{itemize}
-            \item Useful for finding shortest paths or visualizing layers of a tree.
-        \end{itemize}
-    \end{itemize}
-\end{definition}
-
 \newpage
 
 \subsection{Operations}
@@ -66,6 +43,13 @@ class BST:
             Find Min/Max & $O(h)$ \\
             \midrule
             In-order Traversal & $O(n)$ \\
+            \midrule
+            Pre-order Traversal & $O(n)$ \\
+            \midrule
+            Post-order Traversal & $O(n)$ \\
+            \midrule
+            Level-order Traversal & $O(n)$ \\
+            \bottomrule
         \end{tabular}
     \end{center}
 \end{summary}
@@ -125,26 +109,107 @@ def delete(self, key):
 \end{lstlisting}
 \end{algo}
     
+\subsubsection{Find Min}
 \begin{algo}
 \begin{lstlisting}
-def _find_min(self, node):
+def find_min(self, node):
     while node.left is not None:
         node = node.left
     return node
 \end{lstlisting}
 \end{algo}
 
+\subsubsection{Find Max}
 \begin{algo}
 \begin{lstlisting}
-def inorder(self):
-    def _inorder(node):
-        if node:
-            _inorder(node.left)
-            print(node.val, end=' ')
-            _inorder(node.right)
-    _inorder(self.root)
+def find_max(self, node):
+    while node.right is not None:
+        node = node.right
+    return node
 \end{lstlisting}
-\end{algo}    
+\end{algo}
+
+\subsubsection{DFS In-order Traversal (Left → Root → Right)}
+\begin{definition}
+    Visit the left subtree, then the root, and finally the right subtree.
+    \begin{itemize}
+        \item Used for retrieving elements in sorted order from a BST.
+    \end{itemize}
+\end{definition}
+
+\begin{algo}
+\begin{lstlisting} 
+def inorder(node):
+    if node:
+        inorder(node.left)
+        print(node.val)
+        inorder(node.right)
+\end{lstlisting}  
+\end{algo}
+
+\subsubsection{DFS Pre-order Traversal (Root → Left → Right)}
+\begin{definition}
+    Visit the root first, then the left subtree, and finally the right subtree.
+    \begin{itemize}
+        \item Useful for copying or serializing the tree.
+    \end{itemize}
+\end{definition}
+
+\begin{algo} 
+\begin{lstlisting}
+def preorder(node):
+    if node:
+        print(node.val)
+        preorder(node.left)
+        preorder(node.right)
+\end{lstlisting}
+\end{algo}
+
+\subsubsection{DFS Post-order Traversal (Left → Right → Root)}
+\begin{definition}
+    Visit the left subtree, then the right subtree, and finally the root.
+    \begin{itemize}
+        \item Useful for deleting or freeing nodes in memory.
+    \end{itemize}
+\end{definition}
+
+\begin{algo}
+\begin{lstlisting}
+def postorder(node):
+    if node:
+        postorder(node.left)
+        postorder(node.right)
+        print(node.val)
+\end{lstlisting}
+\end{algo}
+
+\subsubsection{BFS Level-order Traversal (Top → Bottom, Left → Right)}
+\begin{definition}
+    Visit nodes level-level from top to bottom \& left to right.
+    \begin{itemize}
+        \item Useful for finding shortest paths or visualizing layers of a tree.
+    \end{itemize}
+\end{definition}
+
+\begin{algo}
+\begin{lstlisting}
+from collections import deque
+
+def level_order(root):
+    if not root:
+        return
+
+    queue = deque([root])
+    while queue:
+        node = queue.popleft()
+        print(node.val)
+
+        if node.left:
+            queue.append(node.left)
+        if node.right:
+            queue.append(node.right)
+\end{lstlisting}
+\end{algo}
 \newpage
 
 \subsubsection{Common Problems}

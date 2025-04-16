@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  16 APR 2025 00:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  16 APR 2025 00:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1257,7 +1257,10 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 3.
- [1
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 38.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [1
 Non-PDF special ignored!
 <special> header=pstricks.pro
 Non-PDF special ignored!
@@ -1283,7 +1286,7 @@ Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
 Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}])
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}])
 \tf@toc=\write5
 \openout5 = `notes.toc'.
 
@@ -1332,15 +1335,11 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 33--95
 ) [15] (./lectures/linked_list.tex
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 18.
  [16]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 72.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
 Overfull \hbox (12.0pt too wide) in paragraph at lines 54--130
  [] 
  []
 
-[17{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+[17{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
 Overfull \hbox (12.0pt too wide) in paragraph at lines 136--183
  [] 
  []
@@ -1355,47 +1354,47 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 52--101
  [] 
  []
 
-[19]) [20] (./lectures/trees.tex [21] [22] [23]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 153--214
+[19]) [20] (./lectures/trees.tex [21] [22] [23] [24]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 218--279
  [] 
  []
 
-[24]) [25] (./lectures/heap_pq.tex [26] [27] [28]
+[25]) [26] (./lectures/heap_pq.tex [27] [28] [29]
 Overfull \hbox (12.0pt too wide) in paragraph at lines 160--223
  [] 
  []
 
-) [29] (./lectures/graphs.tex [30] [31] [32]
+) [30] (./lectures/graphs.tex [31] [32] [33]
 Overfull \hbox (12.0pt too wide) in paragraph at lines 84--113
  [] 
  []
 
-) [33] (./lectures/backtracking.tex) [34] (./lectures/sorting.tex
+) [34] (./lectures/backtracking.tex) [35] (./lectures/sorting.tex
 Overfull \hbox (12.0pt too wide) in paragraph at lines 3--82
  [] 
  []
 
-[35]) [36] (./notes.aux)
+[36]) [37] (./notes.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `notes.out' has not changed.
-(rerunfilecheck)             Checksum: 32C849708A6976C866FA6D16BAE9D8A5;7884.
+(rerunfilecheck)             Checksum: B6D18D496379B1CF18EE9D1A1A435ECB;9186.
  ) 
 Here is how much of TeX's memory you used:
- 53524 strings out of 474116
- 1235600 string characters out of 5743683
- 2260755 words of memory out of 5000000
- 74491 multiletter control sequences out of 15000+600000
+ 53576 strings out of 474116
+ 1236444 string characters out of 5743683
+ 2236756 words of memory out of 5000000
+ 74506 multiletter control sequences out of 15000+600000
  620308 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,21n,107p,786b,1592s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on notes.pdf (36 pages, 417616 bytes).
+Output written on notes.pdf (37 pages, 422985 bytes).
 PDF statistics:
- 1032 PDF objects out of 1200 (max. 8388607)
- 948 compressed objects within 10 object streams
- 478 named destinations out of 1000 (max. 500000)
- 461 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1103 PDF objects out of 1200 (max. 8388607)
+ 1017 compressed objects within 11 object streams
+ 515 named destinations out of 1000 (max. 500000)
+ 501 words of extra memory for PDF output out of 10000 (max. 10000000)
 
