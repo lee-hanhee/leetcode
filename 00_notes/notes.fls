@@ -617,6 +617,9 @@ INPUT ./lectures/linked_list.tex
 INPUT lectures/linked_list.tex
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmr7.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
+INPUT ./lectures/stack_queue.tex
+INPUT ./lectures/stack_queue.tex
+INPUT lectures/stack_queue.tex
 INPUT ./lectures/images.tex
 INPUT ./lectures/images.tex
 INPUT lectures/images.tex
