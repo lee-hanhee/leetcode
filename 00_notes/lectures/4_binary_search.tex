@@ -46,7 +46,8 @@ def binary_search(nums, target):
             & If found, return its index. \\
             \multicolumn{2}{p{\linewidth}}{
                 \begin{itemize}
-                    \item Use binary search to find the row by comparing first value of mid row w/ target \& last value of mid row w/ target.
+                    \item Use binary search to find the row by comparing first value of mid row < target (decrement bottom) \& last value of mid row < target (increment top).
+                    \item Row is top + bottom // 2.
                     \item Then, use binary search to find the column in that row.
                 \end{itemize}
             } \\
