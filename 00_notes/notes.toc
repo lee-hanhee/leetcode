@@ -33,14 +33,17 @@
 \contentsline {section}{\numberline {8}Trees}{21}{section.8}%
 \contentsline {subsection}{\numberline {8.1}Binary Search Tree (BST)}{21}{subsection.8.1}%
 \contentsline {subsection}{\numberline {8.2}Operations}{22}{subsection.8.2}%
-\contentsline {subsubsection}{\numberline {8.2.1}Find Min}{23}{subsubsection.8.2.1}%
-\contentsline {subsubsection}{\numberline {8.2.2}Find Max}{23}{subsubsection.8.2.2}%
-\contentsline {subsubsection}{\numberline {8.2.3}DFS In-order Traversal (Left → Root → Right)}{23}{subsubsection.8.2.3}%
-\contentsline {subsubsection}{\numberline {8.2.4}DFS Pre-order Traversal (Root → Left → Right)}{23}{subsubsection.8.2.4}%
-\contentsline {subsubsection}{\numberline {8.2.5}DFS Post-order Traversal (Left → Right → Root)}{24}{subsubsection.8.2.5}%
-\contentsline {subsubsection}{\numberline {8.2.6}BFS Level-order Traversal (Top → Bottom, Left → Right)}{24}{subsubsection.8.2.6}%
-\contentsline {subsubsection}{\numberline {8.2.7}Common Problems}{25}{subsubsection.8.2.7}%
-\contentsline {subsubsection}{\numberline {8.2.8}BST-based Sets and Maps}{26}{subsubsection.8.2.8}%
+\contentsline {subsubsection}{\numberline {8.2.1}Search}{22}{subsubsection.8.2.1}%
+\contentsline {subsubsection}{\numberline {8.2.2}Insert}{22}{subsubsection.8.2.2}%
+\contentsline {subsubsection}{\numberline {8.2.3}Delete}{22}{subsubsection.8.2.3}%
+\contentsline {subsubsection}{\numberline {8.2.4}Find Min}{23}{subsubsection.8.2.4}%
+\contentsline {subsubsection}{\numberline {8.2.5}Find Max}{23}{subsubsection.8.2.5}%
+\contentsline {subsubsection}{\numberline {8.2.6}DFS In-order Traversal (Left → Root → Right)}{23}{subsubsection.8.2.6}%
+\contentsline {subsubsection}{\numberline {8.2.7}DFS Pre-order Traversal (Root → Left → Right)}{23}{subsubsection.8.2.7}%
+\contentsline {subsubsection}{\numberline {8.2.8}DFS Post-order Traversal (Left → Right → Root)}{24}{subsubsection.8.2.8}%
+\contentsline {subsubsection}{\numberline {8.2.9}BFS Level-order Traversal (Top → Bottom, Left → Right)}{24}{subsubsection.8.2.9}%
+\contentsline {subsubsection}{\numberline {8.2.10}Common Problems}{25}{subsubsection.8.2.10}%
+\contentsline {subsubsection}{\numberline {8.2.11}BST-based Sets and Maps}{26}{subsubsection.8.2.11}%
 \contentsline {section}{\numberline {9}Heaps and Priority Queues}{27}{section.9}%
 \contentsline {subsection}{\numberline {9.1}Heap}{27}{subsection.9.1}%
 \contentsline {subsection}{\numberline {9.2}Heapq}{27}{subsection.9.2}%
