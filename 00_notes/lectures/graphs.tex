@@ -117,6 +117,34 @@ def bfs(start, graph):
                     \item \textbf{Return:} Return list of coordinates where water can flow to both oceans.
                 \end{itemize}                             
             } \\
+            \midrule
+            130. Surrounded Regions & Given a 2D board containing 'X' and 'O', \\
+            & capture all regions surrounded by 'X'. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Problem Goal:} Flip all 'O's completely surrounded by 'X's to 'X'. 'O's on the border or connected to the border remain unchanged.
+                
+                    \item \textbf{Border Traversal:}
+                    \begin{itemize}
+                        \item Iterate through all border cells (first and last rows, first and last columns).
+                        \item Enqueue all 'O's found on the border into the queue \texttt{q}.
+                    \end{itemize}
+                
+                    \item \textbf{BFS Flood Fill:}
+                    \begin{itemize}
+                        \item For each 'O' in the queue, mark it and all connected 'O's as visited by changing them to temporary symbol '\#'.
+                        \item Only move to valid neighbors that are within bounds, are 'O', and unvisited.
+                    \end{itemize}
+                
+                    \item \textbf{Final Transformation:} Traverse the entire board.
+                    \begin{itemize}
+                        \item Change all remaining 'O's (not connected to border) to 'X'.
+                        \item Change all temporary '\#' markers back to 'O'.
+                    \end{itemize}
+                
+                    \item \textbf{Key Insight:} Only 'O's connected to the border should be preserved. All others are fully surrounded and must be flipped.
+                \end{itemize}                             
+            } \\
             \bottomrule
         \end{tabular}
     \end{center}

@@ -69,13 +69,13 @@
 \contentsline {section}{\numberline {10}Graphs}{41}{section.10}%
 \contentsline {subsection}{\numberline {10.1}Breadth-First Search (BFS)}{41}{subsection.10.1}%
 \contentsline {subsubsection}{\numberline {10.1.1}Common Problems}{42}{subsubsection.10.1.1}%
-\contentsline {subsection}{\numberline {10.2}Depth-First Search (DFS)}{43}{subsection.10.2}%
-\contentsline {subsubsection}{\numberline {10.2.1}Common Problems}{44}{subsubsection.10.2.1}%
-\contentsline {subsection}{\numberline {10.3}Topological Sort}{45}{subsection.10.3}%
-\contentsline {section}{\numberline {11}Sorting}{46}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Stable, In-place, and Divide and Conquer}{47}{subsection.11.1}%
-\contentsline {subsection}{\numberline {11.2}Merge Sort}{47}{subsection.11.2}%
-\contentsline {subsection}{\numberline {11.3}Quick Sort}{47}{subsection.11.3}%
-\contentsline {section}{\numberline {12}Images}{48}{section.12}%
-\contentsline {subsection}{\numberline {12.1}2D Convolution Operations}{48}{subsection.12.1}%
-\contentsline {subsection}{\numberline {12.2}Common Problems}{48}{subsection.12.2}%
+\contentsline {subsection}{\numberline {10.2}Depth-First Search (DFS)}{44}{subsection.10.2}%
+\contentsline {subsubsection}{\numberline {10.2.1}Common Problems}{45}{subsubsection.10.2.1}%
+\contentsline {subsection}{\numberline {10.3}Topological Sort}{46}{subsection.10.3}%
+\contentsline {section}{\numberline {11}Sorting}{47}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Stable, In-place, and Divide and Conquer}{48}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Merge Sort}{48}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Quick Sort}{48}{subsection.11.3}%
+\contentsline {section}{\numberline {12}Images}{49}{section.12}%
+\contentsline {subsection}{\numberline {12.1}2D Convolution Operations}{49}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Common Problems}{49}{subsection.12.2}%
