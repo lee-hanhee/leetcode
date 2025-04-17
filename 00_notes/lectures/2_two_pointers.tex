@@ -61,6 +61,7 @@
         \end{itemize}
     \end{enumerate}
 \end{algo}
+\newpage
 
 \subsubsection{Common Problems}
 \begin{summary}
@@ -93,7 +94,86 @@
                     \item Use front and back pointers. If > target, move back pointer left. If < target, move front pointer right.
                 \end{itemize}
             } \\
+            \midrule
+            11. Container With Most Water & Given n non-negative integers a1, a2, ..., an, where each represents \\
+            & a point at coordinate (i, ai). \\
+            & n vertical lines are drawn such that the two endpoints of line i is at \\
+            & (i, ai) and (i, 0). \\
+            & Find two lines, which together with x-axis forms a container, \\
+            & such that the container contains the most water. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Initialization:}
+                    \begin{itemize}
+                        \item Set \texttt{left = 0}, \texttt{right = len(height) - 1} to have the width as large as possible.
+                        \item Initialize \texttt{maxWater = 0}.
+                    \end{itemize}
+                
+                    \item \textbf{Water Area Calculation:} Define helper function \texttt{amtWater(height, left, right)}:
+                    \begin{itemize}
+                        \item Compute \texttt{height = min(height[left], height[right])}.
+                        \item Compute \texttt{width = right - left}.
+                        \item Return \texttt{height * width}.
+                    \end{itemize}
+                
+                    \item \textbf{Two-Pointer Strategy:} \textbf{While} \texttt{left <= right}:
+                    \begin{itemize}
+                        \item Compute area between \texttt{left} and \texttt{right}, update \texttt{maxWater}.
+                        \item Move the pointer at the shorter line inward:
+                        \begin{itemize}
+                            \item If \texttt{height[left] <= height[right]}, increment \texttt{left}.
+                            \item Else, decrement \texttt{right}.
+                        \end{itemize}
+                    \end{itemize}
+                \end{itemize}                
+            } \\
             \bottomrule
         \end{tabular}
     \end{center}
 \end{summary}
+\newpage
+
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Problem} & \textbf{Description:} \\
+            \midrule
+            42. Trapping Rain Water & Given n non-negative integers representing an elevation map \\
+            & where the width of each bar is 1, compute how much water it can trap \\
+            & after raining. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Initialization:} If \texttt{height} is empty, return 0.
+                    \begin{itemize}
+                        \item Set two pointers: \texttt{l = 0}, \texttt{r = len(height) - 1}.
+                        \item Initialize \texttt{leftMax = height[l]}, \texttt{rightMax = height[r]}, \texttt{res = 0}.
+                    \end{itemize}
+                
+                    \item \textbf{Two-Pointer Traversal:} \textbf{While} \texttt{l < r}:
+                    \begin{itemize}
+                        \item If \texttt{leftMax < rightMax}:
+                        \begin{itemize}
+                            \item Increment \texttt{l}. Update \texttt{leftMax = max(leftMax, height[l])}.
+                            \item Accumulate water: \texttt{res += leftMax - height[l]}.
+                        \end{itemize}
+                        \item Else:
+                        \begin{itemize}
+                            \item Decrement \texttt{r}. Update \texttt{rightMax = max(rightMax, height[r])}.
+                            \item Accumulate water: \texttt{res += rightMax - height[r]}.
+                        \end{itemize}
+                    \end{itemize}
+                    \item \textbf{Intuition:} 
+                    \begin{itemize}
+                        \item Always move the pointer at the side with the smaller maximum, since the water trapped at that point depends on the limiting side.
+                        \item The water accumulated for a column is determined by the height of the column minus the min of the maximum heights on both sides.
+                    \end{itemize}
+                \end{itemize}                
+            } \\ 
+            \midrule
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+
+
