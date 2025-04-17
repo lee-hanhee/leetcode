@@ -330,10 +330,85 @@ def level_order(root):
                 \end{itemize}                
             } \\
             \midrule
+            235. Lowest Common Ancestor of a BST & Given a BST and two nodes, find their lowest common ancestor. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Initialization:} Set \texttt{cur} to the \texttt{root} node of the tree.
+                
+                    \item \textbf{Iterative Traversal:} While \texttt{cur} is not \texttt{None}:
+                        \begin{itemize}
+                            \item If both \texttt{p.val} and \texttt{q.val} are greater than \texttt{cur.val}, move to \texttt{cur.right}.
+                            \item Else if both \texttt{p.val} and \texttt{q.val} are less than \texttt{cur.val}, move to \texttt{cur.left}.
+                            \item Otherwise, \texttt{cur} is the split point where paths to \texttt{p} and \texttt{q} diverge, and thus \texttt{cur} is the lowest common ancestor (LCA).
+                        \end{itemize}
+                
+                    \item \textbf{Return Result:} Return the node \texttt{cur} when the split point is found.
+                \end{itemize}                
+            } \\
+            \midrule
+            102. Binary Tree Level Order Traversal & Given a binary tree, return its level order traversal. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Initialization:} Create an empty list \texttt{res} to store nodes level-by-level.
+                
+                    \item \textbf{Depth-First Search (DFS):} Define a recursive function \texttt{dfs(node, depth)}:
+                        \begin{itemize}
+                            \item If \texttt{node} is \texttt{None}, return immediately.
+                            \item If \texttt{depth} equals the length of \texttt{res}, append a new empty list for this depth level.
+                            \item Append \texttt{node.val} to the corresponding depth list.
+                            \item Recursively call \texttt{dfs(node.left, depth + 1)} and \texttt{dfs(node.right, depth + 1)}.
+                        \end{itemize}
+                
+                    \item \textbf{Return Result:}
+                    \begin{itemize}
+                        \item Call \texttt{dfs(root, 0)} to start traversal.
+                        \item Return the list \texttt{res} containing all levels.
+                    \end{itemize}
+                \end{itemize}                
+            } \\
+            \midrule 
+            98. Validate Binary Search Tree & Given a binary tree, check if it is a valid BST. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Initialization:}
+                    \begin{itemize}
+                        \item If \texttt{root} is \texttt{None}, return \texttt{True}.
+                        \item Initialize a queue \texttt{q} with a tuple containing the root node and its valid range \texttt{(-$\infty$, $\infty$)}.
+                    \end{itemize}
+                
+                    \item \textbf{Breadth-First Search (BFS) Traversal:} While the queue is not empty:
+                        \begin{itemize}
+                            \item Dequeue a node along with its valid value bounds \texttt{(left, right)}.
+                            \item If the node’s value is not strictly between \texttt{left} and \texttt{right}, return \texttt{False}.
+                            \item If the node has a left child, enqueue it with updated bounds \texttt{(left, node.val)}.
+                            \item If the node has a right child, enqueue it with updated bounds \texttt{(node.val, right)}.
+                        \end{itemize}
+                
+                    \item \textbf{Return Result:} After completing traversal without violations, return \texttt{True}.
+                \end{itemize}                              
+            } \\
+            \midrule
+            230. Kth Smallest Element in a BST & Given a BST and an integer k, find the kth smallest element. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Initialization:} Create an empty list \texttt{arr} to store node values in ascending order.
+                
+                    \item \textbf{Depth-First Search (DFS) In-Order Traversal:} Define a recursive function \texttt{dfs(node)}:
+                        \begin{itemize}
+                            \item If \texttt{node} is \texttt{None}, return immediately.
+                            \item Recursively call \texttt{dfs(node.left)} to visit the left subtree.
+                            \item Append \texttt{node.val} to \texttt{arr}.
+                            \item Recursively call \texttt{dfs(node.right)} to visit the right subtree.
+                        \end{itemize}
+                
+                    \item \textbf{Return Result:} DFS starting from the \texttt{root}, return \texttt{arr[k-1]}, which is the $k^{\text{th}}$ smallest element.
+                \end{itemize}   
+            } \\
             \bottomrule
         \end{tabular}
     \end{center}
 \end{summary}
+\newpage
 
 \subsubsection{BST-based Sets and Maps}
 
