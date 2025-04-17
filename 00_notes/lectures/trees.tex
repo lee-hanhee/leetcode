@@ -225,10 +225,18 @@ def level_order(root):
             **226. Invert Binary Tree & Given a binary tree, invert it. \\
             \multicolumn{2}{p{\linewidth}}{
                 \begin{itemize}
-                    \item Base case: If the node is None, return.
-                    \item Swap left and right children of the current node.
-                    \item Recursively call the function on left and right children.
-                \end{itemize}
+                    \item \textbf{Base Case:} If \texttt{root} is \texttt{None}, return \texttt{None}.
+                
+                    \item \textbf{Swap Subtrees:} Swap the left and right children of the current \texttt{root}.
+                
+                    \item \textbf{Recursive Inversion:}
+                    \begin{itemize}
+                        \item Recursively invert the left subtree by calling \texttt{invertTree(root.left)}.
+                        \item Recursively invert the right subtree by calling \texttt{invertTree(root.right)}.
+                    \end{itemize}
+                
+                    \item \textbf{Return Result:} Return the current \texttt{root} after its subtrees have been inverted.
+                \end{itemize}                
             } \\
             \midrule
             **104. Maximum Depth of Binary Tree & Given a binary tree, find its maximum depth. \\
@@ -236,36 +244,58 @@ def level_order(root):
                 \begin{itemize}
                     \item \textbf{Recursive DFS:}
                     \begin{itemize}
-                        \item Base case: If the node is None, return 0.
-                        \item Recursively find the maximum depth of left and right subtrees.
-                        \item Return the maximum of the two depths plus one for the current node.
+                        \item \textbf{Base Case:} If \texttt{root} is \texttt{None}, return \texttt{0}.
+                    
+                        \item \textbf{Recursive Depth Calculation:}
+                        \begin{itemize}
+                            \item Recursively compute the maximum depth of the left subtree by calling \texttt{maxDepth(root.left)}.
+                            \item Recursively compute the maximum depth of the right subtree by calling \texttt{maxDepth(root.right)}.
+                        \end{itemize}
+                    
+                        \item \textbf{Return Result:} Return $1$ plus the maximum of the left and right subtree depths.
                     \end{itemize}
+                    
                     \item \textbf{Iterative BFS:}
                     \begin{itemize}
-                        \item Initialize an empty queue $q$.
-                        \item Append $root$ to $q$ and set $level \gets 0$ unless root is None.
-                        \item While $q$ is not empty:
+                        \item \textbf{Initialization:}
                         \begin{itemize}
-                            \item For each node in the current level (\texttt{len(q)} iterations):
-                            \begin{itemize}
-                                \item Pop the front node from $q$.
-                                \item If the node has a left child, append it to $q$.
-                                \item If the node has a right child, append it to $q$.
-                            \end{itemize}
-                            \item Increment $level$ after processing all nodes in the current level.
+                            \item Create an empty queue \texttt{q}.
+                            \item If \texttt{root} is not \texttt{None}, enqueue \texttt{root} into \texttt{q}.
+                            \item Initialize \texttt{level = 0} to track the depth of the tree.
                         \end{itemize}
-                        \item Return $level$ as the maximum depth of the tree.
-                    \end{itemize}                    
+                    
+                        \item \textbf{Level-Order Traversal:} While the queue is not empty:
+                        \begin{itemize}
+                            \item Iterate over all nodes currently in the queue (nodes at the current depth level).
+                            \item For each node, dequeue it and enqueue its left and right children (if they exist).
+                            \item After processing all nodes at the current level, increment \texttt{level} by $1$.
+                        \end{itemize}
+                    
+                        \item \textbf{Return Result:} Return the final value of \texttt{level} after the traversal completes.
+                    \end{itemize}                              
                 \end{itemize}
             } \\
             \midrule
             **543. Diameter of Binary Tree & Given a binary tree, find its diameter. \\
             \multicolumn{2}{p{\linewidth}}{
                 \begin{itemize}
-                    \item The diameter is the longest path between any two nodes in the tree.
-                    \item Use DFS to calculate the height of each subtree and update the diameter.
-                    \item The diameter at each node is the sum of the heights of its left and right subtrees.
-                \end{itemize}
+                    \item \textbf{Initialization:} Initialize a variable \texttt{res = 0} to store the maximum diameter found.
+                
+                    \item \textbf{Depth-First Search (DFS):} 
+                    \begin{itemize}
+                        \item If \texttt{root} is \texttt{None}, return $0$.
+                        \item Recursively compute the left subtree depth by calling \texttt{dfs(root.left)}.
+                        \item Recursively compute the right subtree depth by calling \texttt{dfs(root.right)}.
+                        \item Update \texttt{res} as the maximum of its current value and \texttt{left + right}.
+                        \item Return $1 + \max(\texttt{left}, \texttt{right})$ to represent the height of the current subtree.
+                    \end{itemize}
+                
+                    \item \textbf{Result:}
+                    \begin{itemize}
+                        \item Call \texttt{dfs(root)} to start the recursion from the root node.
+                        \item Return the final value of \texttt{res}, which represents the diameter of the tree.
+                    \end{itemize}
+                \end{itemize}                
             } \\
             \midrule
 
