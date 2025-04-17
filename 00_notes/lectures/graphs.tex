@@ -108,9 +108,8 @@ def bfs(start, graph):
                         \item Call \texttt{bfs(pacific, pac)} and \texttt{bfs(atlantic, atl)} to fill in reachable matrices.
                     \end{itemize}
                 
-                    \item \textbf{Collect Intersection Points:}
+                    \item \textbf{Collect Intersection Points:} Iterate through all cells in the matrix.
                     \begin{itemize}
-                        \item Iterate through all cells in the matrix.
                         \item If a cell is marked \texttt{True} in both \texttt{pac} and \texttt{atl}, append it to the result.
                     \end{itemize}
                 
@@ -135,11 +134,10 @@ def bfs(start, graph):
                 
                     \item \textbf{Final Transformation:} Traverse the entire board.
                     \begin{itemize}
-                        \item Change all remaining 'O's (not connected to border) to 'X'.
-                        \item Change all temporary '\#' markers back to 'O'.
+                        \item Change all remaining 'O's (not connected to border) to 'X' and all temporary '\#' markers back to 'O'.
                     \end{itemize}
                 
-                    \item \textbf{Key Insight:} Only 'O's connected to the border should be preserved. All others are fully surrounded and must be flipped.
+                    \item \textbf{Key Insight:} Only 'O's connected to the border should be preserved. 
                 \end{itemize}                             
             } \\
             \bottomrule

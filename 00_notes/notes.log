@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  16 APR 2025 22:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  16 APR 2025 22:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1374,26 +1374,26 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 306--334
  []
 
 ) [40] (./lectures/graphs.tex [41]
-Overfull \hbox (21.3559pt too wide) in paragraph at lines 48--147
+Overfull \hbox (21.3559pt too wide) in paragraph at lines 48--145
  [] 
  []
 
-[42] [43] [44]
-Underfull \hbox (badness 1852) in paragraph at lines 244--244
+[42] [43]
+Underfull \hbox (badness 1852) in paragraph at lines 242--242
 []\T1/lmr/bx/n/10 Neighbor Cloning: \T1/lmr/m/n/10 For each \T1/lmtt/m/n/10 neigh \T1/lmr/m/n/10 in \T1/lmtt/m/n/10 node.neighbors\T1/lmr/m/n/10 , re-cur-sively clone and ap-pend to
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 200--247
+Overfull \hbox (12.0pt too wide) in paragraph at lines 198--245
  [] 
  []
 
-[45]) [46] (./lectures/sorting.tex
+[44]) [45] (./lectures/sorting.tex
 Overfull \hbox (12.0pt too wide) in paragraph at lines 3--82
  [] 
  []
 
-[47]) [48] (./lectures/images.tex
+[46]) [47] (./lectures/images.tex
 Overfull \hbox (22.64009pt too wide) detected at line 39
 []\OT1/lmr/m/n/10 [\OML/lmm/m/it/10 b; c[]; h[]; w[]\OT1/lmr/m/n/10 ] = [] [] [] []
  []
@@ -1403,7 +1403,7 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 52--101
  [] 
  []
 
-[49]) [50] (./notes.aux)
+[48]) [49] (./notes.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -1412,18 +1412,18 @@ Package rerunfilecheck Info: File `notes.out' has not changed.
 (rerunfilecheck)             Checksum: 3F6C1339F08FC1AEDE4E9011DD36DB4E;11377.
  ) 
 Here is how much of TeX's memory you used:
- 53819 strings out of 474116
- 1240128 string characters out of 5743683
+ 53817 strings out of 474116
+ 1240105 string characters out of 5743683
  2208757 words of memory out of 5000000
- 74574 multiletter control sequences out of 15000+600000
+ 74573 multiletter control sequences out of 15000+600000
  620308 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,21n,107p,786b,1592s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on notes.pdf (50 pages, 464567 bytes).
+Output written on notes.pdf (49 pages, 463933 bytes).
 PDF statistics:
- 1433 PDF objects out of 1440 (max. 8388607)
- 1331 compressed objects within 14 object streams
- 690 named destinations out of 1000 (max. 500000)
+ 1429 PDF objects out of 1440 (max. 8388607)
+ 1328 compressed objects within 14 object streams
+ 689 named destinations out of 1000 (max. 500000)
  653 words of extra memory for PDF output out of 10000 (max. 10000000)
 
