@@ -254,25 +254,6 @@ def level_order(root):
                     
                         \item \textbf{Return Result:} Return $1$ plus the maximum of the left and right subtree depths.
                     \end{itemize}
-                    
-                    \item \textbf{Iterative BFS:}
-                    \begin{itemize}
-                        \item \textbf{Initialization:}
-                        \begin{itemize}
-                            \item Create an empty queue \texttt{q}.
-                            \item If \texttt{root} is not \texttt{None}, enqueue \texttt{root} into \texttt{q}.
-                            \item Initialize \texttt{level = 0} to track the depth of the tree.
-                        \end{itemize}
-                    
-                        \item \textbf{Level-Order Traversal:} While the queue is not empty:
-                        \begin{itemize}
-                            \item Iterate over all nodes currently in the queue (nodes at the current depth level).
-                            \item For each node, dequeue it and enqueue its left and right children (if they exist).
-                            \item After processing all nodes at the current level, increment \texttt{level} by $1$.
-                        \end{itemize}
-                    
-                        \item \textbf{Return Result:} Return the final value of \texttt{level} after the traversal completes.
-                    \end{itemize}                              
                 \end{itemize}
             } \\
             \midrule
@@ -298,21 +279,61 @@ def level_order(root):
                 \end{itemize}                
             } \\
             \midrule
-
-            \midrule
             110. Balanced Binary Tree & Given a binary tree, check if it is height-balanced. \\
             \multicolumn{2}{p{\linewidth}}{
                 \begin{itemize}
-                    \item A tree is balanced if the heights of the two child subtrees of any node differ by no more than one.
-                    \item Use DFS to calculate the height of each subtree and check the balance condition.
+                    \item \textbf{Recursive Depth-First Search (DFS):}
+                    \begin{itemize}
+                        \item If \texttt{root} is \texttt{None}, return \texttt{[True, 0]} (tree is balanced with height $0$).
+                        \item Recursively check the left and right subtrees by calling \texttt{dfs(root.left)} and \texttt{dfs(root.right)}.
+                        \item A node is balanced if:
+                        \begin{itemize}
+                            \item Both left and right subtrees are balanced.
+                            \item The height difference between the left and right subtrees is at most $1$.
+                        \end{itemize}
+                        \item Return a list \texttt{[isBalanced, height]}, where:
+                        \begin{itemize}
+                            \item \texttt{isBalanced} is a boolean indicating subtree balance.
+                            \item \texttt{height} is $1 + \max(\texttt{left height}, \texttt{right height})$.
+                        \end{itemize}
+                    \end{itemize}
+                
+                    \item \textbf{Return Result:} Return 1st element of the result from \texttt{dfs(root)}, indicating whether entire tree is bal.
                 \end{itemize}
+            } \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Problem} & \textbf{Description:} \\
+            100. Same Tree & Given two binary trees, check if they are the same. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Base Cases:}
+                    \begin{itemize}
+                        \item If both \texttt{p} and \texttt{q} are \texttt{None}, return \texttt{True}.
+                        \item If only one of \texttt{p} or \texttt{q} is \texttt{None}, or their values differ, return \texttt{False}.
+                    \end{itemize}
+                
+                    \item \textbf{Recursive Comparison:}
+                    \begin{itemize}
+                        \item Recursively check if the left subtrees \texttt{p.left} and \texttt{q.left} are identical.
+                        \item Recursively check if the right subtrees \texttt{p.right} and \texttt{q.right} are identical.
+                        \item Return \texttt{True} only if both left and right subtree comparisons return \texttt{True}.
+                    \end{itemize}
+                \end{itemize}                
             } \\
             \midrule
             \bottomrule
         \end{tabular}
     \end{center}
 \end{summary}
-\newpage
 
 \subsubsection{BST-based Sets and Maps}
 
