@@ -121,12 +121,9 @@ def bfs(start, graph):
             130. Surrounded Regions & Given a 2D board containing 'X' and 'O', \\
             & capture all regions surrounded by 'X'. \\
             \multicolumn{2}{p{\linewidth}}{
-                \begin{itemize}
-                    \item \textbf{Problem Goal:} Flip all 'O's completely surrounded by 'X's to 'X'. 'O's on the border or connected to the border remain unchanged.
-                
-                    \item \textbf{Border Traversal:}
+                \begin{itemize}                
+                    \item \textbf{Border Traversal:} Iterate through all border cells (first and last rows, first and last columns).
                     \begin{itemize}
-                        \item Iterate through all border cells (first and last rows, first and last columns).
                         \item Enqueue all 'O's found on the border into the queue \texttt{q}.
                     \end{itemize}
                 
