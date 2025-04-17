@@ -36,46 +36,47 @@
 \contentsline {subsection}{\numberline {7.2}Stack}{26}{subsection.7.2}%
 \contentsline {subsubsection}{\numberline {7.2.1}When to Use?}{26}{subsubsection.7.2.1}%
 \contentsline {subsubsection}{\numberline {7.2.2}Operations}{26}{subsubsection.7.2.2}%
-\contentsline {subsection}{\numberline {7.3}Queue}{27}{subsection.7.3}%
-\contentsline {subsubsection}{\numberline {7.3.1}When to Use?}{27}{subsubsection.7.3.1}%
-\contentsline {subsubsection}{\numberline {7.3.2}Operations}{27}{subsubsection.7.3.2}%
-\contentsline {section}{\numberline {8}Trees}{28}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Binary Search Tree (BST)}{28}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Operations}{29}{subsection.8.2}%
-\contentsline {subsubsection}{\numberline {8.2.1}Search}{29}{subsubsection.8.2.1}%
-\contentsline {subsubsection}{\numberline {8.2.2}Insert}{29}{subsubsection.8.2.2}%
-\contentsline {subsubsection}{\numberline {8.2.3}Delete}{29}{subsubsection.8.2.3}%
-\contentsline {subsubsection}{\numberline {8.2.4}Find Min}{30}{subsubsection.8.2.4}%
-\contentsline {subsubsection}{\numberline {8.2.5}Find Max}{30}{subsubsection.8.2.5}%
-\contentsline {subsubsection}{\numberline {8.2.6}DFS In-order Traversal (Left → Root → Right)}{30}{subsubsection.8.2.6}%
-\contentsline {subsubsection}{\numberline {8.2.7}DFS Pre-order Traversal (Root → Left → Right)}{31}{subsubsection.8.2.7}%
-\contentsline {subsubsection}{\numberline {8.2.8}DFS Post-order Traversal (Left → Right → Root)}{31}{subsubsection.8.2.8}%
-\contentsline {subsubsection}{\numberline {8.2.9}BFS Level-order Traversal (Top → Bottom, Left → Right)}{31}{subsubsection.8.2.9}%
-\contentsline {subsubsection}{\numberline {8.2.10}Common Problems}{32}{subsubsection.8.2.10}%
-\contentsline {subsubsection}{\numberline {8.2.11}BST-based Sets and Maps}{33}{subsubsection.8.2.11}%
-\contentsline {section}{\numberline {9}Heaps and Priority Queues}{34}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Heap}{34}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Heapq}{34}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}Operations}{36}{subsection.9.3}%
-\contentsline {subsubsection}{\numberline {9.3.1}Insert}{36}{subsubsection.9.3.1}%
-\contentsline {subsubsection}{\numberline {9.3.2}Heapify}{36}{subsubsection.9.3.2}%
-\contentsline {subsubsection}{\numberline {9.3.3}Extract Min}{36}{subsubsection.9.3.3}%
-\contentsline {subsubsection}{\numberline {9.3.4}Get Min}{37}{subsubsection.9.3.4}%
-\contentsline {subsubsection}{\numberline {9.3.5}Build Heap}{37}{subsubsection.9.3.5}%
-\contentsline {subsubsection}{\numberline {9.3.6}Search}{37}{subsubsection.9.3.6}%
-\contentsline {subsubsection}{\numberline {9.3.7}Delete}{37}{subsubsection.9.3.7}%
-\contentsline {subsubsection}{\numberline {9.3.8}Heap Sort}{37}{subsubsection.9.3.8}%
-\contentsline {subsubsection}{\numberline {9.3.9}Common Problem}{39}{subsubsection.9.3.9}%
-\contentsline {section}{\numberline {10}Graphs}{41}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Breadth-First Search (BFS)}{41}{subsection.10.1}%
-\contentsline {subsubsection}{\numberline {10.1.1}Common Problems}{42}{subsubsection.10.1.1}%
-\contentsline {subsection}{\numberline {10.2}Depth-First Search (DFS)}{43}{subsection.10.2}%
-\contentsline {subsubsection}{\numberline {10.2.1}Common Problems}{44}{subsubsection.10.2.1}%
-\contentsline {subsection}{\numberline {10.3}Topological Sort}{45}{subsection.10.3}%
-\contentsline {section}{\numberline {11}Sorting}{46}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Stable, In-place, and Divide and Conquer}{47}{subsection.11.1}%
-\contentsline {subsection}{\numberline {11.2}Merge Sort}{47}{subsection.11.2}%
-\contentsline {subsection}{\numberline {11.3}Quick Sort}{47}{subsection.11.3}%
-\contentsline {section}{\numberline {12}Images}{48}{section.12}%
-\contentsline {subsection}{\numberline {12.1}2D Convolution Operations}{48}{subsection.12.1}%
-\contentsline {subsection}{\numberline {12.2}Common Problems}{48}{subsection.12.2}%
+\contentsline {subsubsection}{\numberline {7.2.3}Common Problems}{27}{subsubsection.7.2.3}%
+\contentsline {subsection}{\numberline {7.3}Queue}{29}{subsection.7.3}%
+\contentsline {subsubsection}{\numberline {7.3.1}When to Use?}{29}{subsubsection.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.2}Operations}{29}{subsubsection.7.3.2}%
+\contentsline {section}{\numberline {8}Trees}{30}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Binary Search Tree (BST)}{30}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Operations}{31}{subsection.8.2}%
+\contentsline {subsubsection}{\numberline {8.2.1}Search}{31}{subsubsection.8.2.1}%
+\contentsline {subsubsection}{\numberline {8.2.2}Insert}{31}{subsubsection.8.2.2}%
+\contentsline {subsubsection}{\numberline {8.2.3}Delete}{31}{subsubsection.8.2.3}%
+\contentsline {subsubsection}{\numberline {8.2.4}Find Min}{32}{subsubsection.8.2.4}%
+\contentsline {subsubsection}{\numberline {8.2.5}Find Max}{32}{subsubsection.8.2.5}%
+\contentsline {subsubsection}{\numberline {8.2.6}DFS In-order Traversal (Left → Root → Right)}{32}{subsubsection.8.2.6}%
+\contentsline {subsubsection}{\numberline {8.2.7}DFS Pre-order Traversal (Root → Left → Right)}{33}{subsubsection.8.2.7}%
+\contentsline {subsubsection}{\numberline {8.2.8}DFS Post-order Traversal (Left → Right → Root)}{33}{subsubsection.8.2.8}%
+\contentsline {subsubsection}{\numberline {8.2.9}BFS Level-order Traversal (Top → Bottom, Left → Right)}{33}{subsubsection.8.2.9}%
+\contentsline {subsubsection}{\numberline {8.2.10}Common Problems}{34}{subsubsection.8.2.10}%
+\contentsline {subsubsection}{\numberline {8.2.11}BST-based Sets and Maps}{35}{subsubsection.8.2.11}%
+\contentsline {section}{\numberline {9}Heaps and Priority Queues}{36}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Heap}{36}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Heapq}{36}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Operations}{38}{subsection.9.3}%
+\contentsline {subsubsection}{\numberline {9.3.1}Insert}{38}{subsubsection.9.3.1}%
+\contentsline {subsubsection}{\numberline {9.3.2}Heapify}{38}{subsubsection.9.3.2}%
+\contentsline {subsubsection}{\numberline {9.3.3}Extract Min}{38}{subsubsection.9.3.3}%
+\contentsline {subsubsection}{\numberline {9.3.4}Get Min}{39}{subsubsection.9.3.4}%
+\contentsline {subsubsection}{\numberline {9.3.5}Build Heap}{39}{subsubsection.9.3.5}%
+\contentsline {subsubsection}{\numberline {9.3.6}Search}{39}{subsubsection.9.3.6}%
+\contentsline {subsubsection}{\numberline {9.3.7}Delete}{39}{subsubsection.9.3.7}%
+\contentsline {subsubsection}{\numberline {9.3.8}Heap Sort}{39}{subsubsection.9.3.8}%
+\contentsline {subsubsection}{\numberline {9.3.9}Common Problem}{41}{subsubsection.9.3.9}%
+\contentsline {section}{\numberline {10}Graphs}{43}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Breadth-First Search (BFS)}{43}{subsection.10.1}%
+\contentsline {subsubsection}{\numberline {10.1.1}Common Problems}{44}{subsubsection.10.1.1}%
+\contentsline {subsection}{\numberline {10.2}Depth-First Search (DFS)}{45}{subsection.10.2}%
+\contentsline {subsubsection}{\numberline {10.2.1}Common Problems}{46}{subsubsection.10.2.1}%
+\contentsline {subsection}{\numberline {10.3}Topological Sort}{47}{subsection.10.3}%
+\contentsline {section}{\numberline {11}Sorting}{48}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Stable, In-place, and Divide and Conquer}{49}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Merge Sort}{49}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Quick Sort}{49}{subsection.11.3}%
+\contentsline {section}{\numberline {12}Images}{50}{section.12}%
+\contentsline {subsection}{\numberline {12.1}2D Convolution Operations}{50}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Common Problems}{50}{subsection.12.2}%

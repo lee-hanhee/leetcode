@@ -152,6 +152,132 @@ class Stack:
 \end{algo}
 \newpage
 
+\subsubsection{Common Problems}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Problem} & \textbf{Description} \\
+            \midrule
+            20. Valid Parentheses & Check if parentheses are balanced. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Initialization:}
+                    \begin{itemize}
+                        \item Create an empty \texttt{stack} to track unmatched opening brackets.
+                        \item Define a \texttt{closeToOpen} mapping from closing brackets to corresponding opening brackets.
+                    \end{itemize}
+                
+                    \item \textbf{String Traversal:}
+                    \begin{itemize}
+                        \item For each character:
+                        \begin{itemize}
+                            \item If it is a closing bracket:
+                            \begin{itemize}
+                                \item Check if the stack is non-empty and the top of the stack matches the corresponding opening bracket. If yes, pop the stack; otherwise, return \texttt{False}.
+                            \end{itemize}
+                            \item If it is an opening bracket, push it onto the stack.
+                        \end{itemize}
+                    \end{itemize}
+                
+                    \item \textbf{Final Check:} Return \texttt{True} if the stack is empty (all brackets matched), else \texttt{False}.
+                
+                    \item \textbf{Key Insight:}  The stack ensures that brackets are matched in the correct type and order, guaranteeing validity through last-in, first-out (LIFO) behavior.
+                \end{itemize}                
+            } \\
+            \midrule
+            150. Evaluate Reverse Polish Notation & Evaluate expression in postfix notation. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Initialization:} Create an empty \texttt{stack} to store intermediate operands and results.
+                
+                    \item \textbf{Token Traversal:}
+                    \begin{itemize}
+                        \item For each token in the input list:
+                        \begin{itemize}
+                            \item If the token is an operator (\texttt{+}, \texttt{-}, \texttt{*}, \texttt{/}):
+                            \begin{itemize}
+                                \item Pop the top two elements from the stack.
+                                \item Apply the operator in the correct order (note: for subtraction and division, order matters).
+                                \item Push the result back onto the stack.
+                            \end{itemize}
+                            \item If the token is a number:
+                            \begin{itemize}
+                                \item Convert it to an integer and push it onto the stack.
+                            \end{itemize}
+                        \end{itemize}
+                    \end{itemize}
+                
+                    \item \textbf{Final Result:} Return the top element of the stack, which contains the final evaluated value.
+                
+                    \item \textbf{Key Insight:} Reverse Polish Notation (postfix notation) allows expressions to be evaluated using a stack without parentheses by always applying operations to the two most recent operands.
+                \end{itemize}                              
+            } \\
+            \midrule
+            22. Generate Parentheses & Generate all combinations of valid parentheses. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Initialization:} Create \texttt{stack} to build the current sequence and \texttt{res} list to store valid sequences.
+                
+                    \item \textbf{Recursive Backtracking:} Define a recursive function \texttt{backtrack(openN, closedN)}:
+                    \begin{itemize}
+                        \item If both \texttt{openN} and \texttt{closedN} equal \texttt{n}, a complete valid sequence is formed. Append it to \texttt{res}.
+                        \item If \texttt{openN < n}, add an opening bracket \texttt{"("}, recurse, then backtrack by removing it.
+                        \item If \texttt{closedN < openN}, add a closing bracket \texttt{")"}, recurse, then backtrack by removing it.
+                    \end{itemize}
+                
+                    \item \textbf{Initial Call:} Start the recursion with \texttt{openN = 0}, \texttt{closedN = 0}.
+                
+                    \item \textbf{Return Result:} Return the list \texttt{res} containing all valid combinations.
+                
+                    \item \textbf{Key Insight:} Maintain the constraint that at any point, the number of closing brackets must not exceed the number of opening brackets to ensure sequence validity.
+                \end{itemize}
+            } \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Problem} & \textbf{Description} \\
+            \midrule     
+            739. Daily Temperatures & Find days until a warmer temperature. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Initialization:}
+                    \begin{itemize}
+                        \item Create a result list \texttt{res} initialized with zeros, having the same length as \texttt{temperatures}.
+                        \item Create an empty \texttt{stack} to store pairs of (temperature, index).
+                    \end{itemize}
+                
+                    \item \textbf{Array Traversal:}
+                    \begin{itemize}
+                        \item Iterate through each temperature and its index:
+                        \begin{itemize}
+                            \item While the stack is not empty and the current temperature is greater than the temperature at the top of the stack:
+                            \begin{itemize}
+                                \item Pop the stack, and for the popped index, set the result as the difference between the current index and the popped index.
+                            \end{itemize}
+                            \item Push the current temperature and index onto the stack.
+                        \end{itemize}
+                    \end{itemize}
+                
+                    \item \textbf{Return Result:} Return the result list \texttt{res}, which contains the number of days to wait for a warmer temperature for each day.
+                
+                    \item \textbf{Key Insight:} A monotonic decreasing stack is used to efficiently find, for each day, the next day with a higher temperature, achieving linear $O(n)$ time complexity.
+                \end{itemize}                           
+            } \\
+            \midrule               
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
 \subsection{Queue}
 \begin{summary}
     Data structure that follows First-In-First-Out (FIFO) order for inserting and removing elements.
