@@ -74,6 +74,49 @@ def bfs(start, graph):
                 \end{itemize}                
             } \\
             \midrule
+            417. Pacific Atlantic Water Flow & Given an m x n matrix of non-negative integers representing the height \\
+            & of each cell, return the coordinates of cells that can flow to both the Pacific \& \\
+            & Atlantic oceans. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Initialization:}
+                    \begin{itemize}
+                        \item Define \texttt{ROWS, COLS} as the dimensions of the input matrix.
+                        \item Define \texttt{directions} as the 4 possible adjacent moves (up, down, left, right).
+                        \item Create two 2D boolean matrices: \texttt{pac} and \texttt{atl}, indicating cells reachable by Pacific and Atlantic oceans. 
+                    \end{itemize}
+                
+                    \item \textbf{Construct Ocean Borders:}
+                    \begin{itemize}
+                        \item Initialize Pacific ocean border with all top row and leftmost column coordinates.
+                        \item Initialize Atlantic ocean border with all bottom row and rightmost column coordinates.
+                    \end{itemize}
+                
+                    \item \textbf{BFS Traversal Function:}
+                    \begin{itemize}
+                        \item Perform breadth-first search (BFS) from all coordinates along each ocean's border.
+                        \item For each visited cell, enqueue adjacent cells that:
+                        \begin{itemize}
+                            \item Are within bounds.
+                            \item Are not yet marked as reachable.
+                            \item Have equal or greater height (ensuring water can flow from neighbor to current).
+                        \end{itemize}
+                    \end{itemize}
+                
+                    \item \textbf{Mark Reachable Cells:}
+                    \begin{itemize}
+                        \item Call \texttt{bfs(pacific, pac)} and \texttt{bfs(atlantic, atl)} to fill in reachable matrices.
+                    \end{itemize}
+                
+                    \item \textbf{Collect Intersection Points:}
+                    \begin{itemize}
+                        \item Iterate through all cells in the matrix.
+                        \item If a cell is marked \texttt{True} in both \texttt{pac} and \texttt{atl}, append it to the result.
+                    \end{itemize}
+                
+                    \item \textbf{Return:} Return list of coordinates where water can flow to both oceans.
+                \end{itemize}                             
+            } \\
             \bottomrule
         \end{tabular}
     \end{center}
