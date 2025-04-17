@@ -1,3 +1,100 @@
+\subsection{collections.deque}
+\begin{summary}
+\begin{lstlisting}
+from collections import deque
+\end{lstlisting}
+
+\begin{lstlisting}
+deque(iterable=None, maxlen=None)
+\end{lstlisting}
+\begin{itemize}
+    \item Creates a new deque object initialized with elements from \texttt{iterable}.
+    \item \textbf{Arguments:} \texttt{iterable}: optional iterable of elements; \texttt{maxlen}: maximum number of elements.
+\end{itemize}
+
+\begin{lstlisting}
+d.append(x)
+\end{lstlisting}
+\begin{itemize}
+    \item Adds \texttt{x} to the right end of the deque.
+    \item \textbf{Arguments:} \texttt{x}: element to append.
+\end{itemize}
+
+\begin{lstlisting}
+d.appendleft(x)
+\end{lstlisting}
+\begin{itemize}
+    \item Adds \texttt{x} to the left end of the deque.
+    \item \textbf{Arguments:} \texttt{x}: element to append.
+\end{itemize}
+
+\begin{lstlisting}
+d.pop()
+\end{lstlisting}
+\begin{itemize}
+    \item Removes and returns the rightmost element.
+    \item \textbf{Raises:} \texttt{IndexError} if deque is empty.
+\end{itemize}
+
+\begin{lstlisting}
+d.popleft()
+\end{lstlisting}
+\begin{itemize}
+    \item Removes and returns the leftmost element.
+    \item \textbf{Raises:} \texttt{IndexError} if deque is empty.
+\end{itemize}
+
+\begin{lstlisting}
+d.extend(iterable)
+\end{lstlisting}
+\begin{itemize}
+    \item Appends elements from \texttt{iterable} to the right side.
+    \item \textbf{Arguments:} \texttt{iterable}: iterable of elements to append.
+\end{itemize}
+
+\begin{lstlisting}
+d.extendleft(iterable)
+\end{lstlisting}
+\begin{itemize}
+    \item Appends elements from \texttt{iterable} to the left side (in reverse order).
+    \item \textbf{Arguments:} \texttt{iterable}: iterable of elements to append.
+\end{itemize}
+
+\begin{lstlisting}
+d.rotate(n=1)
+\end{lstlisting}
+\begin{itemize}
+    \item Rotates the deque \texttt{n} steps to the right (left if negative).
+    \item \textbf{Arguments:} \texttt{n}: number of steps to rotate.
+\end{itemize}
+
+\begin{lstlisting}
+d.clear()
+\end{lstlisting}
+\begin{itemize}
+    \item Removes all elements from the deque.
+    \item \textbf{Postcondition:} deque is empty.
+\end{itemize}
+
+\begin{lstlisting}
+d.count(x)
+\end{lstlisting}
+\begin{itemize}
+    \item Counts occurrences of \texttt{x} in the deque.
+    \item \textbf{Arguments:} \texttt{x}: element to count.
+\end{itemize}
+
+\begin{lstlisting}
+d.remove(value)
+\end{lstlisting}
+\begin{itemize}
+    \item Removes the first occurrence of \texttt{value}.
+    \item \textbf{Raises:} \texttt{ValueError} if value is not present.
+\end{itemize}
+
+\end{summary}
+\newpage
+
 \subsection{Stack}
 \begin{summary}
     Data structure that follows Last-In-First-Out (LIFO) order for inserting and removing elements.

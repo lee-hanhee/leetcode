@@ -44,6 +44,39 @@ def bfs(start, graph):
 
 \subsubsection{Common Problems}
 \begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Problem} & \textbf{Description:} \\
+            \midrule
+            994. Rotting Oranges & Given a m x n grid of oranges, \\
+            & where 0 = empty cell, 1 = fresh orange, and 2 = rotten orange, \\
+            & and where fresh oranges rot if adjacent to a rotten orange, \\
+            & return the minimum time required for all oranges to become rotten. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Initialization:}
+                    \begin{itemize}
+                        \item Create a queue \texttt{q} to store coordinates of initially rotten oranges.
+                        \item Count total fresh oranges \texttt{fresh = 0}, and set \texttt{time = 0}.
+                        \item Traverse \texttt{grid}:
+                        \begin{itemize}
+                            \item If \texttt{grid[r][c] == 1}, increment \texttt{fresh}.
+                            \item If \texttt{grid[r][c] == 2}, append \texttt{(r, c)} to \texttt{q}.
+                        \end{itemize}
+                    \end{itemize}
+                    \item \textbf{BFS Propagation:} \textbf{While} \texttt{fresh > 0 and q} is not empty:
+                    \begin{itemize}
+                        \item Go through all rotten oranges in \texttt{q} and check their neighbors to mark it as rotten.
+                        \item Increment \texttt{time} after each level (i.e. after processing all rotten oranges at the current level).
+                    \end{itemize}
+                    \item \textbf{Return Result:} If \texttt{fresh == 0}, return \texttt{time}; else return \texttt{-1}.
+                \end{itemize}                
+            } \\
+            \midrule
+            \bottomrule
+        \end{tabular}
+    \end{center}
 \end{summary}
 \newpage
 
@@ -141,6 +174,7 @@ def dfs(node, visited):
                     \item \textbf{Entry Point:} Return \texttt{dfs(node)} if \texttt{node} is not \texttt{None}; otherwise return \texttt{None}.
                 \end{itemize}                
             } \\
+            \midrule 
         \end{tabular}
     \end{center}
 \end{summary}
