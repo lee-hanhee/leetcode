@@ -74,6 +74,16 @@ heapq.nsmallest(n, iterable)
     \item \textbf{Arguments:} \texttt{n}: number of elements; \texttt{iterable}: list or other iterable.
 \end{itemize}        
 \end{summary}
+
+\begin{notes}
+    \begin{itemize}
+        \item In general, when pushing tuples to a heap in Python:
+        \begin{itemize}
+            \item The first element determines the primary priority.
+            \item If equal, subsequent elements serve as tie-breakers.
+        \end{itemize}
+    \end{itemize}
+\end{notes}
 \newpage
 
 \begin{algo}
