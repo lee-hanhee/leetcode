@@ -207,32 +207,32 @@ class CircularLinkedList:
             \toprule
             \textbf{Problem} & \textbf{Description:} \\
             \midrule
-                141. Linked List Cycle & Given a linked list, determine if it has a cycle in it. \\
-                \multicolumn{2}{p{\linewidth}}{
-                    \begin{itemize}
-                        \item \textbf{Floyd's Cycle Detection Algorithm:} 
-                        \begin{itemize}
-                            \item Use two pointers (slow and fast) to traverse the list 
-                            \item If they meet, a cycle exists. 
-                        \end{itemize}
-                        \item \textbf{While Condition:} While fast and fast.next are not None b/c fast moves twice as fast so will reach the end first if no cycle.
-                        \begin{itemize}
-                            \item \texttt{fast}: Ensures \texttt{fast} is not \texttt{None}, so \texttt{fast.next} is safe.
-                            \item \texttt{fast.next}: Ensures \text{tt{fast.next}} is not \texttt{None}, so \texttt{fast.next.next} is safe.
-                        \end{itemize}                        
-                    \end{itemize}
-                } \\
-                \midrule
-                143. Reorder List & Given a linked list, reorder it in a specific pattern. \\
-                & Specifically, the pattern is to rearrange the list s.t. \\
-                & the first element is followed by the last element, and so on. \\
-                \multicolumn{2}{p{\linewidth}}{
-                    \begin{itemize} 
-                        \item Find middle of list using slow/fast pointers w/ Floyd's algorithm, but have fast start at 2nd node.
-                        \item Reverse the second half of the list using 206. 
-                        \item Merge the two halves together.
-                    \end{itemize}
-                } \\
+                % 141. Linked List Cycle & Given a linked list, determine if it has a cycle in it. \\
+                % \multicolumn{2}{p{\linewidth}}{
+                %     \begin{itemize}
+                %         \item \textbf{Floyd's Cycle Detection Algorithm:} 
+                %         \begin{itemize}
+                %             \item Use two pointers (slow and fast) to traverse the list 
+                %             \item If they meet, a cycle exists. 
+                %         \end{itemize}
+                %         \item \textbf{While Condition:} While fast and fast.next are not None b/c fast moves twice as fast so will reach the end first if no cycle.
+                %         \begin{itemize}
+                %             \item \texttt{fast}: Ensures \texttt{fast} is not \texttt{None}, so \texttt{fast.next} is safe.
+                %             \item \texttt{fast.next}: Ensures \text{tt{fast.next}} is not \texttt{None}, so \texttt{fast.next.next} is safe.
+                %         \end{itemize}                        
+                %     \end{itemize}
+                % } \\
+                % \midrule
+                % 143. Reorder List & Given a linked list, reorder it in a specific pattern. \\
+                % & Specifically, the pattern is to rearrange the list s.t. \\
+                % & the first element is followed by the last element, and so on. \\
+                % \multicolumn{2}{p{\linewidth}}{
+                %     \begin{itemize} 
+                %         \item Find middle of list using slow/fast pointers w/ Floyd's algorithm, but have fast start at 2nd node.
+                %         \item Reverse the second half of the list using 206. 
+                %         \item Merge the two halves together.
+                %     \end{itemize}
+                % } \\
                 \midrule 
                 19. Remove Nth Node From End of List & Given a linked list, remove the Nth node from the end of the list. \\
                 \multicolumn{2}{p{\linewidth}}{
