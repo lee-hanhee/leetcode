@@ -118,13 +118,13 @@ class CircularLinkedList:
 \end{summary}
 \newpage
 
-\subsection{Common Problems}
-\begin{summary}
-    \begin{center}
-        \begin{tabular}{ll}
-            \toprule
-            \textbf{Problem} & \textbf{Description:} \\
-            \midrule
+% \subsection{Common Problems}
+% \begin{summary}
+%     \begin{center}
+%         \begin{tabular}{ll}
+%             \toprule
+%             \textbf{Problem} & \textbf{Description:} \\
+%             \midrule
                 % 206. Reverse Linked List & Given the head of a singly linked list, reverse the list and return the reversed list. \\
                 % \multicolumn{2}{p{\linewidth}}{
                 %     \begin{itemize}
@@ -141,64 +141,64 @@ class CircularLinkedList:
                 %     \end{itemize}
                 % } \\
                 % \midrule
-                21. Merge Two Sorted Lists & Given two sorted linked lists, merge them into one sorted list. \\
-                \multicolumn{2}{p{\linewidth}}{
-                    \begin{itemize}
-                        \item \textbf{Initialize a dummy head:} 
-                        \begin{itemize}
-                            \item \texttt{dummy = ListNode()}: Placeholder node to simplify edge case handling. 
-                            \item \texttt{current = dummy}: Build the merged list step-by-step.
-                        \end{itemize}
+                % 21. Merge Two Sorted Lists & Given two sorted linked lists, merge them into one sorted list. \\
+                % \multicolumn{2}{p{\linewidth}}{
+                %     \begin{itemize}
+                %         \item \textbf{Initialize a dummy head:} 
+                %         \begin{itemize}
+                %             \item \texttt{dummy = ListNode()}: Placeholder node to simplify edge case handling. 
+                %             \item \texttt{current = dummy}: Build the merged list step-by-step.
+                %         \end{itemize}
                     
-                        \item \textbf{Iterate through both lists while neither is empty:} 
-                        \begin{itemize}
-                            \item \textbf{Compare current nodes:}
-                            \begin{itemize}
-                                \item If \texttt{list1.val <= list2.val}, attach \texttt{list1}'s node to \texttt{current.next}, and move \texttt{list1} forward. Otherwise, do the same for \texttt{list2}.
-                            \end{itemize}
-                            \item Move the \texttt{current} pointer forward.
-                        \end{itemize}
+                %         \item \textbf{Iterate through both lists while neither is empty:} 
+                %         \begin{itemize}
+                %             \item \textbf{Compare current nodes:}
+                %             \begin{itemize}
+                %                 \item If \texttt{list1.val <= list2.val}, attach \texttt{list1}'s node to \texttt{current.next}, and move \texttt{list1} forward. Otherwise, do the same for \texttt{list2}.
+                %             \end{itemize}
+                %             \item Move the \texttt{current} pointer forward.
+                %         \end{itemize}
                     
-                        \item \textbf{Attach remaining nodes (if any):} After the loop, only one of \texttt{list1} or \texttt{list2} may still have nodes left. 
-                        \begin{itemize}
-                            \item \texttt{current.next = list1 if list1 else list2} ensures the remainder is attached.
-                        \end{itemize}
+                %         \item \textbf{Attach remaining nodes (if any):} After the loop, only one of \texttt{list1} or \texttt{list2} may still have nodes left. 
+                %         \begin{itemize}
+                %             \item \texttt{current.next = list1 if list1 else list2} ensures the remainder is attached.
+                %         \end{itemize}
                     
-                        \item \textbf{Return the merged list:} \texttt{return dummy.next} returns actual start of the merged list.
-                        \begin{itemize}
-                        \item \textbf{Visualization:}
-                        \begin{itemize}
-                            \item \textbf{Initial state:}
+                %         \item \textbf{Return the merged list:} \texttt{return dummy.next} returns actual start of the merged list.
+                %         \begin{itemize}
+                %         \item \textbf{Visualization:}
+                %         \begin{itemize}
+                %             \item \textbf{Initial state:}
                             
-                            \begin{itemize}
-                                \item List1: $\underbrace{1}_{\text{list1}} \rightarrow 2 \rightarrow 4$
-                                \item List2: $\underbrace{1}_{\text{list2}} \rightarrow 3 \rightarrow 4$
-                                \item Merged List: $\underbrace{\text{dummy}}_{\text{start}} \rightarrow$
-                            \end{itemize}
+                %             \begin{itemize}
+                %                 \item List1: $\underbrace{1}_{\text{list1}} \rightarrow 2 \rightarrow 4$
+                %                 \item List2: $\underbrace{1}_{\text{list2}} \rightarrow 3 \rightarrow 4$
+                %                 \item Merged List: $\underbrace{\text{dummy}}_{\text{start}} \rightarrow$
+                %             \end{itemize}
                         
-                            \item \textbf{Step 1: Compare list1 and list2 (1 $\leq$ 1), take list1}
+                %             \item \textbf{Step 1: Compare list1 and list2 (1 $\leq$ 1), take list1}
                             
-                            \begin{itemize}
-                                \item dummy $\rightarrow \underbrace{1}_{\text{current}} \rightarrow$
-                                \item list1 $\rightarrow \underbrace{2}_{\text{list1}} \rightarrow 4$
-                                \item list2 unchanged: $\underbrace{1}_{\text{list2}} \rightarrow 3 \rightarrow 4$
-                            \end{itemize}
+                %             \begin{itemize}
+                %                 \item dummy $\rightarrow \underbrace{1}_{\text{current}} \rightarrow$
+                %                 \item list1 $\rightarrow \underbrace{2}_{\text{list1}} \rightarrow 4$
+                %                 \item list2 unchanged: $\underbrace{1}_{\text{list2}} \rightarrow 3 \rightarrow 4$
+                %             \end{itemize}
                         
-                            \item \textbf{Step 2: Compare 2 and 1 (2 $>$ 1), take list2}
+                %             \item \textbf{Step 2: Compare 2 and 1 (2 $>$ 1), take list2}
                             
-                            \begin{itemize}
-                                \item dummy $\rightarrow 1 \rightarrow \underbrace{1}_{\text{current}} \rightarrow$
-                                \item list1 remains: $\underbrace{2}_{\text{list1}} \rightarrow 4$
-                                \item list2 $\rightarrow \underbrace{3}_{\text{list2}} \rightarrow 4$
-                            \end{itemize}
-                        \end{itemize}
-                        \end{itemize}                        
-                    \end{itemize}                    
-                } \\
-            \bottomrule
-        \end{tabular}
-    \end{center}
-\end{summary}
+                %             \begin{itemize}
+                %                 \item dummy $\rightarrow 1 \rightarrow \underbrace{1}_{\text{current}} \rightarrow$
+                %                 \item list1 remains: $\underbrace{2}_{\text{list1}} \rightarrow 4$
+                %                 \item list2 $\rightarrow \underbrace{3}_{\text{list2}} \rightarrow 4$
+                %             \end{itemize}
+                %         \end{itemize}
+                %         \end{itemize}                        
+                %     \end{itemize}                    
+                % } \\
+%             \bottomrule
+%         \end{tabular}
+%     \end{center}
+% \end{summary}
 \newpage
 
 \begin{summary}
