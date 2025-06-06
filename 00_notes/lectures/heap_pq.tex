@@ -248,49 +248,49 @@ def heap_sort(self):
             \toprule
             \textbf{Problem} & \textbf{Description} \\
             \midrule
-            703. Kth Largest Element in a Stream & Design a class to find the kth largest element in a stream of numbers. \\
-            \multicolumn{2}{p{\linewidth}}{
-                    \begin{itemize}
-                        \item Implement a heap that keeps track of the k largest elements using a min-heap so that the kth largest element is always at the root. 
-                        \item \textbf{Process:}
-                        \begin{enumerate}
-                            \item Change list into heap. If more than $k$ elements, pop until only $k$ elements remain.
-                            \item Add: Push new element into heap. If size exceeds $k$, pop the smallest element. Return the root.
-                        \end{enumerate}
-                    \end{itemize}
-                } \\
-            \midrule
-            1046. Last Stone Weight & You are given an array of integers. \\
-            & Each integer represents the weight of a stone. \\
-            \multicolumn{2}{p{\linewidth}}{
-                    \begin{itemize}
-                        \item Convert the list into a max-heap using heapq with negation. 
-                        \item While there are at least 1 stone in heap:
-                        \begin{itemize}
-                            \item If they are equal, both stones are destroyed. If not, new stone is created and pushed back into the heap.
-                        \end{itemize}
-                        \item Return the weight of the last remaining stone or 0 if there are no stones left.
-                    \end{itemize}
-                } \\
-            \midrule
-            973. K Closest Points to Origin & Given an array of points, find the k closest points to the origin. \\
-            \multicolumn{2}{p{\linewidth}}{
-                    \begin{itemize}
-                        \item Use a min-heap to store the points based on their distance using a tuple of (distance, point).
-                        \item While len(heap) > k, pop the largest element.
-                        \item Return the k closest points by using heapq.nsmallest.
-                    \end{itemize}
-                } \\
-            \midrule
-            215. Kth Largest Element in an Array & Find the kth largest element in an unsorted array. \\
-            \multicolumn{2}{p{\linewidth}}{
-                    \begin{itemize}
-                        \item Use a min-heap to keep track of the k largest elements.
-                        \item If the heap size exceeds k, pop the smallest element.
-                        \item Return the root of the heap.
-                    \end{itemize}
-                } \\
-            \midrule
+            % 703. Kth Largest Element in a Stream & Design a class to find the kth largest element in a stream of numbers. \\
+            % \multicolumn{2}{p{\linewidth}}{
+            %         \begin{itemize}
+            %             \item Implement a heap that keeps track of the k largest elements using a min-heap so that the kth largest element is always at the root. 
+            %             \item \textbf{Process:}
+            %             \begin{enumerate}
+            %                 \item Change list into heap. If more than $k$ elements, pop until only $k$ elements remain.
+            %                 \item Add: Push new element into heap. If size exceeds $k$, pop the smallest element. Return the root.
+            %             \end{enumerate}
+            %         \end{itemize}
+            %     } \\
+            % \midrule
+            % 1046. Last Stone Weight & You are given an array of integers. \\
+            % & Each integer represents the weight of a stone. \\
+            % \multicolumn{2}{p{\linewidth}}{
+            %         \begin{itemize}
+            %             \item Convert the list into a max-heap using heapq with negation. 
+            %             \item While there are at least 1 stone in heap:
+            %             \begin{itemize}
+            %                 \item If they are equal, both stones are destroyed. If not, new stone is created and pushed back into the heap.
+            %             \end{itemize}
+            %             \item Return the weight of the last remaining stone or 0 if there are no stones left.
+            %         \end{itemize}
+            %     } \\
+            % \midrule
+            % 973. K Closest Points to Origin & Given an array of points, find the k closest points to the origin. \\
+            % \multicolumn{2}{p{\linewidth}}{
+            %         \begin{itemize}
+            %             \item Use a min-heap to store the points based on their distance using a tuple of (distance, point).
+            %             \item While len(heap) > k, pop the largest element.
+            %             \item Return the k closest points by using heapq.nsmallest.
+            %         \end{itemize}
+            %     } \\
+            % \midrule
+            % 215. Kth Largest Element in an Array & Find the kth largest element in an unsorted array. \\
+            % \multicolumn{2}{p{\linewidth}}{
+            %         \begin{itemize}
+            %             \item Use a min-heap to keep track of the k largest elements.
+            %             \item If the heap size exceeds k, pop the smallest element.
+            %             \item Return the root of the heap.
+            %         \end{itemize}
+            %     } \\
+            % \midrule
             621. Task Scheduler & Given a list of tasks and a cooldown period, \\
             & find the least time to finish all tasks. \\
             \multicolumn{2}{p{\linewidth}}{
