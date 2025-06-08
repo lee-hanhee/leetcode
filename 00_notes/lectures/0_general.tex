@@ -95,67 +95,75 @@
 \end{summary}
 \newpage
 
-\subsection{Big-O Cheat Sheet}
+\subsection{Big-O Complexity Chart}
 \begin{summary}
-    \begin{center}
-        \begin{tabular}{lll}
-            \toprule
-            \textbf{Data Structure} & \textbf{Average | Worst TC (Access/Search/Insert/Delete)} & \textbf{SC (Worst)} \\
-            \midrule
-            Array & $\Theta(1)/\Theta(n)/\Theta(n)/\Theta(n) \, | \, O(1)/O(n)/O(n)/O(n)$ & $O(n)$ \\
-            & & \\
-            Stack & $\Theta(n)/\Theta(n)/\Theta(1)/\Theta(1) \, | \, O(n)/O(n)/O(1)/O(1)$ & $O(n)$ \\
-            & & \\
-            Queue & $\Theta(n)/\Theta(n)/\Theta(1)/\Theta(1) \, | \, O(n)/O(n)/O(1)/O(1)$ & $O(n)$ \\
-            & & \\
-            Singly-Linked List & $\Theta(n)/\Theta(n)/\Theta(1)/\Theta(1) \, | \, O(n)/O(n)/O(1)/O(1)$ & $O(n)$ \\
-            & & \\
-            Doubly-Linked List & $\Theta(n)/\Theta(n)/\Theta(1)/\Theta(1) \, | \, O(n)/O(n)/O(1)/O(1)$ & $O(n)$ \\
-            & & \\
-            Skip List & $\Theta(\log n)/\Theta(\log n)/\Theta(\log n)/\Theta(\log n) \, | \, O(n)/O(n)/O(n)/O(n)$ & $O(n \log n)$ \\
-            & & \\
-            Hash Table & N/A / $\Theta(1)/\Theta(1)/\Theta(1) \, | \, N/A/O(n)/O(n)/O(n)$ & $O(n)$ \\
-            & & \\
-            Binary Search Tree & $\Theta(\log n)/\Theta(\log n)/\Theta(\log n)/\Theta(\log n) \, | \, O(n)/O(n)/O(n)/O(n)$ & $O(n)$ \\
-            & & \\
-            Cartesian Tree & N/A / $\Theta(\log n)/\Theta(\log n)/\Theta(\log n) \, | \, N/A/O(n)/O(n)/O(n)$ & $O(n)$ \\
-            & & \\
-            B-Tree & $\Theta(\log n)/\Theta(\log n)/\Theta(\log n)/\Theta(\log n) \, | \, O(\log n)/O(\log n)/O(\log n)/O(\log n)$ & $O(n)$ \\
-            & & \\
-            Red-Black Tree & $\Theta(\log n)/\Theta(\log n)/\Theta(\log n)/\Theta(\log n) \, | \, O(\log n)/O(\log n)/O(\log n)/O(\log n)$ & $O(n)$ \\
-            & & \\
-            Splay Tree & N/A / $\Theta(\log n)/\Theta(\log n)/\Theta(\log n) \, | \, N/A/O(\log n)/O(\log n)/O(\log n)$ & $O(n)$ \\
-            & & \\
-            AVL Tree & $\Theta(\log n)/\Theta(\log n)/\Theta(\log n)/\Theta(\log n) \, | \, O(\log n)/O(\log n)/O(\log n)/O(\log n)$ & $O(n)$ \\
-            & & \\
-            KD Tree & $\Theta(\log n)/\Theta(\log n)/\Theta(\log n)/\Theta(\log n) \, | \, O(n)/O(n)/O(n)/O(n)$ & $O(n)$ \\
-            \bottomrule
-        \end{tabular}
-    \end{center}        
+    \customFigure[1]{images/0.png}{}
+\end{summary}
+\newpage
+
+\subsection{Common Data Structure Operations}
+\begin{summary}
+    \customFigure[1]{images/1.png}{}
+    % \begin{center}
+    %     \begin{tabular}{lll}
+    %         \toprule
+    %         \textbf{Data Structure} & \textbf{Average | Worst TC (Access/Search/Insert/Delete)} & \textbf{SC (Worst)} \\
+    %         \midrule
+    %         Array & $\Theta(1)/\Theta(n)/\Theta(n)/\Theta(n) \, | \, O(1)/O(n)/O(n)/O(n)$ & $O(n)$ \\
+    %         & & \\
+    %         Stack & $\Theta(n)/\Theta(n)/\Theta(1)/\Theta(1) \, | \, O(n)/O(n)/O(1)/O(1)$ & $O(n)$ \\
+    %         & & \\
+    %         Queue & $\Theta(n)/\Theta(n)/\Theta(1)/\Theta(1) \, | \, O(n)/O(n)/O(1)/O(1)$ & $O(n)$ \\
+    %         & & \\
+    %         Singly-Linked List & $\Theta(n)/\Theta(n)/\Theta(1)/\Theta(1) \, | \, O(n)/O(n)/O(1)/O(1)$ & $O(n)$ \\
+    %         & & \\
+    %         Doubly-Linked List & $\Theta(n)/\Theta(n)/\Theta(1)/\Theta(1) \, | \, O(n)/O(n)/O(1)/O(1)$ & $O(n)$ \\
+    %         & & \\
+    %         Skip List & $\Theta(\log n)/\Theta(\log n)/\Theta(\log n)/\Theta(\log n) \, | \, O(n)/O(n)/O(n)/O(n)$ & $O(n \log n)$ \\
+    %         & & \\
+    %         Hash Table & N/A / $\Theta(1)/\Theta(1)/\Theta(1) \, | \, N/A/O(n)/O(n)/O(n)$ & $O(n)$ \\
+    %         & & \\
+    %         Binary Search Tree & $\Theta(\log n)/\Theta(\log n)/\Theta(\log n)/\Theta(\log n) \, | \, O(n)/O(n)/O(n)/O(n)$ & $O(n)$ \\
+    %         & & \\
+    %         Cartesian Tree & N/A / $\Theta(\log n)/\Theta(\log n)/\Theta(\log n) \, | \, N/A/O(n)/O(n)/O(n)$ & $O(n)$ \\
+    %         & & \\
+    %         B-Tree & $\Theta(\log n)/\Theta(\log n)/\Theta(\log n)/\Theta(\log n) \, | \, O(\log n)/O(\log n)/O(\log n)/O(\log n)$ & $O(n)$ \\
+    %         & & \\
+    %         Red-Black Tree & $\Theta(\log n)/\Theta(\log n)/\Theta(\log n)/\Theta(\log n) \, | \, O(\log n)/O(\log n)/O(\log n)/O(\log n)$ & $O(n)$ \\
+    %         & & \\
+    %         Splay Tree & N/A / $\Theta(\log n)/\Theta(\log n)/\Theta(\log n) \, | \, N/A/O(\log n)/O(\log n)/O(\log n)$ & $O(n)$ \\
+    %         & & \\
+    %         AVL Tree & $\Theta(\log n)/\Theta(\log n)/\Theta(\log n)/\Theta(\log n) \, | \, O(\log n)/O(\log n)/O(\log n)/O(\log n)$ & $O(n)$ \\
+    %         & & \\
+    %         KD Tree & $\Theta(\log n)/\Theta(\log n)/\Theta(\log n)/\Theta(\log n) \, | \, O(n)/O(n)/O(n)/O(n)$ & $O(n)$ \\
+    %         \bottomrule
+    %     \end{tabular}
+    % \end{center}        
 \end{summary}
 \newpage
 
 \subsection{Array Sorting Algorithms}
 \begin{summary}
-    \begin{center}
-        \begin{tabular}{lll}
-            \toprule
-            \textbf{Algorithm} & \textbf{Time Complexity (Best | Average | Worst)} & \textbf{Space Complexity (Worst)} \\
-            \midrule
-            Quicksort & $\Omega(n \log n)\,|\,\Theta(n \log n)\,|\,O(n^2)$ & $O(\log n)$ \\[1ex]
-            Mergesort & $\Omega(n \log n)\,|\,\Theta(n \log n)\,|\,O(n \log n)$ & $O(n)$ \\[1ex]
-            Timsort & $\Omega(n)\,|\,\Theta(n \log n)\,|\,O(n \log n)$ & $O(n)$ \\[1ex]
-            Heapsort & $\Omega(n \log n)\,|\,\Theta(n \log n)\,|\,O(n \log n)$ & $O(1)$ \\[1ex]
-            Bubble Sort & $\Omega(n)\,|\,\Theta(n^2)\,|\,O(n^2)$ & $O(1)$ \\[1ex]
-            Insertion Sort & $\Omega(n)\,|\,\Theta(n^2)\,|\,O(n^2)$ & $O(1)$ \\[1ex]
-            Selection Sort & $\Omega(n^2)\,|\,\Theta(n^2)\,|\,O(n^2)$ & $O(1)$ \\[1ex]
-            Tree Sort & $\Omega(n \log n)\,|\,\Theta(n \log n)\,|\,O(n^2)$ & $O(n)$ \\[1ex]
-            Shell Sort & $\Omega(n \log n)\,|\,\Theta(n(\log n)^2)\,|\,O(n(\log n)^2)$ & $O(1)$ \\[1ex]
-            Bucket Sort & $\Omega(n + k)\,|\,\Theta(n + k)\,|\,O(n^2)$ & $O(n)$ \\[1ex]
-            Radix Sort & $\Omega(nk)\,|\,\Theta(nk)\,|\,O(nk)$ & $O(n + k)$ \\[1ex]
-            Counting Sort & $\Omega(n + k)\,|\,\Theta(n + k)\,|\,O(n + k)$ & $O(k)$ \\[1ex]
-            Cubesort & $\Omega(n)\,|\,\Theta(n \log n)\,|\,O(n \log n)$ & $O(n)$ \\
-            \bottomrule
-        \end{tabular}
-    \end{center}
+    \customFigure[1]{images/2.png}{}
+    % \begin{center}
+    %     \begin{tabular}{lll}
+    %         \toprule
+    %         \textbf{Algorithm} & \textbf{Time Complexity (Best | Average | Worst)} & \textbf{Space Complexity (Worst)} \\
+    %         \midrule
+    %         Quicksort & $\Omega(n \log n)\,|\,\Theta(n \log n)\,|\,O(n^2)$ & $O(\log n)$ \\[1ex]
+    %         Mergesort & $\Omega(n \log n)\,|\,\Theta(n \log n)\,|\,O(n \log n)$ & $O(n)$ \\[1ex]
+    %         Timsort & $\Omega(n)\,|\,\Theta(n \log n)\,|\,O(n \log n)$ & $O(n)$ \\[1ex]
+    %         Heapsort & $\Omega(n \log n)\,|\,\Theta(n \log n)\,|\,O(n \log n)$ & $O(1)$ \\[1ex]
+    %         Bubble Sort & $\Omega(n)\,|\,\Theta(n^2)\,|\,O(n^2)$ & $O(1)$ \\[1ex]
+    %         Insertion Sort & $\Omega(n)\,|\,\Theta(n^2)\,|\,O(n^2)$ & $O(1)$ \\[1ex]
+    %         Selection Sort & $\Omega(n^2)\,|\,\Theta(n^2)\,|\,O(n^2)$ & $O(1)$ \\[1ex]
+    %         Tree Sort & $\Omega(n \log n)\,|\,\Theta(n \log n)\,|\,O(n^2)$ & $O(n)$ \\[1ex]
+    %         Shell Sort & $\Omega(n \log n)\,|\,\Theta(n(\log n)^2)\,|\,O(n(\log n)^2)$ & $O(1)$ \\[1ex]
+    %         Bucket Sort & $\Omega(n + k)\,|\,\Theta(n + k)\,|\,O(n^2)$ & $O(n)$ \\[1ex]
+    %         Radix Sort & $\Omega(nk)\,|\,\Theta(nk)\,|\,O(nk)$ & $O(n + k)$ \\[1ex]
+    %         Counting Sort & $\Omega(n + k)\,|\,\Theta(n + k)\,|\,O(n + k)$ & $O(k)$ \\[1ex]
+    %         Cubesort & $\Omega(n)\,|\,\Theta(n \log n)\,|\,O(n \log n)$ & $O(n)$ \\
+    %         \bottomrule
+    %     \end{tabular}
+    % \end{center}
 \end{summary}
