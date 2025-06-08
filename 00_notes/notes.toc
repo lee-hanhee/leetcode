@@ -4,78 +4,80 @@
 \contentsline {subsection}{\numberline {1.2}Steps for Success During the Technical Interview}{3}{subsection.1.2}%
 \contentsline {subsection}{\numberline {1.3}Common Mistakes to Avoid}{3}{subsection.1.3}%
 \contentsline {subsection}{\numberline {1.4}Syntax}{4}{subsection.1.4}%
-\contentsline {section}{\numberline {2}Arrays and Hashing}{5}{section.2}%
-\contentsline {subsection}{\numberline {2.1}When to Use?}{5}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Hashing}{5}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Common Problems}{6}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Two Pointers}{8}{section.3}%
-\contentsline {subsection}{\numberline {3.1}When to Use?}{8}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Slow and Fast Pointers}{8}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Common Problems}{8}{subsubsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.3}Left and Right Pointers}{9}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Common Problems}{10}{subsubsection.3.3.1}%
-\contentsline {section}{\numberline {4}Sliding Window}{12}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Fixed Sliding Window}{12}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Common Problems}{13}{subsubsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.2}Dynamic Sliding Window}{14}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Common Problems}{15}{subsubsection.4.2.1}%
-\contentsline {section}{\numberline {5}Binary Search}{17}{section.5}%
-\contentsline {subsection}{\numberline {5.1}When to Use?}{17}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}Common Problems}{18}{subsubsection.5.1.1}%
-\contentsline {section}{\numberline {6}Linked List}{19}{section.6}%
-\contentsline {subsection}{\numberline {6.1}When to Use?}{19}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Singly Linked List}{19}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Operations}{19}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Doubly Linked List}{20}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}Operations}{20}{subsection.6.5}%
-\contentsline {subsection}{\numberline {6.6}Circular Linked List}{21}{subsection.6.6}%
-\contentsline {subsection}{\numberline {6.7}Operations}{21}{subsection.6.7}%
-\contentsline {section}{\numberline {7}Stack and Queue}{24}{section.7}%
-\contentsline {subsection}{\numberline {7.1}collections.deque}{24}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Stack}{25}{subsection.7.2}%
-\contentsline {subsubsection}{\numberline {7.2.1}When to Use?}{25}{subsubsection.7.2.1}%
-\contentsline {subsubsection}{\numberline {7.2.2}Operations}{25}{subsubsection.7.2.2}%
-\contentsline {subsubsection}{\numberline {7.2.3}Common Problems}{26}{subsubsection.7.2.3}%
-\contentsline {subsection}{\numberline {7.3}Queue}{28}{subsection.7.3}%
-\contentsline {subsubsection}{\numberline {7.3.1}When to Use?}{28}{subsubsection.7.3.1}%
-\contentsline {subsubsection}{\numberline {7.3.2}Operations}{28}{subsubsection.7.3.2}%
-\contentsline {section}{\numberline {8}Trees}{29}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Binary Search Tree (BST)}{29}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Operations}{30}{subsection.8.2}%
-\contentsline {subsubsection}{\numberline {8.2.1}Search}{30}{subsubsection.8.2.1}%
-\contentsline {subsubsection}{\numberline {8.2.2}Insert}{30}{subsubsection.8.2.2}%
-\contentsline {subsubsection}{\numberline {8.2.3}Delete}{30}{subsubsection.8.2.3}%
-\contentsline {subsubsection}{\numberline {8.2.4}Find Min}{31}{subsubsection.8.2.4}%
-\contentsline {subsubsection}{\numberline {8.2.5}Find Max}{31}{subsubsection.8.2.5}%
-\contentsline {subsubsection}{\numberline {8.2.6}DFS In-order Traversal (Left → Root → Right)}{31}{subsubsection.8.2.6}%
-\contentsline {subsubsection}{\numberline {8.2.7}DFS Pre-order Traversal (Root → Left → Right)}{32}{subsubsection.8.2.7}%
-\contentsline {subsubsection}{\numberline {8.2.8}DFS Post-order Traversal (Left → Right → Root)}{32}{subsubsection.8.2.8}%
-\contentsline {subsubsection}{\numberline {8.2.9}BFS Level-order Traversal (Top → Bottom, Left → Right)}{32}{subsubsection.8.2.9}%
-\contentsline {subsubsection}{\numberline {8.2.10}Common Problems}{33}{subsubsection.8.2.10}%
-\contentsline {subsubsection}{\numberline {8.2.11}BST-based Sets and Maps}{35}{subsubsection.8.2.11}%
-\contentsline {section}{\numberline {9}Heaps and Priority Queues}{36}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Heap}{36}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Heapq}{36}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}Operations}{38}{subsection.9.3}%
-\contentsline {subsubsection}{\numberline {9.3.1}Insert}{38}{subsubsection.9.3.1}%
-\contentsline {subsubsection}{\numberline {9.3.2}Heapify}{38}{subsubsection.9.3.2}%
-\contentsline {subsubsection}{\numberline {9.3.3}Extract Min}{38}{subsubsection.9.3.3}%
-\contentsline {subsubsection}{\numberline {9.3.4}Get Min}{39}{subsubsection.9.3.4}%
-\contentsline {subsubsection}{\numberline {9.3.5}Build Heap}{39}{subsubsection.9.3.5}%
-\contentsline {subsubsection}{\numberline {9.3.6}Search}{39}{subsubsection.9.3.6}%
-\contentsline {subsubsection}{\numberline {9.3.7}Delete}{39}{subsubsection.9.3.7}%
-\contentsline {subsubsection}{\numberline {9.3.8}Heap Sort}{39}{subsubsection.9.3.8}%
-\contentsline {subsubsection}{\numberline {9.3.9}Common Problem}{41}{subsubsection.9.3.9}%
-\contentsline {section}{\numberline {10}Graphs}{43}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Breadth-First Search (BFS)}{43}{subsection.10.1}%
-\contentsline {subsubsection}{\numberline {10.1.1}Common Problems}{44}{subsubsection.10.1.1}%
-\contentsline {subsection}{\numberline {10.2}Depth-First Search (DFS)}{45}{subsection.10.2}%
-\contentsline {subsubsection}{\numberline {10.2.1}Common Problems}{46}{subsubsection.10.2.1}%
-\contentsline {subsection}{\numberline {10.3}Topological Sort}{47}{subsection.10.3}%
-\contentsline {section}{\numberline {11}Sorting}{48}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Stable, In-place, and Divide and Conquer}{49}{subsection.11.1}%
-\contentsline {subsection}{\numberline {11.2}Merge Sort}{49}{subsection.11.2}%
-\contentsline {subsection}{\numberline {11.3}Quick Sort}{49}{subsection.11.3}%
-\contentsline {section}{\numberline {12}Images}{50}{section.12}%
-\contentsline {subsection}{\numberline {12.1}2D Convolution Operations}{50}{subsection.12.1}%
-\contentsline {subsection}{\numberline {12.2}Common Problems}{51}{subsection.12.2}%
+\contentsline {subsection}{\numberline {1.5}Big-O Cheat Sheet}{5}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Array Sorting Algorithms}{6}{subsection.1.6}%
+\contentsline {section}{\numberline {2}Arrays and Hashing}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}When to Use?}{7}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Hashing}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Common Problems}{8}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Two Pointers}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1}When to Use?}{10}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Slow and Fast Pointers}{10}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Common Problems}{10}{subsubsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.3}Left and Right Pointers}{11}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Common Problems}{12}{subsubsection.3.3.1}%
+\contentsline {section}{\numberline {4}Sliding Window}{14}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Fixed Sliding Window}{14}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Common Problems}{15}{subsubsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.2}Dynamic Sliding Window}{16}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Common Problems}{17}{subsubsection.4.2.1}%
+\contentsline {section}{\numberline {5}Binary Search}{19}{section.5}%
+\contentsline {subsection}{\numberline {5.1}When to Use?}{19}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Common Problems}{20}{subsubsection.5.1.1}%
+\contentsline {section}{\numberline {6}Linked List}{21}{section.6}%
+\contentsline {subsection}{\numberline {6.1}When to Use?}{21}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Singly Linked List}{21}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Operations}{21}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Doubly Linked List}{22}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Operations}{22}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Circular Linked List}{23}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Operations}{23}{subsection.6.7}%
+\contentsline {section}{\numberline {7}Stack and Queue}{26}{section.7}%
+\contentsline {subsection}{\numberline {7.1}collections.deque}{26}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Stack}{27}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}When to Use?}{27}{subsubsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2}Operations}{27}{subsubsection.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.3}Common Problems}{28}{subsubsection.7.2.3}%
+\contentsline {subsection}{\numberline {7.3}Queue}{30}{subsection.7.3}%
+\contentsline {subsubsection}{\numberline {7.3.1}When to Use?}{30}{subsubsection.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.2}Operations}{30}{subsubsection.7.3.2}%
+\contentsline {section}{\numberline {8}Trees}{31}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Binary Search Tree (BST)}{31}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Operations}{32}{subsection.8.2}%
+\contentsline {subsubsection}{\numberline {8.2.1}Search}{32}{subsubsection.8.2.1}%
+\contentsline {subsubsection}{\numberline {8.2.2}Insert}{32}{subsubsection.8.2.2}%
+\contentsline {subsubsection}{\numberline {8.2.3}Delete}{32}{subsubsection.8.2.3}%
+\contentsline {subsubsection}{\numberline {8.2.4}Find Min}{33}{subsubsection.8.2.4}%
+\contentsline {subsubsection}{\numberline {8.2.5}Find Max}{33}{subsubsection.8.2.5}%
+\contentsline {subsubsection}{\numberline {8.2.6}DFS In-order Traversal (Left → Root → Right)}{33}{subsubsection.8.2.6}%
+\contentsline {subsubsection}{\numberline {8.2.7}DFS Pre-order Traversal (Root → Left → Right)}{34}{subsubsection.8.2.7}%
+\contentsline {subsubsection}{\numberline {8.2.8}DFS Post-order Traversal (Left → Right → Root)}{34}{subsubsection.8.2.8}%
+\contentsline {subsubsection}{\numberline {8.2.9}BFS Level-order Traversal (Top → Bottom, Left → Right)}{34}{subsubsection.8.2.9}%
+\contentsline {subsubsection}{\numberline {8.2.10}Common Problems}{35}{subsubsection.8.2.10}%
+\contentsline {subsubsection}{\numberline {8.2.11}BST-based Sets and Maps}{37}{subsubsection.8.2.11}%
+\contentsline {section}{\numberline {9}Heaps and Priority Queues}{38}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Heap}{38}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Heapq}{38}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Operations}{40}{subsection.9.3}%
+\contentsline {subsubsection}{\numberline {9.3.1}Insert}{40}{subsubsection.9.3.1}%
+\contentsline {subsubsection}{\numberline {9.3.2}Heapify}{40}{subsubsection.9.3.2}%
+\contentsline {subsubsection}{\numberline {9.3.3}Extract Min}{40}{subsubsection.9.3.3}%
+\contentsline {subsubsection}{\numberline {9.3.4}Get Min}{41}{subsubsection.9.3.4}%
+\contentsline {subsubsection}{\numberline {9.3.5}Build Heap}{41}{subsubsection.9.3.5}%
+\contentsline {subsubsection}{\numberline {9.3.6}Search}{41}{subsubsection.9.3.6}%
+\contentsline {subsubsection}{\numberline {9.3.7}Delete}{41}{subsubsection.9.3.7}%
+\contentsline {subsubsection}{\numberline {9.3.8}Heap Sort}{41}{subsubsection.9.3.8}%
+\contentsline {subsubsection}{\numberline {9.3.9}Common Problem}{43}{subsubsection.9.3.9}%
+\contentsline {section}{\numberline {10}Graphs}{45}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Breadth-First Search (BFS)}{45}{subsection.10.1}%
+\contentsline {subsubsection}{\numberline {10.1.1}Common Problems}{46}{subsubsection.10.1.1}%
+\contentsline {subsection}{\numberline {10.2}Depth-First Search (DFS)}{47}{subsection.10.2}%
+\contentsline {subsubsection}{\numberline {10.2.1}Common Problems}{48}{subsubsection.10.2.1}%
+\contentsline {subsection}{\numberline {10.3}Topological Sort}{49}{subsection.10.3}%
+\contentsline {section}{\numberline {11}Sorting}{50}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Stable, In-place, and Divide and Conquer}{51}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Merge Sort}{51}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Quick Sort}{51}{subsection.11.3}%
+\contentsline {section}{\numberline {12}Images}{52}{section.12}%
+\contentsline {subsection}{\numberline {12.1}2D Convolution Operations}{52}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Common Problems}{53}{subsection.12.2}%
