@@ -1,0 +1,129 @@
+\begin{process}
+    The system design interview is an open-ended conversation. You are expected to lead it.
+    \begin{enumerate}
+        \item \textbf{Outline use cases, constraints, and assumptions}
+        \begin{itemize}
+            \item Gather requirements and scope the problem. Ask questions to clarify use cases and constraints. Discuss assumptions.
+            \begin{itemize}
+                \item Who is going to use it?
+                \item How are they going to use it?
+                \item How many users are there?
+                \item What does the system do?
+                \item What are the inputs and outputs of the system?
+                \item How much data do we expect to handle?
+                \item How many requests per second do we expect?
+                \item What is the expected read to write ratio?
+            \end{itemize}
+        \end{itemize}
+        
+        \item \textbf{Create a high level design}
+        \begin{itemize}
+            \item Outline a high level design with all important components.
+            \item Sketch the main components and connections.
+            \item Justify your ideas.
+        \end{itemize}
+
+        \item \textbf{Design core components}
+        \begin{itemize}
+            \item Dive into details for each core component. 
+            \item For example, if you were asked to design a URL shortening service, discuss:
+            \begin{itemize}
+                \item Generating and storing a hash of the full URL
+                \begin{itemize}
+                    \item MD5 and Base62
+                    \item Hash collisions
+                    \item SQL or NoSQL
+                    \item Database schema
+                \end{itemize}
+                \item Translating a hashed URL to the full URL
+                \begin{itemize}
+                    \item Database lookup
+                \end{itemize}
+                \item API and object-oriented design
+            \end{itemize}
+        \end{itemize}
+        
+        \item \textbf{Scale the design}
+        \begin{itemize}
+            \item Identify and address bottlenecks, given the constraints. 
+            \item For example, do you need the following to address scalability issues?
+            \begin{itemize}
+                \item Load balancer
+                \item Horizontal scaling
+                \item Caching
+                \item Database sharding
+            \end{itemize}
+            \item Discuss potential solutions and trade-offs. Everything is a trade-off. Address bottlenecks using principles of scalable system design.
+        \end{itemize}
+        \item \textbf{Back-of-the-envelope calculations}
+        \begin{itemize}
+            \item 
+        \end{itemize}
+    \end{enumerate}
+\end{process}
+
+\subsection{Back-of-the-envelope calculations}
+\subsubsection{Powers of 2 Table}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{r l l l}
+        \toprule
+        \textbf{Power} & \textbf{Exact Value} & \textbf{Approx Value} & \textbf{Bytes} \\
+        \midrule
+        7  & 128 & & \\
+        8  & 256 & & \\
+        10 & 1,024 & 1 thousand & 1 KB \\
+        16 & 65,536 & & 64 KB \\
+        20 & 1,048,576 & 1 million & 1 MB \\
+        30 & 1,073,741,824 & 1 billion & 1 GB \\
+        32 & 4,294,967,296 & & 4 GB \\
+        40 & 1,099,511,627,776 & 1 trillion & 1 TB \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+
+\subsubsection{Latency numbers every programmer should know}
+\begin{summary}
+    \begin{center}
+        \textbf{Latency Comparison Numbers}
+        \begin{tabular}{l r r r l}
+        \toprule
+        \textbf{Operation} & \textbf{Time (ns)} & \textbf{Time (us)} & \textbf{Time (ms)} & \textbf{Notes} \\
+        \midrule
+        L1 cache reference & 0.5 & & & \\
+        Branch mispredict & 5 & & & \\
+        L2 cache reference & 7 & & & 14x L1 cache \\
+        Mutex lock/unlock & 25 & & & \\
+        Main memory reference & 100 & & & 20x L2 cache, 200x L1 cache \\
+        Compress 1 KB with Zippy & 10,000 & 10 & & \\
+        Send 1 KB over 1 Gbps network & 10,000 & 10 & & \\
+        Read 4 KB randomly from SSD* & 150,000 & 150 & & \textasciitilde1 GB/sec SSD \\
+        Read 1 MB sequentially from memory & 250,000 & 250 & & \\
+        Round trip within same datacenter & 500,000 & 500 & & \\
+        Read 1 MB sequentially from SSD* & 1,000,000 & 1,000 & 1 & \textasciitilde1 GB/sec SSD, 4x memory \\
+        HDD seek & 10,000,000 & 10,000 & 10 & 20x datacenter roundtrip \\
+        Read 1 MB sequentially from 1 Gbps & 10,000,000 & 10,000 & 10 & 40x memory, 10x SSD \\
+        Read 1 MB sequentially from HDD & 30,000,000 & 30,000 & 30 & 120x memory, 30x SSD \\
+        Send packet CA $\rightarrow$ NL $\rightarrow$ CA & 150,000,000 & 150,000 & 150 & \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
+    \vspace{1em}
+
+    \begin{itemize}
+        \item 1 ns = $10^{-9}$ seconds
+        \item 1 $\mu$s = $10^{-6}$ seconds = 1,000 ns
+        \item 1 ms = $10^{-3}$ seconds = 1,000 $\mu$s = 1,000,000 ns
+    \end{itemize}
+    \vspace{1em}
+
+    \begin{itemize}
+        \item Read sequentially from HDD at 30 MB/s
+        \item Read sequentially from 1 Gbps Ethernet at 100 MB/s
+        \item Read sequentially from SSD at 1 GB/s
+        \item Read sequentially from main memory at 4 GB/s
+        \item 6--7 world-wide round trips per second
+        \item 2,000 round trips per second within a data center
+    \end{itemize}
+\end{summary}
