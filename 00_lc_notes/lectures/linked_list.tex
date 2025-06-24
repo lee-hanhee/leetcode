@@ -233,48 +233,48 @@ class CircularLinkedList:
                 %         \item Merge the two halves together.
                 %     \end{itemize}
                 % } \\
-                \midrule 
-                19. Remove Nth Node From End of List & Given a linked list, remove the Nth node from the end of the list. \\
-                \multicolumn{2}{p{\linewidth}}{
-                    \begin{itemize}
-                        \item \textbf{Idea:} Use two pointers (slow and fast) to traverse the list by moving fast pointer N steps ahead. 
-                        \begin{itemize}
-                            \item \textbf{Conditional:} If fast is None, then this means $N=\text{length of list}$, therefore, remove head by returning head.next.
-                        \end{itemize}
-                        \item Move both pointers until fast reaches the end. 
-                        \begin{itemize}
-                            \item Slow pointer will be at the node to be deleted, so store prev node and do appropriate adjustments. 
-                        \end{itemize}
-                    \end{itemize}
-                } \\
-                \midrule
-                2. Add Two Numbers & Given two non-empty linked lists representing two \\
-                & non-negative integers, add the two numbers and return a linked list. \\
-                \multicolumn{2}{p{\linewidth}}{
-                    \begin{itemize}
-                        \item \textbf{Initialize:} Create a dummy node, use \texttt{cur} to traverse as \texttt{cur = dummy}.
-                        \begin{itemize}
-                            \item Set \texttt{next\_val = 0} to store carry between digit additions.
-                        \end{itemize}
-                        \item \textbf{Helper Function:} \texttt{add\_two\_nodes(n1, n2, next\_val)}
-                        \begin{itemize}
-                            \item Extract values: \texttt{val1 = n1.val if n1 else 0}, \texttt{val2 = n2.val if n2 else 0}.
-                            \item Compute sum:
-                            \begin{itemize}
-                                \item \texttt{rem = (val1 + val2 + next\_val) \% 10}
-                                \item \texttt{next\_val = (val1 + val2 + next\_val) // 10}.
-                            \end{itemize}
-                            \item Return updated carry and new node with value \texttt{rem}.
-                        \end{itemize}
-                        \item \textbf{Traversal Loop:}
-                        \begin{itemize}
-                            \item Continue while at least one of \texttt{l1}, \texttt{l2} exists or \texttt{next\_val != 0}.
-                            \item Call \texttt{add\_two\_nodes(l1, l2, next\_val)} and link result to \texttt{cur.next}.
-                            \item Advance \texttt{cur}, and move \texttt{l1}, \texttt{l2} to their next nodes if they exist.
-                        \end{itemize}
-                    \end{itemize}                    
-                } \\
-                \midrule
+                % \midrule 
+                % 19. Remove Nth Node From End of List & Given a linked list, remove the Nth node from the end of the list. \\
+                % \multicolumn{2}{p{\linewidth}}{
+                %     \begin{itemize}
+                %         \item \textbf{Idea:} Use two pointers (slow and fast) to traverse the list by moving fast pointer N steps ahead. 
+                %         \begin{itemize}
+                %             \item \textbf{Conditional:} If fast is None, then this means $N=\text{length of list}$, therefore, remove head by returning head.next.
+                %         \end{itemize}
+                %         \item Move both pointers until fast reaches the end. 
+                %         \begin{itemize}
+                %             \item Slow pointer will be at the node to be deleted, so store prev node and do appropriate adjustments. 
+                %         \end{itemize}
+                %     \end{itemize}
+                % } \\
+                % \midrule
+                % 2. Add Two Numbers & Given two non-empty linked lists representing two \\
+                % & non-negative integers, add the two numbers and return a linked list. \\
+                % \multicolumn{2}{p{\linewidth}}{
+                %     \begin{itemize}
+                %         \item \textbf{Initialize:} Create a dummy node, use \texttt{cur} to traverse as \texttt{cur = dummy}.
+                %         \begin{itemize}
+                %             \item Set \texttt{next\_val = 0} to store carry between digit additions.
+                %         \end{itemize}
+                %         \item \textbf{Helper Function:} \texttt{add\_two\_nodes(n1, n2, next\_val)}
+                %         \begin{itemize}
+                %             \item Extract values: \texttt{val1 = n1.val if n1 else 0}, \texttt{val2 = n2.val if n2 else 0}.
+                %             \item Compute sum:
+                %             \begin{itemize}
+                %                 \item \texttt{rem = (val1 + val2 + next\_val) \% 10}
+                %                 \item \texttt{next\_val = (val1 + val2 + next\_val) // 10}.
+                %             \end{itemize}
+                %             \item Return updated carry and new node with value \texttt{rem}.
+                %         \end{itemize}
+                %         \item \textbf{Traversal Loop:}
+                %         \begin{itemize}
+                %             \item Continue while at least one of \texttt{l1}, \texttt{l2} exists or \texttt{next\_val != 0}.
+                %             \item Call \texttt{add\_two\_nodes(l1, l2, next\_val)} and link result to \texttt{cur.next}.
+                %             \item Advance \texttt{cur}, and move \texttt{l1}, \texttt{l2} to their next nodes if they exist.
+                %         \end{itemize}
+                %     \end{itemize}                    
+                % } \\
+                % \midrule
                 23. Merge K Sorted Lists & Given an array of k linked lists, each list is sorted in ascending order. \\
                 & Merge all the lists into one sorted linked list and return it. \\
                 \multicolumn{2}{p{\linewidth}}{
@@ -299,36 +299,36 @@ class CircularLinkedList:
 \end{summary}
 \newpage 
 
-\begin{summary}
-    \begin{center}
-        \begin{tabular}{ll}
-            \toprule
-            \textbf{Problem} & \textbf{Description:} \\
-            \midrule
-            287. Find the Duplicate Number & Given an array of integers, find the duplicate number. \\
-            \multicolumn{2}{p{\linewidth}}{
-                \begin{itemize}
-                    \item \textbf{Phase 1: Cycle Detection (Floyd's Tortoise and Hare)}
-                    \begin{itemize}
-                        \item Initialize two pointers: \texttt{slow = 0}, \texttt{fast = 0}.
-                        \item \textbf{Loop:} Move \texttt{slow = nums[slow]}, \texttt{fast = nums[nums[fast]]}.
-                        \item Continue until \texttt{slow == fast}, indicating an intersection point within the cycle.
-                    \end{itemize}
+% \begin{summary}
+%     \begin{center}
+%         \begin{tabular}{ll}
+%             \toprule
+%             \textbf{Problem} & \textbf{Description:} \\
+%             \midrule
+%             287. Find the Duplicate Number & Given an array of integers, find the duplicate number. \\
+%             \multicolumn{2}{p{\linewidth}}{
+%                 \begin{itemize}
+%                     \item \textbf{Phase 1: Cycle Detection (Floyd's Tortoise and Hare)}
+%                     \begin{itemize}
+%                         \item Initialize two pointers: \texttt{slow = 0}, \texttt{fast = 0}.
+%                         \item \textbf{Loop:} Move \texttt{slow = nums[slow]}, \texttt{fast = nums[nums[fast]]}.
+%                         \item Continue until \texttt{slow == fast}, indicating an intersection point within the cycle.
+%                     \end{itemize}
                     
-                    \item \textbf{Phase 2: Cycle Entrance (Duplicate Finder)}
-                    \begin{itemize}
-                        \item Initialize a new pointer: \texttt{slow2 = 0}.
-                        \item \textbf{Loop:} Move both \texttt{slow = nums[slow]} and \texttt{slow2 = nums[slow2]}.
-                        \item When \texttt{slow == slow2}, return the value at that index as the duplicate.
-                    \end{itemize}
+%                     \item \textbf{Phase 2: Cycle Entrance (Duplicate Finder)}
+%                     \begin{itemize}
+%                         \item Initialize a new pointer: \texttt{slow2 = 0}.
+%                         \item \textbf{Loop:} Move both \texttt{slow = nums[slow]} and \texttt{slow2 = nums[slow2]}.
+%                         \item When \texttt{slow == slow2}, return the value at that index as the duplicate.
+%                     \end{itemize}
                 
-                    \item \textbf{Rationale:}
-                    \begin{itemize}
-                        \item Each number is a pointer to the next index; repeated values form a cycle.
-                        \item Detecting the start of the cycle identifies the duplicate.
-                    \end{itemize}
-                \end{itemize}                
-            } \\
-        \end{tabular}
-    \end{center}
-\end{summary}
+%                     \item \textbf{Rationale:}
+%                     \begin{itemize}
+%                         \item Each number is a pointer to the next index; repeated values form a cycle.
+%                         \item Detecting the start of the cycle identifies the duplicate.
+%                     \end{itemize}
+%                 \end{itemize}                
+%             } \\
+%         \end{tabular}
+%     \end{center}
+% \end{summary}
